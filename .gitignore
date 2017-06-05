@@ -1,0 +1,21 @@
+
+# .gitignore for yehuohan.blog.src
+
+/yehuohan.github.io
+
+*.swp
+*.log
+.DS_Store
+Thumbs.db
+db.json
+
+node_modules/
+public/
+.deploy*/
+
+
+/themes
+#/themes/*
+#!/themes/spfk
+#/themes/spfk/*
+#!/themes/spfk/_config.yml
