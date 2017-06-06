@@ -2,7 +2,9 @@
 title: git命令行基础
 date: 2017-06-05 23:34:57
 tags: git
-categories: 杂记
+categories: 
+ - 极文
+ - Linux
 ---
 
 ---

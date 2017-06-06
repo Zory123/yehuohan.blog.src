@@ -2,7 +2,7 @@
 ---
 title: Hello World
 tags: hexo
-categories: 随笔
+categories: 杂记
 ---
 
 ---

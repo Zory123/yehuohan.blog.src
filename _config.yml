@@ -84,14 +84,17 @@ theme: yilia
 #theme: 3-hexo
 
 
-
+  
 #===============================================================================
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type: git
-  repo: git@github.com:yehuohan/yehuohan.github.io.git
-  branch: master
+ - type: git
+   repo: git@github.com:yehuohan/yehuohan.github.io.git
+   branch: master
+ - type: git
+   repo: git@git.oschina.net:yehuohan/yehuohan.git
+   branch: master
   
   
 #===============================================================================

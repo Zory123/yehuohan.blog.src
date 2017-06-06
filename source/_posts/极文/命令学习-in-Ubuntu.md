@@ -4,12 +4,14 @@ date: 2017-06-06 14:21:13
 tags:
  - linux
  - ubuntu
-categories: 杂记
+categories: 
+ - 极文
+ - Linux
 ---
 
 
 ---
-#***写在前面***
+# ***写在前面***
 - 查看命令帮助：man (manual)，如 man rm
 - 有相同命令时，可以先用man -f 查询，然后用man + 数字 + 命令名查询。
 - 比较通用的命令参数：	
@@ -24,9 +26,9 @@ categories: 杂记
 
 
 ---
-#***文件管理***
+# ***文件管理***
 
-##**rm：删除文件或目录**
+## **rm：删除文件或目录**
 ```bash
 rm [-dfirv][--help][--version][file_dir]
 rm file
@@ -43,7 +45,7 @@ rm -recursive folder/dir
 -v -verbose
 	# 显示执行过程
 ```
-##**ls：列出目录内容**
+## **ls：列出目录内容**
 ```bash
 ls -a
 	# 显示所有文件和目录，包括隐藏的
@@ -58,7 +60,7 @@ ls -ld /etc/init.d
 	# 详细显示r*.d(*是通配符，init.d是一个目录)目录信息，而不显示目录包含的文件信息
 ```
 
-##**du：查看目录或文件所占用磁盘空间的大小**
+## **du：查看目录或文件所占用磁盘空间的大小**
 ```bash
 du -s <dirname>
 	# 只显示 <dirname>的大小，不显示子目录或子文
@@ -68,7 +70,7 @@ du -a <dirname>
 	# 显示<dirname>及子目录和子文件的大小
 ```
 
-##**cp：复制文件或目录**
+## **cp：复制文件或目录**
 ```bash
 cp [-abdfilpPrRsuvx][-S][-V][源文件目录][目录文件目录]
 cp file dir/ff
@@ -77,19 +79,19 @@ cp -r floder/dir /temp/
 	# 将目录dir及目录下的文件和子目录复制到temp下，即有temp/dir
 ```
 
-##**mkdir：建立目录**
+## **mkdir：建立目录**
 ```
 mkdir [-p][-m<目录属性>][目录名称]
 ```
 
-##**touch：改变文件或目录时间**
+## **touch：改变文件或目录时间**
 ```bash
 touch [-acfm][-d<日期时间>][-r<参考文件或目录>][-t<日期时间>][文件或目录]
 touch file
 	# 建立空文件file
 ```
 
-##**cat：将文件显示到基本输出**
+## **cat：将文件显示到基本输出**
 ```bash
 cat [-AbeEnstTuv] filename
 cat file
@@ -98,13 +100,13 @@ cat file
 	# 输出行号
 ```
 
-##**ln：链接文件或目录**
+## **ln：链接文件或目录**
 ```bash
 ln -s file_src file_des
 	# 建立符号连接，打开file_des时，即打开file_src,相当于快捷方式
 ```
 
-##**grep： 查找文件里符合条件的字符串**
+## **grep： 查找文件里符合条件的字符串**
 ```bash
 grep[-abcEFGhHilLnqrsvVwxy][-A][-B][-C][-d][-e][-f]
 grep str file
@@ -115,7 +117,7 @@ grep str file
 	# 忽略字符大小写
 ```
 
-##**find：查找文件或目录**
+## **find：查找文件或目录**
 ```bash
 find ~/ -name filename
 	# 在 ～/ 查找filename的文件或目录
@@ -133,7 +135,7 @@ find -size +10M -size -30M
 	# 查找小于30M但大于10M的文件
 ```
 
-##**locate：查找文件**
+## **locate：查找文件**
 ```bash
 locate [-d<数据库文件>][--help][--version][范本样式...]
 locate /etc/sh
@@ -142,14 +144,14 @@ updatedb
 	# 手动更新数据库/var/lib/locatedb
 ```
 
-##**which：查找环境变量中的文件**
+## **which：查找环境变量中的文件**
 ```bash
 which [-n<文件名长度>][-p<文件名长度>][-w]
 which ls
 	# 查看命令ls的位置
 ```
 
-##**rename：批量重命名**
+## **rename：批量重命名**
 ```bash
 rename perlexpr file
 	# file：要处理的文件
@@ -162,13 +164,13 @@ rename tr/A-Z/a-z/ file*
 	# 将所有file开头的文件，变成小写
 	# "tr/<par>/<rep>/"：转化，par转成rep
 ```
-##**unzip：解压zip文件**
+## **unzip：解压zip文件**
 ```bash
 unzip [-cflptuvz][-agCjLMnoqsVX][-P<密码>][-d][-x]
 unzip file.zip -d ～/dir
 	# 解压file文件，放~/dir目录中
 ```
-##**tar：备份还原文件**
+## **tar：备份还原文件**
 ```bash
 -c # 建立新的归档文件
 -r # 向归档文件末尾追加文件
@@ -190,7 +192,7 @@ tar -xf	tmp.tar
 	# 解压归档文件tmp.tar
 ```
 
-##**cmp：比较两个文件是否有差异**
+## **cmp：比较两个文件是否有差异**
 ```bash
 cmp [-clsv][-i <字符数目>][--help][第一个文件][第二个文件]
 cmp file1.txt file2.txt
@@ -200,7 +202,7 @@ cmp file.txt -
 	# 将file.txt与标准输入（即从终端输入）比较。输入命令回车后，需要从终端输入要比较的内容，回车然后ctrl+d输入结束，开始比较
 ```
 
-##**comm：比较两个已排过序的文件**
+## **comm：比较两个已排过序的文件**
 ```bash
 comm [-123][--help][--version][第1个文件][第2个文件]
 	-1   # 不显示只在第1个文件里出现过的列。
@@ -211,7 +213,7 @@ comm file1 file2
 	# 结果： 仅file1出现的行; 仅file2出现的行; 两个文件均出现的行
 ```
 
-##**file：辨识文件类型**
+## **file：辨识文件类型**
 ```bash
 file [-beLvz][-f < 名称文件 >][-m < 魔法数字文件 >...][ 文件或目录 ...]
 file text.txt
@@ -220,7 +222,7 @@ file -z tempfile
 	# 尝试解文件
 ```
 
-##**echo：显示字符串到标准输出**
+## **echo：显示字符串到标准输出**
 ```bash
 echo [-ne][字符串]
 echo -e 'hello world\n'
@@ -233,8 +235,8 @@ echo '
 
 
 ---
-#***系统管理***
-##**su：变更用户身份**
+# ***系统管理***
+## **su：变更用户身份**
 ```
 su [-flmp][--help][--version][-][-c<指令>][-s<shell>][用户帐号]
 su root
@@ -242,14 +244,14 @@ su
 	// 切换root用户，不带用户时，预设为root
 	// root的"～/"是"/root",不是"/home/username"
 ```
-##**sudo：以其他身份来执行指令**
+## **sudo：以其他身份来执行指令**
 ```
 sudo [-bhHpV][-s<shell>][-u<用户>][指令]
 sudo [-klv]
 sudo passwd
 	// 初次设置root密码，不然不能用root
 ```
-##**passwd：设置密码**
+## **passwd：设置密码**
 ```
 passwd [-dklS][-u<-f>][用户名称]
 passwd
@@ -258,7 +260,7 @@ passwd newuser
 	// 更改用户newuser的密码
 ```
 
-##**chmod：变更文件或目录权限**
+## **chmod：变更文件或目录权限**
 ```
 chmod [-cfRv][--help][--version][mode][文件或目录]
 　　-R 表示对当前目录下的所有文件和子目录进行相同的权限更改
@@ -283,7 +285,7 @@ chmod u+w file			# u增加写入权限
 chmod u=w file			# u设置为只有定入权限
 chmod 777 file			# 所有用户拥用rwx权限
 ```
-##**chown：变更文件或目录拥有者或所属群**
+## **chown：变更文件或目录拥有者或所属群**
 ```
 chown [-cfhRv][--dereference][--help][--version][拥有者<所属群>][文件或目录]
 chown me file					# file所有者改为me
@@ -291,7 +293,7 @@ chown -R hello:staff /folder	# folder目录及目录下所有目录和文件的�
 								# -R 递归操作当前目录下的所有目录和文件
 ```
 
-##**shutdown：系统关机命令**
+## **shutdown：系统关机命令**
 ```
 shutdown [-efFhknr][-t秒数][时间][警告信息]
 shutdown -h 	#关闭系统，即关机
@@ -299,19 +301,19 @@ shutdown -r		# 重启
 reboot			# 重启
 ```
 
-##**export:设置或显示环境变量**
+## **export:设置或显示环境变量**
 ```
 export [-fnp][变量名称]=[变量设置值]
 export PATH="$PATH:$HOME/dir"      # 添加路径$HOME/dir到PATH中,只是临时添加，不是更改配置文件
 ```
 
-##**free：显示内存状态**
+## **free：显示内存状态**
 ```
 free -b(k)(m)(g)		# 以byte(kb)(mb)(gb)显示内存状态
 free -s 5 -c 10			# 每隔5秒显示一次，共显示10次
 ```
 
-##**kill：删除执行中的进程**
+## **kill：删除执行中的进程**
 ```
 kill [-s <信息名称或编号>][程序]
 kill [-l <信息编号>]
@@ -320,37 +322,37 @@ PID可以使用htop查看;
 kill 2950			# 结束PID为2950的程序
 ```
 
-##**pkill：直接杀死运行中的程序**
+## **pkill：直接杀死运行中的程序**
 ```
 pkill firefox		# 结束firefox程序
 					# firefor是程序名，也即是“命令名”
 					# 要结束一个程序的单个进程，使用 kill PID
 ```
 
-##**xkill：杀死图形程序**
+## **xkill：杀死图形程序**
 ```
 xkill			# 运行后，鼠标光标会会变成“X”型，点击相应的程序图形窗口就可以结束程序
 ```
 
-##**pgrep：查找进程id**
+## **pgrep：查找进程id**
 ```
 pgrep chro -l			# 查找关键字chro的进程id，并显示进程名称
 ```
 
-##**ps：报告程序状况**
+## **ps：报告程序状况**
 ```
 ps：process status
 ps -A | grep chrome		# 在所有运行的程序中查找chrome
 ```
 
-##**pstree：以树状图显示程序**
+## **pstree：以树状图显示程序**
 ```
 pstree：process status tree
 pstree					# 以树状图显示程序
 pstree -a				# 显示所有程序及其相关信息
 ```
 
-##**screen：多重视窗管理程序**
+## **screen：多重视窗管理程序**
 ```
 screen [-AmRvx -ls -wipe][-d <作业名称>][-h <行数>][-r <作业名称>][-s ][-S <作业名称>]
 
@@ -359,7 +361,7 @@ screen -ls				# 列出所有视窗
 screen -r work			# 恢复work视窗
 ```
 
-##**alias：设置指令的别名**
+## **alias：设置指令的别名**
 ```
 alias name = 'command line'		# 基本用法
 alias mv='mv -i'				# mv就自带参数-i
@@ -367,8 +369,8 @@ alias -p						# 列出现有的所有别名
 ```
 
 ---
-#***设备管理***
-##**mount：挂载命令**
+# ***设备管理***
+## **mount：挂载命令**
 ```
 mount [-t vfstype][-o options][挂载设备][目录]
 mount /dev/sda1 mymount
@@ -380,20 +382,20 @@ mount -o loop /file mymount
 mount -t fat32 /dev/sda1 mymount
 	// 指定要挂载的设备类型为fat32
 ```
-##**df：显示磁盘相关信息**
+## **df：显示磁盘相关信息**
 ```
 df [-ahHiklmPT][--block-size=<区块大小>][-t][-x][--no-sync][--sync][文件或设备]
 df	-T -h
 	// 显示磁盘信息，包括分区类型，大小以G M K 等大单位显示
 ```
-##**lspci：查看pci设备信息**
+## **lspci：查看pci设备信息**
 ```
 lspci 
 	// 显示pci简略信息
 lspci -v
 	// 显示pci设备详细信息，-vv更详细，-vvv非常详细
 ```
-##**blkid:查看块设备（包括交换分区）的信息**
+## **blkid:查看块设备（包括交换分区）的信息**
 ```bash
 sudo blkid 
 	# 列出当前系统中所以已挂载文件系统的类型
@@ -405,7 +407,7 @@ sudo blkid -s UUID
 	# 查看设备的UUID
 ```
 
-##**lsusb：查看usb设备**
+## **lsusb：查看usb设备**
 ```bash
 lsusb
 	# 列出所有usb信息
@@ -415,7 +417,7 @@ lsusb -v
 
 
 ---
-#***软件管理***
+# ***软件管理***
 
 百度百科解释：
 -*aptitude与 apt-get 一样，是 Debian 及其衍生系统中功能极其强大的包管理工具。与 apt-get 不同的是，aptitude在处理依赖问题上更佳一些。举例来说，aptitude在删除一个包时，会同时删除本身所依赖的包。这样，系统中不会残留无用的包，整个系统更为干净。*-
@@ -425,7 +427,7 @@ lsusb -v
 -*“dpkg ”为 “Debian” 专门开发的套件管理系统，方便软件的安装、更新及移除。用来安装.deb文件,但不会解决模块的依赖关系,且不会关心ubuntu的软件仓库内的软件,可以用于安装本地的deb文件 *-
 
 
-##**aptitude**
+## **aptitude**
 ```bash
 aptitude search package
 aptitude search "str1 str2" //xkeyword: str1 && str2 
@@ -437,7 +439,7 @@ aptitude remove package
 	# 删除软件包
 ```
 
-##**apt-get**
+## **apt-get**
 ```bash
 apt-get install package
 	# 安装软件包
@@ -461,7 +463,7 @@ sudo apt-get autoremove
 	# 删除系统不再使用的孤立软件
 ```
 
-##**apt-cache**
+## **apt-cache**
 ```bash
 apt-cache show package
 	# 显示指定软件包的信息，包括版本号，安装状态和包依赖关系等
@@ -472,7 +474,7 @@ apt-cache depends package
 ```
 
 
-##**dpkg**
+## **dpkg**
 ```bash
 dpkg -i package.deb 
 	# 安装软件包，安装deb包，但不能自己解模专依赖问题，只会提示你需要安装依赖的模块
@@ -491,8 +493,8 @@ dpkg -L pacakge
 ```
 
 ---
-#***程序相关***
-##**pkg-config：用于提供库等路径**
+# ***程序相关***
+## **pkg-config：用于提供库等路径**
 ```bash
 pkg-config --libs opecv
 	# 查看opencv的库位置，将会有如下输出：
@@ -512,7 +514,8 @@ locate opnecv.pc
 
 
 ---
-#终端快捷键
+# 终端快捷键
+
 |快捷键	|功能|
 |-------|---|
 |Tab	|自动补全|
