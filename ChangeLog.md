@@ -1,10 +1,13 @@
 
 # Style
- - tags : 一般全小写
- - categories : 首字母大写 
+ - tags : 一般全小写，做为二级分类
+ - categories : 首字母大写
 
 # ChangeLog
 
+## 20170608 - v0.0.6
+ - 使用tags进行二级分类，categories只用一级分类
+ 
 ## 20170607 - v0.0.5
  - 为不同分类添加不同post模版
  

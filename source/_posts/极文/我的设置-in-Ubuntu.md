@@ -5,8 +5,7 @@ tags:
  - linux
  - ubuntu
 categories:
-  - 极文
-  - Linux
+ - 极文
 ---
 
 
