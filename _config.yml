@@ -7,9 +7,9 @@
 #===============================================================================
 # Site
 title: 夜惑寒
-subtitle: yehuohanxing's blog
-description: 
-author: yehuohan
+subtitle: false
+description: false
+author: Yehuohanxing
 language: zh
 timezone: Asia/Shanghai
 
@@ -81,8 +81,7 @@ pagination_dir: page
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
 theme: yilia
-#theme: 3-hexo
-
+#theme: 3-hexo # require: (highlight: enable: false)
 
   
 #===============================================================================
