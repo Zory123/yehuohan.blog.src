@@ -1,7 +1,7 @@
 ---
 title: U盘中的Boot
 categories:
-  - 杂记
+  - 极文
 date: 2017-06-08 23:32:50
 tags: 
  - boot
@@ -204,6 +204,8 @@ edit
 	# 文本编辑器，可以更改文本配置文件，Ctrl+S是保存，Ctrl+Q是退出
 hexedit
 	# hex编辑
+map
+    # 显示所有磁盘映射
 ```
 
 ---
