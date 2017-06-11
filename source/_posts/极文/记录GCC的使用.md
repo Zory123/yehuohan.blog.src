@@ -1,6 +1,6 @@
 
 ---
-title: 记录GCC的使用
+title: 记录GCC,GDB的使用
 date: 2017-06-07 01:05:36
 tags:
  - gcc
@@ -118,3 +118,155 @@ g++ main.cpp -std=c++11
 g++ main.cpp -m32
 # 编译成32位程序或64位程序
 ```
+
+
+---
+# GDB使用
+首先将GDB看成一个可以独立的软件，不再是像各种IDE一样，将编译、运行、调试都集成到一个软件中。 
+在这里介绍GDB命令的基本使用。gdb是一个命令交互试界面，所以需要使用一些命令来对exe进行调试。
+
+附：以下命令没有特殊说明，均在gdb环境中键入运行。
+附：如果想使用一个相对方便点的终端界面，可以使用[gdb-dashboard](https://github.com/cyrus-and/gdb-dashboard)，效果图如下：
+{% asset_img gdb.png %}
+
+ - 打开
+```bash
+gdb
+# 此命令在终端下运行，打开gdb
+
+gdb <exec-file>
+# 此命令在终端下运行，打开gdb，并加载可执行文件
+
+gdb -tui
+# 此命令在终端下运行，使用gdb终端界面，可以显示源码
+
+help <cmd>
+# 显示gdb中cmd命令的帮助
+
+file <exec-file>
+# 加载可执行程序文件，以便调试
+# 可执行程序用gcc编译时，需要加-g参数
+
+quit
+q
+# 退出gdb，可简写成q
+```
+
+ - 源代码显示
+```bash
+list  
+l
+# 显示当前行到之后10行源代码，可简写成l
+
+l n1,n2
+# 显示n1行到n2行的源代码
+
+l +/-ofs
+# 显示当前行到正/负偏移量的源代码，仿移量为ofs
+
+l <filename:line-num/function>
+# 显示某个文件的指定行号/指定函数
+# filename包括后缀名在内，若省略filename，则为当前文件
+```
+
+ - 断点
+```bash
+break <filename:line-num/function> <condition>
+b <filename:line-num/function> <condition>
+# 在行号/函数处下断点，filename可省略，代表当前文件
+# condition为一个if表达式，如：
+b 10 if tmp>10
+# 当变量tmp>10时，在此断点
+
+delete
+d
+# 删除所有断点
+d N
+# 删除N号断点，(使用info b查看断点信息)
+```
+
+ - 显示所调试程序的信息
+```bash
+display <var>
+disp <var>
+# 每次中断时，显示变量var的值
+
+disp <expr>
+# 每次中断时，显示表达式的值，如：
+disp (float)test/2.0
+
+undisp N
+# 取消显示，N为需要取消变量或表达式的编号(使用info disp查看)
+
+print <var>
+p /arg <var>
+p /arg <expr>
+# 显示变量或表达式的值，不会每次中断显示
+# arg参数为显示格式，可省略：
+# /x : 按十六进制格式显示变量。 
+# /d : 按十进制格式显示变量。 
+# /u : 按十六进制格式显示无符号整型。 
+# /o : 按八进制格式显示变量。 
+# /t : 按二进制格式显示变量。 
+# /a : 按十六进制格式显示变量。 
+# /c : 按字符格式显示变量。 
+# /f : 按浮点数格式显示变量。 
+
+p <var=?>
+# 改变变量的值并显示
+
+```
+
+ - 显示gdb程序的信息
+```bash
+info b
+i b
+# 显示所有断点信息
+
+i disp
+# 显示所有disp信息
+
+i source
+i s
+# 显示当前所在语言件和行号
+
+i variables
+i va
+# 显示所有的全局变量和变静态变量名称
+```
+
+ - 运行
+```bash
+run <args>
+r <args>
+# 运行程序，直至遇到断点
+# run后面可接参数，即传给main函数的参数
+
+continue
+c
+# 断续执行，直至下一个断点
+
+step <N>
+s <N>
+# 执行一行源代码，若有函数，则进入函数
+# N表示执行N次step
+
+next <N>
+n <N>
+# 执行一行源代码，若有函数，则函数一并执行，不会进入函数
+# N表示执行N次next
+
+nexti/stepi
+ni/si
+# 针对汇编指令的step和next 
+
+finish
+f
+# 执行完当前函数，返回到调用它的函数(包括main函数)
+
+[enter]
+# 直接回车，则执行上一次的命令(这样单步调试时，就不用一直输s/n了)
+```
+
+
+
