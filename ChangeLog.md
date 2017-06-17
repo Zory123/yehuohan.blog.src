@@ -5,6 +5,9 @@
 
 # ChangeLog
 
+## 20170618 - v0.1.7
+ - github和oschina使用不同主题，通过编写cmd实现一键部署
+ 
 ## 20170608 - v0.0.6
  - 使用tags进行二级分类，categories只用一级分类
  

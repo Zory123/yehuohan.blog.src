@@ -16,6 +16,3 @@ public/
 
 /themes
 #/themes/*
-#!/themes/spfk
-#/themes/spfk/*
-#!/themes/spfk/_config.yml

@@ -3,7 +3,7 @@ title: 软件应用之 AltiumDesigner
 categories:
   - 杂记
 date: 2017-06-17 00:24:49
-tags: Altium Designer
+tags: altium designer
 ---
 
 Altium Designer使用记录，主要是快捷键操作等技巧。
