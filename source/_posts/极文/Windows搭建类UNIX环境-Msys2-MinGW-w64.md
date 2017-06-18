@@ -1,7 +1,7 @@
 ---
 title: 'Windows搭建类UNIX环境: Msys2+MinGW-w64'
 categories:
-  - 极文
+ - 极文
 date: 2017-06-09 00:36:01
 tags: 
  - msys2
@@ -63,9 +63,9 @@ set bs=2
 
 不然vim在插入模式下的退格不能用。
 
-* 注意事项1：
+ * 注意事项1：
 Msys2的配置文件（~/.gitconfig, ~/.ssh/, ~/.vimrc等都在home下，注意别随便删除 ）。
-* 注意事项2：
+ * 注意事项2：
 将Msys64/usr/bin加入windows环境变量中后，就可以在cmd中直接使用Msys2中安装的vim，git等软件（如以编写bat脚本，使用git管理软件版本）
  
 
@@ -97,6 +97,7 @@ gcc -v
   添加X:\Msys64\mingw64\x86_64-w64-mingw32\lib32到环境变量PATH中。
 
 - 编译32位程序：
+
 ```bash
 gcc -m32 main.c -o main
 	# 生成32位的main程序
@@ -121,6 +122,7 @@ windres --target=pe-i386
 ```
 
 -  MinGw未生成.dll动态库
+
 ```bash
 	# 在configure时使用下面的参数
 	./configure --disable-static --enable-shared

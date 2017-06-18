@@ -66,6 +66,7 @@ categories:
 Git现在也有不少Gui程序，我还建议使用git命令行工具，不是为了所谓的装逼。使用git命令行更加容易理解git的工作原理和流程，而且，使用git命令行可定制空间更大。
 
  - Linux下安装：Linux安装很简单，就是一条命令的事：
+
 ```bash
 sudo apt-get install git
 ```
@@ -77,6 +78,7 @@ sudo apt-get install git
 这里说是Git环境设置主要是关于在windows的编码设置，因为windows使用gbk编码，而git服务器是utf-8编码，不设置编码的转换，容易乱码。
 
  - 用户信息高设置
+
 ```bash
     git config --global user.name <name>
     git config --global user.email <email>
@@ -84,6 +86,7 @@ sudo apt-get install git
 ```
 
  - git编码设置
+
 ```bash
     git config --global i18n.commitEncoding utf-8
     git config --global i18n.logOutputEncoding gbk
@@ -98,25 +101,32 @@ sudo apt-get install git
 ### 设置SSH密钥
 设置SSH密钥基本过程就是，在本地计算机生成rsa公钥和私钥，然后将rsa公钥填入git平台帐号。
 首先行成rsa密钥，一个命令即可：
+
 ```bash
 ssh-keygen -C <comment> -t rsa
     # 公钥：id_rsa.pub
     # 私钥：d_rsa
 ```
+
 将生成的公钥填入git平台帐号即可。然后更改私钥名称。建立一个配置文件，然后写入以下内容即可：
+
 ```bash
 # 文件：~/.ssh/config
 Host git.oschina.net
 IdentityFile ~/.ssh/id_rsa_oschina
 ```
+
 最后，测试SSH是否可以使用，键入命令：
+
 ```bash
 SSH -T git@git.oschina.net
 ```
+
  出现"Welcome to Git@OSC, yourname"即代表可以连接。
 
 ### Git仓库的建立与使用
 按照以下命令，即可以完在从Git仓库建到上传的过程：
+
 ```bash
 mkdir project       # project目录就是工作区
 cd project          # 切换到project目录，进行git仓库建立
@@ -128,7 +138,9 @@ git remore add origin_oschina git@git.oschina.net:<yourname>/project.git
 git push origin_oschina master:master
                     # 将本地master分支提同步到远程仓库的master分支
 ```
+
 然后，有时候project有一些缓存文件或是临时文件，不需要进行git管理，这就需要".gitignore"文件来添加不需要管理的文件和目录，".gitignore"文件的基本规则如下：
+
 ```bash
 ## rules
 /                   # 斜杆表示project目录
@@ -159,40 +171,53 @@ git push origin_oschina master:master
 此外，开始阶段使用Git的时候，最好还是压缩备份，免得因为不熟悉命令操作，而造成不必要的后果。
 
 * help
+
 ```bash
 git help <command>
 # 这个肯定是第一个要学会的，遇到问题就help。
 ```
+
 * init
+
 ```
 git init            
 # 初始化git，会建立.git文件夹
 ```
+
 * status
+
 ```bash
 git status
 # 查看WorkSpace区和Index区状态，显示WorkSpace中有哪些修改，显示Index中有哪些提交。
 ```
+
 * add
+
 ```bash
 git add <file> (or .)
 # 添加WorkSpace中指定文件（或所有修改的文件，不包括delete的）到Index。
 ```
+
 ```bash
 git add -all (or -A)
 # 添加WorkSpace中所有修改到Index，包括delete的。
 ```
+
 * commit
+
 ```bash
 git commit -m "comments" (or 'comments')
 # 将Index中的内容提交到Local，并添加备注信息（使用单引号，可以输入多行comments）。
 ```
+
 ```bash
 git commit --amend
 git commit --amend -m "comments"
 # 修改最一次提交的备注信息。
 ```
+
 * checkout
+
 ```bash
 git checkout -- <file>(or .)
 # 从Index区指定恢复指定文件file（或所有文件）到WorkSpace
@@ -200,13 +225,16 @@ git checkout -- <file>(or .)
 # 若是没有执行git add，则不会扔掉任何修改。
 # 注意，两横线"--"不能少，这表示后面代表的是路径或文件，而不是分支名，因为checkout来可以用于分支的切换。
 ```
+
 * reset
+
 ```bash
 git reset <commit_id> [-- <path/file>(or .)]
 # 从Local区中指定的提交版本commit_id恢复指定文件file（或目录）到Index
 # 即相当于扔掉Index中git add添加的修改，此命令 !只! 会改变Index中的内容。
 # 若省略commit_id，则是为最后一次的commit的id
 ```
+
 ```bash
 git reset <mode> <commit_id>
 # mode这里讲三个，分别为"--mixed, --soft, --hard"，其中"--mixed"为默认方式，
@@ -222,16 +250,19 @@ git reset <mode> <commit_id>
 # 附： windows下使用HEAD^表示时，需要用双引号括起来：
 git reset --hard HEAD"^"2 (or "HEAD^2")
 ```
+
 本地git命令间的基本关系：
 {% asset_img 02.jpg %}
 
 * log
+
 ```bash
 git log
 # 查看所有的提交记录。
 # 注意：Windows下使用Msys2显示gbk编码内容时会乱码，需要转码，如:
 git log | iconv -f -gbk -t utf-8
 ```
+
 ```bash
 git log <path/file>
 # 查看关于file每次提交的记录
@@ -239,11 +270,13 @@ git log -p <path/file>
 # 查看每次修改file的详细内容
 # <path/file> : 可以是一个目录 或 文件
 ```
+
 ```bash
 git reflog
 # 显示Local所有分支的commit,包括已经通过reset --hard撤销的commit
 ```
 * diff
+
 ```bash
 git diff
 # 查看WorkSpace区和Index区差异，即显示WorkSpace中未add到Index中的修改
@@ -261,6 +294,7 @@ git diff <branch1> <branch2> [-- <path/file>]
 ```
 
 * rm
+
 ```bash
 rm <file>
 # 删除文件，和git没有任何关系
@@ -277,17 +311,21 @@ git rm –cached <file>
 远程仓库管理的命令，即关于Local与Remote之间的命令。
 
 * clone
+
 ```bash
 git clone <url>
 #从Remote克隆一个版本仓库到本地。
 ```
+
 * remote
+
 ```bash
 git remote add <name> <url>
 # 添加远程库，例如：
 git remote add origin_oschina git@git.oschina.net:username/project 
 # 会使用OsChina的帐号username，添加一个远程序project，而origin_oschina就是远程库的名称。
 ```
+
 ```bash
 git remote -v
 # 显示所有远程库的名称和地址。
@@ -298,19 +336,24 @@ git remote rm <name>
 git remote rename <name> <new name>
 # 重命名远程主机。
 ```
+
 * push
+
 ```bash
 git push origin master:test
 # 将本地master分支的更新，推送到远程主机origin的test分支。
 # 如果省略test，则是从本地master分支推送远程master分支（最好养成写全本地分支与远程分支的习惯）。
 ```
+
 ```bash
 git push --delete origin  master
 git push origin :master
 # 两条命令等价，均表示删除远程主机origin的master分支。
 # 注意：删除的远程分支不能是默认分支
 ```
+
 * fetch & merge
+
 ```bash
 git fetch origin master
 # 取回origin的master分支最新版本到origin/master分支上
@@ -327,7 +370,9 @@ git checkout test
 git merge origin/master 
 # 将origin/master合并到test分支，这时test的WorkSpace就变成origin/master的WorkSpace区内容
 ```
+
 * pull
+
 ```bash
 git pull origin master:test
 # 取回远程主机origin/master分支，与本地test分支合并。
@@ -337,6 +382,7 @@ git pull origin master:test
 
 ---
 # Git分支管理
+
 ```bash
 git branch
 # 列出本地已经存在的分支，并且在当前分支的前面加"*"号标记。
@@ -347,6 +393,7 @@ git branch -r
 git branch -a
 # 列出本地分支和远程分支。
 ```
+
 ```bash
 git branch <name>
 # 创建名为name的新分支
@@ -355,6 +402,7 @@ git branch <name>
 git checkout <name>
 # 切换到分支name
 ```
+
 ```bash
 git branch -d <test>
 # 删除分支test
@@ -369,6 +417,7 @@ git branch -m <name> <new name>
 # Git标签管理
 标签（tag）是特定提交（commit)一个指针，也就是每个tag对应一个特定的commit。
 Release是源码托管商对git的tag功能的增强，通过git提供的tag功能，可以给项目进行版本标识，添加编译好的二进制文件等。
+
 ```bash
 git tag
 # 查看所有标签
@@ -384,6 +433,7 @@ git tag -a v1.0.2 -m "Release version v1.0.2" HEAD~1
 git tag -d <tagname>
 # 删除标签
 ```
+
 ```bash
 git show <tagname>
 # 显示<tagname>的详细信息

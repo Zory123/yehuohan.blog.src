@@ -24,6 +24,7 @@ categories:
 
 ---
 # **基本说明**	
+```
 	 gcc 编译c文件
 	 g++ 编译cpp文件
 	 
@@ -37,10 +38,13 @@ categories:
 	.s      汇编语言源程序;汇编
 	.S      汇编语言源程序;预处理,汇编
 	.h      预处理器文件;通常不出现在命令行上
+```
 
 ---
 # **基本使用**
-* 生成可执行文件
+
+ - 生成可执行文件
+
 ```bash
 "gcc, g++"
 gcc main.c -o main
@@ -52,35 +56,40 @@ g++ main.cpp src.cpp -o main
 # 直接编译链接*.cpp，生成main.exe
 ```
 
-* 生成obj文件
+ * 生成obj文件
+
 ```bash
 "-c"
 g++ -c main.cpp
 # 编绎cpp文件，输出目标main.o文件
 ```
 
-* 生成静态库(.a)
+ * 生成静态库(.a)
+
 ```bash
 "ar -crv"
 ar -crv libmain.a main.o
 # 由.o生成静态库.a文件（也称归档文件）
 ```
 
-* 生成动态库(.so)
+ * 生成动态库(.so)
+
 ```bash
 "-shared -fPIC"
 g++ -shared -fPIC -o libmain.so main.o
 # 由.o文件生成动态库.so文件
 ```
 
-* 添加头文件目录
+ * 添加头文件目录
+
 ```bash
 "-I"
 g++ main.cpp -o main -I "./src"
 # 头文件在 "./src" 中，多个文件夹用多个 "-I"
 ```
 
-* 添加库文件
+ * 添加库文件
+
 ```bash
 "-L"
 g++ main.cpp -o main -L "./lib"
@@ -94,7 +103,9 @@ g++ main.cpp -o main -llibmain
 
 ---
 # **配置选项**
+
 * 设置源文件编码和可执行文件编码
+
 ```bash
 "-finput-charset"
 g++ main.cpp -finput-charset=utf-8
@@ -106,6 +117,7 @@ g++ main.cpp -o main -fexec-charset=gbk
 ```
 
 * 设置c++标准
+
 ```bash
 "-std"
 g++ main.cpp -std=c++11
@@ -113,6 +125,7 @@ g++ main.cpp -std=c++11
 ```
 
 *  设置x86或x64
+
 ```bash
 "-m32" "-m64"
 g++ main.cpp -m32
@@ -130,6 +143,7 @@ g++ main.cpp -m32
 {% asset_img gdb.png %}
 
  - 打开
+
 ```bash
 gdb
 # 此命令在终端下运行，打开gdb
@@ -153,6 +167,7 @@ q
 ```
 
  - 源代码显示
+
 ```bash
 list  
 l
@@ -170,6 +185,7 @@ l <filename:line-num/function>
 ```
 
  - 断点
+
 ```bash
 break <filename:line-num/function> <condition>
 b <filename:line-num/function> <condition>
@@ -186,6 +202,7 @@ d N
 ```
 
  - 显示所调试程序的信息
+
 ```bash
 display <var>
 disp <var>
@@ -214,10 +231,10 @@ p /arg <expr>
 
 p <var=?>
 # 改变变量的值并显示
-
 ```
 
  - 显示gdb程序的信息
+
 ```bash
 info b
 i b
@@ -236,6 +253,7 @@ i va
 ```
 
  - 运行
+
 ```bash
 run <args>
 r <args>

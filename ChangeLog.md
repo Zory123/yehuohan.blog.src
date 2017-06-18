@@ -1,10 +1,20 @@
 
-# Style
+---
+# Hexo Style
  - tags : 一般全小写，做为二级分类
  - categories : 首字母大写
 
+
+---
+# MarkDown Style
+ - code : 代码标识\`\`\`前后均空一行
+ 
+---
 # ChangeLog
 
+## 20170618 - v0.1.8
+ - 添加MarkDown Style
+ 
 ## 20170618 - v0.1.7
  - github和oschina使用不同主题，通过编写cmd实现一键部署
  
