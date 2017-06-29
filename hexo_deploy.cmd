@@ -4,8 +4,8 @@ echo Are you sure : Continue generate and delopy ?????
 echo Press Ctrl + c to exit.
 pause
 
-echo Hexo : generate and deploy in oschina...
-copy /y _config_oschina.yml _config.yml
+echo Hexo : generate and deploy in gitee...
+copy /y _config_gitee.yml _config.yml
 hexo clean && ^
 hexo generate && ^
 hexo deploy && ^

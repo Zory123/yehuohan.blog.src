@@ -86,6 +86,10 @@ g++ -shared -fPIC -o libmain.so main.o
 "-I"
 g++ main.cpp -o main -I "./src"
 # 头文件在 "./src" 中，多个文件夹用多个 "-I"
+
+"-isystem"
+g++ main.cpp -o main -isystem "/usr/include/abc"
+# 将/usr/include/abc做为头文件搜索路径之一，搜索顺序 "-I >= -isystem >= std"
 ```
 
  * 添加库文件

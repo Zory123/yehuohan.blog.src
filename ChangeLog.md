@@ -12,6 +12,9 @@
 ---
 # ChangeLog
 
+## 20170629 - v0.1.9
+ - git.oschian的部署使用新域名gitee.com
+
 ## 20170618 - v0.1.8
  - 添加MarkDown Style
  
