@@ -1,7 +1,6 @@
 
 # .gitignore for yehuohan.blog.src
 
-/yehuohan.github.io
 
 *.swp
 *.log
@@ -13,6 +12,5 @@ node_modules/
 public/
 .deploy*/
 
+#/themes
 
-/themes
-#/themes/*

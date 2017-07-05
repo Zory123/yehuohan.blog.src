@@ -14,9 +14,11 @@ CCS v6.0的使用记录
 # 文件说明
  - .gel : 仿真需要的文件，ccsv4后不再需要此文件
  - .cmd : ccs存放链接器的配置信息的，一个工程可以有多个cmd文件
+ - .map : CCS软件编译后产生的有关DSP用到所有程序、数据及IO空间的一种映射文件。
  - rts2800.lib : C/C++运行支持库
  - rts2800_ml.lib : C/C++大内存模式运行支持库，其中有大量浮点运算处理的函数
  - rts2800_fpu32.lib : 浮点FPU支持库
+ - rts2800_fpu32_fast_supplement.lib : 浮点FPU加速库，计算速度更快
 
 
 ---
@@ -30,6 +32,7 @@ CCS v6.0的使用记录
  - 代码时间测量：Run-clock
  - 重新开始运行：Run-Restart
  - 使用asm : 在汇编代码前需要加空格，如，asm(" NOP");
+ - char类型 : char类型也是占16bit（可以在.map中查看），故使用int16即可
  
  
 ---

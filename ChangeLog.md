@@ -12,6 +12,11 @@
 ---
 # ChangeLog
 
+## 20170705 - v0.1.12
+ - 开启mathjax
+ - 将themes添加到git仓库
+ - post模块中添加mathjax配置
+
 ## 20170629 - v0.1.9
  - git.oschian的部署使用新域名gitee.com
 

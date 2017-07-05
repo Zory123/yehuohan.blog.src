@@ -1,0 +1,149 @@
+
+
+#===============================================================================
+# Header
+#===============================================================================
+# 你的头像url
+avatar: /img/rabbit.png
+favicon: /img/rabbit2.png
+
+#链接图标，链接为空则不显示
+link:
+  email: 550034086@qq.com
+  github: "https://github.com/yehuohan"
+  #rss: /atom.xml
+  #facebook: #
+  #twitter:
+  #linkedin: #
+  #instagram:
+  #reddit: #
+  #weibo: #
+
+bottom_text: ©2017 yehuohan
+# 自定义页面最下方的站点版权信息
+# 如果不填，则自定义为 ©2017 author (这个author为hexo根目录_config.yml中配置的)
+
+reward: false
+# true 开启打赏功能
+
+copyright: true
+# Copyright info. of post | 文末版权信息
+
+word_count: false
+# true 开启字数统计
+# 开启此功能需要安装插件 ：在 hexo根目录 执行npm i hexo-wordcount --save
+
+# 不蒜子网站计数设置
+# http://ibruce.info/2015/04/04/busuanzi/
+visit_counter:
+  on: true
+  site_visit: true
+  page_visit: true
+
+#===============================================================================
+# 自定义样式设置
+#===============================================================================
+# Table of contents | 文章目录
+toc:
+  max_depth: 3  # 1 - 6 (h1-h6) 目录最大级数
+
+#文章列表 鼠标移上去的样式, 为空时使用默认效果
+article_list:
+  hover:
+    background: '#e2e0e0'  # 背景色:提供几种：'#c1bfc1'  '#fbf4a8'
+    color:     # 文字颜色 提供几种：'#ffffff'
+# 注意：由于颜色如果包含#，使用单引号 ' 引起来
+
+table: green_title
+# table 的样式
+# 为空时类似github的table样式
+# green 绿色样式
+# green_title 头部为青色的table样式
+
+highlight:
+  on: true # true开启代码高亮
+  lineNum: false # true显示行号
+  theme: sublime
+# 代码高亮主题,效果可以查看 https://highlightjs.org/static/demo/
+# 支持主题：
+# sublime : 参考sublime的高亮主题
+# darcula : 参考idea中的darcula的主题
+# atom-dark : 参考Atom的dark主题
+# atom-light : 参考Atom的light主题
+# github : 参考GitHub版的高亮主题
+# github-gist : GitHub-Gist主题
+# brown-paper : 牛皮纸效果
+# gruvbox-light : gruvbox的light主题
+# gruvbox-dark ： gruvbox的dark主题
+# rainbow :
+# railscasts :
+# sunburst :
+# kimbie-dark :
+# kimbie-light :
+# school-book : 纸张效果
+# zenbum : oschina 也选择此高亮主题
+
+# MathJax 数学公式支持
+mathjax:
+  on: true  # 是否启用
+  per_page: false # 若只渲染单个页面，此选项设为false，页面内加入 mathjax: true
+
+
+#===============================================================================
+# 评论设置
+#===============================================================================
+comment_count: true
+# 文章标题下方显示评论数
+
+preload_comment: false
+# 预加载评论区
+## false: 当点击评论条等区域时再加载评论模块
+## true: 页面加载时加载评论区
+
+disqus:
+  on: false
+  shortname: yehuohan
+  # disqus评论系统， 2016年9月被GFW认证，大陆不能使用。
+  # https://help.disqus.com/customer/en/portal/articles/466208-what-s-a-shortname-
+
+duoshuo:
+  on: false
+  domain: jaytp
+  # 2017年6月1日正式关停服务，届时将移除此功能，所以不建议使用
+  # 多说评论系统，http://duoshuo.com/create-site/
+  # 使用上面网址登陆你的多说，然后创建站点，在 domain 中填入你设定的域名前半部分
+  # http://<要填的部分>.duoshuo.com (domain只填上<>里的内容，不要填整个网址)
+
+gentie:
+  on: false
+  product_key: ceb0c7f9689041dea4dd9b3a021f457c
+  # 网易云跟帖评论系统，https://gentie.163.com/
+  # 注册后，进入后台管理，获取代码：复制其中的productKey到product_key中。
+  # 网易云跟帖暂时不支持查询评论数，所以启用时，把评论数关掉，上方comment_count: false。
+
+gitment:
+  on: false
+  owner: yelog
+  repo: yelog.github.io
+  client_id: d64ceca0d8a4e8a1f5c9
+  client_secret: fb17d5f0aba31372f61a03df707b320a39a73a06
+  # gitment : 通过github issue实现的评论系统
+  # 开源地址 : https://github.com/imsun/gitment
+  # 使用说明 :
+  #
+
+  
+#===============================================================================
+# CND设置
+#===============================================================================
+CDN:
+  jquery: //cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js
+  jquery_ui: //cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js
+  jquery_ui_css: //cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css
+  highlight: //cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js
+  pjax: //cdnjs.cloudflare.com/ajax/libs/jquery.pjax/1.9.6/jquery.pjax.min.js
+  animate: //cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css
+  font_awsome: //cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css
+  nprogres_js: //cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.js
+  mathjax: //cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML
+##############################

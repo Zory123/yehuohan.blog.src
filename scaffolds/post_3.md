@@ -4,6 +4,7 @@ date: {{ date }}
 tags:
 categories:
  - 随笔
+mathjax: false
 ---
 
 <!-- more -->

@@ -1,0 +1,55 @@
+@import "_partial/*"
+
+html, body
+  width 100%
+  height 100%
+  margin 0
+  color #283444
+  font 400 16px/1 "Open Sans","Hiragino Sans GB",sans-serif
+  -webkit-font-smoothing subpixel-antialiased
+  -webkit-text-size-adjust none
+  overflow hidden
+
+a
+  color inherit
+  text-decoration none
+  cursor pointer
+  -webkit-transition color .35s
+  -moz-transition color .35s
+  -ms-transition color .35s
+  -o-transition color .35s
+  transition color .35s
+
+h1, h2, h3, h4, h5, h6
+  font-family inherit
+  font-weight bold
+  color #283444
+  text-rendering optimizelegibility
+  border-bottom 1px solid #eee
+
+.nav
+  width 542px
+  height 100%
+  float left
+  transition margin-left 0.5s cubic-bezier(0.77, 0, 0.175, 1)
+  &.fullscreen
+    margin-left -585px
+
+div.img_max
+  position: fixed;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+  height: 100%;
+  width: 100%;
+  z-index: 50;
+  background: rgb(255, 255, 255);
+  transition opacity .5s
+img.img_max
+  cursor:zoom-out;
+  position:fixed;
+  z-index: 51;
+  transition: top .5s,left .5s, transform .5s,width .5s,height .5s;
+
+@import "mobile.styl"
