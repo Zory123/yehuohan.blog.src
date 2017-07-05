@@ -92,7 +92,7 @@ mathjax:
 #===============================================================================
 # 评论设置
 #===============================================================================
-comment_count: true
+comment_count: false
 # 文章标题下方显示评论数
 
 preload_comment: false
@@ -115,8 +115,8 @@ duoshuo:
   # http://<要填的部分>.duoshuo.com (domain只填上<>里的内容，不要填整个网址)
 
 gentie:
-  on: false
-  product_key: ceb0c7f9689041dea4dd9b3a021f457c
+  on: true
+  product_key: cf323980dbd64c08af36ed57fc42042e
   # 网易云跟帖评论系统，https://gentie.163.com/
   # 注册后，进入后台管理，获取代码：复制其中的productKey到product_key中。
   # 网易云跟帖暂时不支持查询评论数，所以启用时，把评论数关掉，上方comment_count: false。
