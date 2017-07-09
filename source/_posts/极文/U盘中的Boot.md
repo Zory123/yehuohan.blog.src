@@ -10,7 +10,8 @@ tags:
 ---
 
 
-**记一下自己用的grub4dos和refind的使用记录。
+**
+记一下自己用的grub4dos和refind的使用记录。
 grub4dos : 用于管理bios的启动；
 refind   : 用于管理efi启动，简单方便实用，界面美观，配合efi shell，UEFI启动超级容易。
 **
@@ -20,9 +21,9 @@ refind   : 用于管理efi启动，简单方便实用，界面美观，配合efi
 
 ---
 # grub4dos安装
- - grub4dos下载：http://grub4dos.chenall.net/
+ - [grub4dos下载](http://grub4dos.chenall.net/)
  - 安装方式：bootice 或 grubinst 或 bootlace.com
-  - bootice： http://www.ipauly.com/， 除了安装外还有众多其它功能；
+  - bootice： [官网下载](http://www.ipauly.com/)， 除了安装外还有众多其它功能；
   - grubinst：安装方便；
   - bootlace.com：最好对dos命令比较熟悉，对硬盘分区命名等参数熟悉。
 
@@ -147,7 +148,7 @@ boot -1		(或boot -int18)
 
 # grub4dos配置
 
-地址：https://github.com/yehuohan/_bak_winly-grub4dos-rEFInd，具体见里面的readme.txt
+[grub4dos配置](https://github.com/yehuohan/USBBootFiles)，具体见里面的readme.txt
 
 
 
@@ -158,11 +159,10 @@ boot -1		(或boot -int18)
 
 ---
 # 安装refind
-- 官网：http://www.rodsbooks.com/refind/
-- 在官网中可以下载到refind，还有各种详细的帮助说明，只是全是英文的。
-- 先了解uefi：http://bbs.wuyou.net/forum.php?mod=viewthread&tid=299643&extra=page%3D1
-- 可以用bootice安装：http://www.ipauly.com/，直观方便，
-- 也可以用命令安装：
+ - 官网：[refind下载](http://www.rodsbooks.com/refind/)在官网中可以下载到refind，还有各种详细的帮助说明，只是全是英文的。
+ - 在这里可以了解[uefi](http://bbs.wuyou.net/forum.php?mod=viewthread&tid=299643&extra=page%3D1)
+ - 安装：
+ 可以用[bootice安装](http://www.ipauly.com/)，直观方便；也可以用以下命令安装：
 
 ```bash
 bcdedit /set {bootmgr} path \EFI\refind\refind_x64.efi
@@ -213,4 +213,6 @@ map
 - /efi/boot/refind_x64.efi：启动rEFInd引导管理
 - /efi/tools/shell.efi：启动efi shell环境
 
-地址：https://github.com/yehuohan/_bak_winly-grub4dos-rEFInd/，具体见里面的readme.txt
+[refind配置](https://github.com/yehuohan/USBBootFiles)，具体见里面的readme.txt
+
+
