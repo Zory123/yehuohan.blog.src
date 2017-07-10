@@ -95,13 +95,13 @@ mathjax:
 comment_count: false
 # 文章标题下方显示评论数
 
-preload_comment: false
+preload_comment: true
 # 预加载评论区
 ## false: 当点击评论条等区域时再加载评论模块
 ## true: 页面加载时加载评论区
 
 disqus:
-  on: false
+  on: true
   shortname: yehuohan
   # disqus评论系统， 2016年9月被GFW认证，大陆不能使用。
   # https://help.disqus.com/customer/en/portal/articles/466208-what-s-a-shortname-
@@ -115,7 +115,7 @@ duoshuo:
   # http://<要填的部分>.duoshuo.com (domain只填上<>里的内容，不要填整个网址)
 
 gentie:
-  on: true
+  on: false
   product_key: cf323980dbd64c08af36ed57fc42042e
   # 网易云跟帖评论系统，https://gentie.163.com/
   # 注册后，进入后台管理，获取代码：复制其中的productKey到product_key中。
