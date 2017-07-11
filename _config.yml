@@ -47,7 +47,7 @@ post_asset_folder: true
 relative_link: false
 future: true
 highlight:
-  enable: true
+  enable: false
   line_number: true
   auto_detect: false
   tab_replace:
@@ -80,8 +80,8 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: yilia
-#theme: 3-hexo 
+#theme: yilia
+theme: 3-hexo 
 # require: (highlight: enable: false)
 
   
@@ -89,12 +89,12 @@ theme: yilia
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-# - type: git
-#   repo: git@github.com:yehuohan/yehuohan.github.io.git
-#   branch: master
  - type: git
-   repo: git@gitee.com:yehuohan/yehuohan.git
+   repo: git@github.com:yehuohan/yehuohan.github.io.git
    branch: master
+# - type: git
+#   repo: git@gitee.com:yehuohan/yehuohan.git
+#   branch: master
   
   
 #===============================================================================
