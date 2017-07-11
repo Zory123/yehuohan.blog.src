@@ -89,9 +89,9 @@ theme: yilia
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
- - type: git
-   repo: git@github.com:yehuohan/yehuohan.github.io.git
-   branch: master
+# - type: git
+#   repo: git@github.com:yehuohan/yehuohan.github.io.git
+#   branch: master
  - type: git
    repo: git@gitee.com:yehuohan/yehuohan.git
    branch: master

@@ -9,9 +9,22 @@
 # MarkDown Style
  - code : 代码标识\`\`\`前后均空一行
  
+ 
+ 
+---
+# Plugin
+ - 3-hexo排序：修改node_modules/hexo-generator-index/lib/generator.js
+ - 3-hexo数学公式：修改node_modules\marked\lib\marked.js
+
+
 ---
 # ChangeLog
 
+## 20170711 - v0.1.18
+ - 修复yilia主题 "所有文章/关于我" 页面不显示的问题
+ - 更新yilia（添加子TOP和TOC功能）
+ - 3-hexo添加排序功能
+ 
 ## 20170710 - v0.1.15
  - 使用disqus评论，弃用网易云
  
