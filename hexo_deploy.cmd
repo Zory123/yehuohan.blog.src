@@ -15,6 +15,5 @@ hexo clean && ^
 hexo generate && ^
 hexo deploy && ^
 echo Hexo : deploy complete! && ^
-copy /y _config_all.yml _config.yml && ^
 hexo clean & pause
 

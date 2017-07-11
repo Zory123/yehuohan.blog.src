@@ -10,7 +10,6 @@
  - code : 代码标识\`\`\`前后均空一行
  
  
- 
 ---
 # Plugin
  - 3-hexo排序：修改node_modules/hexo-generator-index/lib/generator.js
@@ -19,6 +18,9 @@
 
 ---
 # ChangeLog
+
+## 20170711 - v0.1.19
+ - 修改hexo\_deploy.cmd，去除\_config\_all.yml
 
 ## 20170711 - v0.1.18
  - 修复yilia主题 "所有文章/关于我" 页面不显示的问题
