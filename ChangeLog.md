@@ -19,6 +19,9 @@
 ---
 # ChangeLog
 
+## 20170712 - v0.1.20
+ - 修改3-hexo的字体尺寸及行距
+
 ## 20170711 - v0.1.19
  - 修改hexo\_deploy.cmd，去除\_config\_all.yml
 
