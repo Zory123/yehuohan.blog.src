@@ -16,8 +16,14 @@ link:
   #twitter:
   #linkedin: #
   #instagram:
-  #reddit: #
-  #weibo: #
+
+##########多作者模式############
+author:
+  on: false
+  authors:
+    author1: 阿杰
+    author2: 小马哥
+##############################
 
 bottom_text: ©2017 yehuohan
 # 自定义页面最下方的站点版权信息
@@ -63,7 +69,7 @@ table: green_title
 highlight:
   on: true # true开启代码高亮
   lineNum: false # true显示行号
-  theme: sublime
+  theme: railscasts
 # 代码高亮主题,效果可以查看 https://highlightjs.org/static/demo/
 # 支持主题：
 # sublime : 参考sublime的高亮主题

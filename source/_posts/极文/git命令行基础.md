@@ -43,7 +43,7 @@ categories:
 {% asset_img 01.jpg %}
 
 ## Git服务器平台
-常用的Git服务器平台有{\bf Github,Gitlab,oschina,coding.net}等。Git平台选用哪个看自己，自己觉得哪个适合自己就用哪个，这里不详细介绍各个平台，只基本的对上述四个进行比较。
+常用的Git服务器平台有Github,Gitlab,oschina,coding.net等。Git平台选用哪个看自己，自己觉得哪个适合自己就用哪个，这里不详细介绍各个平台，只基本的对上述四个进行比较。
  
  - [Github](https://github.com/)
     基本上说上Git平台，首先想到就是这个，好多开源项目都托管在Github。但Github私有仓库需要收费，而且因为是国外的，速度不比国内的Git平台。
@@ -175,6 +175,19 @@ git push origin_oschina master:master
 ```bash
 git help <command>
 # 这个肯定是第一个要学会的，遇到问题就help。
+```
+
+* config
+
+```bash
+git config <--type>
+# 设置工作环境变量
+# --system: 配置文件在 /etc/.gitconfig
+# --global: 配置文件在 ~/.gitconfig
+# --local: 配置文件在 Project_Dir/.git/.gitconfig
+
+git config --list
+# 查看已有的配置信息
 ```
 
 * init
