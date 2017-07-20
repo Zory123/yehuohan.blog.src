@@ -4,6 +4,7 @@
 
 \begin{document}
  
+\usetikzlibrary{arrows}
 \begin{tikzpicture}
 
 % 定子和转子
@@ -17,20 +18,12 @@
 
 
 % 绕组
-\draw [line width=2pt] (140:4) node (SA1) {} circle(0.4)
+\draw [line width=2pt] (180:4) node (SA1) {} circle(0.4)
 	  	+(0,0.8) node {\huge $\bm{A}$}
 	  	+(45:0.4)--+(45+180:0.4)
 	  	+(-45:0.4)--+(-45+180:0.4);
-\draw [line width=2pt] (40:4) node (SA2) {} circle(0.4)
+\draw [line width=2pt] (0:4) node (SA2) {} circle(0.4)
 		+(0,0.8) node {\huge $\bm{A'}$};
-\draw [fill=black] (SA2) ellipse (0.15 and 0.15);
-
-\draw [line width=2pt] (-140:4) node {} circle(0.4)
-	  	+(-0.5,0.8) node {\huge $\bm{A}$}
-	  	+(45:0.4)--+(45+180:0.4)
-	  	+(-45:0.4)--+(-45+180:0.4);
-\draw [line width=2pt] (-40:4) node {} circle(0.4)
-		+(0.5,0.8) node {\huge $\bm{A'}$};
 \draw [fill=black] (SA2) ellipse (0.15 and 0.15);
 
 \draw [line width=2pt] (220:2.5) node (RB1) {} circle(0.4)
@@ -54,7 +47,7 @@
 \draw (-35:7) node () {\huge $\bm{t_e}$};
 
 % 标签
-\draw [line width=2pt] (SA1)+(-0.3,0.4)--++(-1.5,2.8)
+\draw [line width=2pt] (SA1)+(-0.3,0.4)--++(-1.5,4.5)
 		+(0,0.5) node (SW) {\Huge \texttt{Stator Wind}};
 \draw [line width=2pt] (RB1)+(-0.1,-0.4)--++(-1.6,-4)
 		+(0,-0.5) node (SW) {\Huge \texttt{Rotor Wind}};
@@ -62,6 +55,13 @@
 \draw [line width=2pt] (-110:3)--++(-110:0.5);
 \draw [line width=2pt] [<-](-110:3.5)--++(-110:1);
 \draw [line width=2pt] (-115:4.3) node () {\huge $\bm{g}$};
+
+% 磁场线
+\draw [line width=1pt, color=red] (-1.55,-3.94) arc (-90:-270:3.3 and 4);
+\draw [line width=1pt, color=red] (-1.55,-3.94) arc (-90:90:0.9 and 4);
+\tikzstyle{myedgestyle} = [-triangle 60]
+\draw [line width=2pt, color=red] [->](-0.65,0)--(-0.65,-0.1);
+
 
 \end{tikzpicture}
 \end{document}

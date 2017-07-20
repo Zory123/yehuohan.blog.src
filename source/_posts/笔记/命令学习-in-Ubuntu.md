@@ -5,7 +5,7 @@ tags:
  - linux
  - ubuntu
 categories: 
- - 极文
+ - 笔记
 ---
 
 

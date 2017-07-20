@@ -1,7 +1,7 @@
 ---
 title: 我的Vim学习之路
 categories:
-  - 极文
+ - 笔记
 mathjax: false
 date: 2017-07-10 23:48:41
 tags: 

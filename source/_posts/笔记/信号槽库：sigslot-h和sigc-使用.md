@@ -1,7 +1,7 @@
 ---
 title: 信号槽库：sigslot.h和sigc++使用
 categories:
-  - 极文
+ - 笔记
 date: 2017-06-09 18:09:52
 tags: c/c++
 ---

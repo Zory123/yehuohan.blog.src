@@ -1,7 +1,7 @@
 ---
 title: 两个gif图片处理库使用
 categories:
-  - 极文
+ - 笔记
 date: 2017-06-09 18:00:52
 tags: 
  - c/c++

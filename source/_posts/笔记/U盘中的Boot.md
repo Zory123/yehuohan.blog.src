@@ -1,7 +1,7 @@
 ---
 title: U盘中的Boot
 categories:
-  - 极文
+ - 笔记
 date: 2017-06-08 23:32:50
 tags: 
  - boot

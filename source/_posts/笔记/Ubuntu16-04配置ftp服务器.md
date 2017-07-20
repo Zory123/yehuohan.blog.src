@@ -1,7 +1,7 @@
 ---
 title: Ubuntu16.04配置ftp服务器
 categories:
-  - 极文
+ - 笔记
 date: 2017-06-09 00:31:28
 tags: 
  - linux
