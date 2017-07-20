@@ -65,14 +65,16 @@ categories:
 ## Git安装
 Git现在也有不少Gui程序，我还建议使用git命令行工具，不是为了所谓的装逼。使用git命令行更加容易理解git的工作原理和流程，而且，使用git命令行可定制空间更大。
 
- - Linux下安装：Linux安装很简单，就是一条命令的事：
+ - Linux下安装：
+ Linux安装很简单，就是一条命令的事：
 
 ```bash
 sudo apt-get install git
 ```
 
- - Windows下安装：windows下使用Git的话，得先装一个类unix环境，如mingw等。可以按照下列教程链接来安装，然后同样一条命令就可以安装Git。
-[Windows下搭建类UNIX环境 : Msys2+MinGW-w64](http://blog.csdn.net/yehuohan/article/details/52090282)
+ - Windows下安装：
+ windows下使用Git的话，得先装一个类unix环境，如mingw等。可以按照下列教程链接来安装，然后同样一条命令就可以安装Git。
+{% post_link 笔记/Windows搭建类UNIX环境-Msys2-MinGW-w64 %}
 
 ## Git坏境设置
 这里说是Git环境设置主要是关于在windows的编码设置，因为windows使用gbk编码，而git服务器是utf-8编码，不设置编码的转换，容易乱码。
