@@ -1,0 +1,58 @@
+
+\documentclass[tikz,border=4pt]{standalone}
+\usepackage{bm}
+
+\usetikzlibrary{arrows,automata}
+
+\newcommand {\tr} {30}
+
+\input{motor.tex}
+
+\begin{document}
+
+\begin{tikzpicture}
+
+\coordinate (O1) at (0,0);
+
+% 面装式
+\draw [line width=2pt] (O1) circle(3);
+\filldraw [line width=2pt, color=gray] (O1) circle(1.8);
+
+\abcAxis{(O1)}{6.5};
+
+\draw (O1)+(\tr+10:2.2) node {\Large \textbf{N}};
+\draw (O1)+(\tr+10+180:2.2) node {\Large \textbf{S}};
+
+\draw [line width=2pt] [-latex] (O1)--+(\tr:5) 
+	node [below right] {\LARGE \bm{$\psi_f$}};
+\draw [line width=1.5pt] [-latex] (O1)+(0:3.6) to[out=0+90,in=\tr-90] +(\tr:3.6);
+\draw (O1)+(\tr-7:3.7) node [right] {\LARGE \bm{$\theta_r$}};
+\draw [line width=1.5pt] [-latex] (O1)+(\tr-10:6) to[out=\tr-10+90,in=\tr+10-90] +(\tr+10:6);
+\draw (O1)+(\tr:6) node [right] {\LARGE \bm{$\omega_r$}};
+
+\draw [line width = 1.5pt] [-latex] (O1)+(145:2.3) to[out=145+90,in=180-90] +(180:2.3);
+\draw (O1)+(185:2.4) node {\Large \bm{$t_e$}};
+
+\coordinate (W1) at ([shift={+(-10:4.3)}] O1);
+\coordinate (W2) at ([shift={+(110:4.3)}] O1);
+\coordinate (W3) at ([shift={+(-130:4.3)}] O1);
+\inductorWind{(W1)}{0};
+\draw [rotate around={0:(0,0)}] (W1)+(-0.1,0) node [left] {\large \textbf{X}};
+\draw [rotate around={0:(0,0)}] (W1)+(1.7,0) node [right] {\large \textbf{A}};
+\draw [rotate around={0:(0,0)}] (W1)+(0.3,-0.9) node [right] {\Large \bm{$u_A$}};
+\draw [rotate around={0:(0,0)}] (W1)+(0.4,0.4) node [right] {\Large \bm{$i_A$}};
+\inductorWind{(W2)}{120};
+\draw [rotate around={0:(0,0)}] (W2)+(115:-0.5) node [below] {\large \textbf{Y}};
+\draw [rotate around={0:(0,0)}] (W2)+(115:1.6) node [above] {\large \textbf{B}};
+\draw [rotate around={0:(0,0)}] (W2)+(85:0.9) node [right] {\Large \bm{$u_B$}};
+\draw [rotate around={0:(0,0)}] (W2)+(120:1.2) node [below]{\Large \bm{$i_B$}};
+\inductorWind{(W3)}{-120};
+\draw [rotate around={0:(0,0)}] (W3)+(-110:-0.2) node [above] {\large \textbf{Z}};
+\draw [rotate around={0:(0,0)}] (W3)+(-110:2) node [left] {\large \textbf{C}};
+\draw [rotate around={0:(0,0)}] (W3)+(-0.8,0) node [left] {\Large \bm{$u_C$}};
+\draw [rotate around={0:(0,0)}] (W3)+(-0.6,-0.9) node [right] {\Large \bm{$i_C$}};
+
+\end{tikzpicture}
+
+\end{document}
+
