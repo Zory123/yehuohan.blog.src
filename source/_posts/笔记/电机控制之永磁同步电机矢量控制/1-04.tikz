@@ -27,10 +27,18 @@
 
 \coordinate (O1) at (0,0);
 
-% 面装式
+% 插入式
 \draw [line width=2pt] (O1) circle(3);
-\filldraw [line width=2pt, color=gray] (O1) circle(1.8);
-\draw [line width=1pt] (O1) circle(1.8);
+
+\filldraw [color=gray] 
+	(O1)+(\tr+90-40:1.8) arc(\tr+90-40:\tr+90+40:1.8)
+	--(\tr-90-40:1.8)
+	arc(\tr-90-40:\tr-90+40:1.8);
+\draw [line width=1.5pt] 
+	(O1)+(\tr+90-40:1.8) arc(\tr+90-40:\tr+90+40:1.8)
+	--(\tr-90-40:1.8)
+	arc(\tr-90-40:\tr-90+40:1.8)
+	--(\tr+90-40:1.8);
 
 \draw [line width=1.5pt][latex-latex] (260:1.8)--(260:3);
 \draw (260:2.5) node [right] {\Large \textbf{g}};
@@ -61,8 +69,8 @@
 \draw (O1)+(\tr+20:3.5) node [right] {\LARGE \bm{$\theta_s$}};
 
 % N、S极
-\draw (O1)+(\tr+20:2.2) node {\Large \textbf{N}};
-\draw (O1)+(\tr+10+180:2.2) node {\Large \textbf{S}};
+\draw (O1)+(\tr+20:2) node {\Large \textbf{N}};
+\draw (O1)+(\tr+10+180:1.6) node {\Large \textbf{S}};
 \currentOut{(\tr+90:1.6)};
 \currentIn{(\tr-90:1.6)};
 
