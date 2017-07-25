@@ -32,8 +32,6 @@
 % 磁铁
 \sector{(O1)}{0.8}{1}{90}{\tr-45};
 \sector{(O1)}{0.8}{1}{90}{\tr-45+180};
-\sectorLine{(O1)}{0.8}{1}{90}{\tr-45};
-\sectorLine{(O1)}{0.8}{1}{90}{\tr-45+180};
 
 % A轴
 \draw [line width=2pt] [-latex] (O1) -- +(0:7.8) node [right] {\LARGE \textbf{A}};

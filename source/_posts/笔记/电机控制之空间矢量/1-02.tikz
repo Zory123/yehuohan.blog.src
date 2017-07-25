@@ -47,9 +47,6 @@
 \draw [line width=2pt] [-latex] (O1)--+(60:4.3);
 \draw (O1)++(60:4.7)+(0.5,0.2) node [left] {\Large \bm{$a^2F_C(t)$}};
 
-% F ABC
-
-
 
 \end{tikzpicture}
 

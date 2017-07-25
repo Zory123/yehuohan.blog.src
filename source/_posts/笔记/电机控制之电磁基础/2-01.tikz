@@ -57,11 +57,10 @@
 \draw [line width=2pt] (-115:4.3) node () {\huge $\bm{g}$};
 
 % 磁场线
-\draw [line width=1pt, color=red] (-1.55,-3.94) arc (-90:-270:3.3 and 4);
-\draw [line width=1pt, color=red] (-1.55,-3.94) arc (-90:90:0.9 and 4);
+\draw [line width=1.5pt, color=red, dashed] (-1.55,-3.94) arc (-90:-270:3.3 and 4);
+\draw [line width=1.5pt, color=red, dashed] (-1.55,-3.94) arc (-90:90:0.9 and 4);
 \tikzstyle{myedgestyle} = [-triangle 60]
-\draw [line width=2pt, color=red] [->](-0.65,0)--(-0.65,-0.1);
-
+\draw [line width=2pt, color=red] [-latex](-0.65,0)--(-0.65,-0.1);
 
 \end{tikzpicture}
 \end{document}

@@ -71,7 +71,7 @@
 % #4 扇形角度
 % #5 旋转角度
 \newcommand {\sector}[5]{
-\filldraw [rotate around={#5:(0,0)}, color=gray] 
+\filldraw [rotate around={#5:(0,0)}, color=gray,line width=2pt,draw=black] 
 	#1 ++(0:#2) arc(0:#4:#2)
 	-- ++(#4:#3-#2)
 	arc(#4:0:#3)
