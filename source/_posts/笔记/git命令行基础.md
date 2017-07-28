@@ -210,10 +210,9 @@ git status
 
 ```bash
 git add <file> (or .)
-# 添加WorkSpace中指定文件（或所有修改的文件，不包括delete的）到Index。
-```
+# 添加WorkSpace中指定文件或目录（或所有修改的文件，不包括delete的）到Index。
+# 有多个文件或目录用空格隔开，如 "git add /file1 /dirA /dirB/fileB"
 
-```bash
 git add -all (or -A)
 # 添加WorkSpace中所有修改到Index，包括delete的。
 ```
@@ -223,6 +222,9 @@ git add -all (or -A)
 ```bash
 git commit -m "comments" (or 'comments')
 # 将Index中的内容提交到Local，并添加备注信息（使用单引号，可以输入多行comments）。
+
+git commit -m "comments" /file /dir
+# 只提交指定文件或目录到Local，多个文件或目录用空格隔开
 ```
 
 ```bash
@@ -239,6 +241,9 @@ git checkout -- <file>(or .)
 # 即相当于扔掉WorkSpace中自上次执行git add以来的修改，此命令会扔掉WorkSpace中修改，使用请慎重。
 # 若是没有执行git add，则不会扔掉任何修改。
 # 注意，两横线"--"不能少，这表示后面代表的是路径或文件，而不是分支名，因为checkout来可以用于分支的切换。
+
+git checkout <branck-name> -- file(or .)
+# 从分支<branck-name>的Local区恢复指定文件到当前分支的WorkSpace
 ```
 
 * reset
@@ -416,6 +421,7 @@ git branch <name>
 
 git checkout <name>
 # 切换到分支name
+# 注意，切换后，分支name的WorkSpace中未commit的更改会扔掉
 ```
 
 ```bash
