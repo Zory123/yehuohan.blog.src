@@ -163,7 +163,7 @@ sudo hwclock --systohc --localtime
  ---
 # *安装NVIDIA驱动*
  - 关闭独立显示，降低发热量（默认双显卡均在工作状态）
- - 可以到管网下载：http://www.nvidia.cn/Download/index.aspx?lang=cn，安装显卡驱动需要重启才会生效
+ - 可以到[官网下载](http://www.nvidia.cn/Download/index.aspx?lang=cn)，安装显卡驱动需要重启才会生效
  - 在Nvidia官方的控制面板nvidia-settings里就可以切换显卡（alt+F2搜索nvidia-settings）
  - 或者用apt-get下载，打开终端：
 

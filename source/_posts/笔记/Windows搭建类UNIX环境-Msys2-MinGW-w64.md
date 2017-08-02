@@ -23,17 +23,17 @@ Msys2现在维护得更好，软件更新更方便，推荐使用Msys2，同时�
 Msys2使用pacman管理软件。pacman的基本使用如下：
 
 ```bash
-pacman -S <packge-name> 	# 安装软件
-pacman -U <gz-file>			# 安装本地包，其扩展名为 pkg.tar.gz
-pacman -Syu             	# 同步Msys2源，并更新 
-pacman -Sy					# 仅同步源 
-pacman -Su              	# 更新系统
-pacman -Sy <packge-name>	# 同步源后再安装软件
-pacman -R <packge-name> 	# 该命令将只删除包，不包含该包的依赖。
-pacman -Rs <packge-name> 	# 在删除包的同时，也将删除其依赖。
-pacman -Rd <packge-name> 	# 在删除包时不检查依赖。
-pacman -Ss <keywords> 		# 这将搜索含关键字的包。
-pacman -Qi <packge-name>	# 查看有关包的信息。
+pacman -S <packge-name>  # 安装软件
+pacman -U <gz-file>      # 安装本地包，其扩展名为 pkg.tar.gz
+pacman -Syu              # 同步Msys2源，并更新
+pacman -Sy               # 仅同步源
+pacman -Su               # 更新系统
+pacman -Sy <packge-name> # 同步源后再安装软件
+pacman -R <packge-name>  # 该命令将只删除包，不包含该包的依赖。
+pacman -Rs <packge-name> # 在删除包的同时，也将删除其依赖。
+pacman -Rd <packge-name> # 在删除包时不检查依赖。
+pacman -Ss <keywords>    # 这将搜索含关键字的包。
+pacman -Qi <packge-name> # 查看有关包的信息。
 ```
 
  安装Msys2后，或解压Msys2后，第一次运行下msys2_shell.cmd，提示第一次设置初始化完毕后，就可以运行Msys2.exe、mingw64.exe或mingw32.exe，主要区别：
