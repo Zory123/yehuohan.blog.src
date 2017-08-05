@@ -34,16 +34,24 @@
  
  
 ---
-# Plugin
+# Plugin & Config
  - 3-hexo排序
 修改node_modules/hexo-generator-index/lib/generator.js
 
  - 3-hexo数学公式
 修改node_modules\marked\lib\marked.js
 
+ - 3-hexo字体
+修改3-hexo\source\css\_partial\post.styl中的字体大小与行距
 
+ - 3-hexo目录
+修改3-hexo\source\css\_partial\full-toc.styl中的目录高度百分比
+ 
 ---
 # ChangeLog
+
+## 20170720 - v0.1.25
+ - fixed:使3-hexo主题的目录显示全
 
 ## 20170720 - v0.1.24
  - 将极文改成笔记

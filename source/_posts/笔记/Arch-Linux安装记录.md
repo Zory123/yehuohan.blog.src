@@ -54,7 +54,7 @@ tags:
  已经安装了Windows，且有一个ESP分区了，所在Arch也就直接使用ESP即可。
 
  - 启动方法：
- 我使用[refind](http://www.rodsbooks.com/refind/)引导。将Arch.iso解到任一硬盘分区的根目录（移动硬盘也可以），然后，在refind中添加Arch的引导即可。我使用的[refind配置](https://github.com/yehuohan/USBBootFiles/blob/master/EFI/boot/refind.conf)。
+ 我使用 [refind](http://www.rodsbooks.com/refind/) 引导。将Arch.iso解到任一硬盘分区的根目录（移动硬盘也可以），然后，在refind中添加Arch的引导即可。我使用的[refind配置](https://github.com/yehuohan/USBBootFiles/blob/master/EFI/boot/refind.conf)。
 
 
 ---
@@ -292,7 +292,6 @@ ln -s /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 
 hwlock --systohc --utc
 # 设置成UTC时间标准，即本地时间 = Bios时间 + 时区数(北京为+0800)
-
 hwlock --systohc --localtime
 # 设置使用本地时间标准，即本地时间 = Bios时间
 ```
@@ -307,7 +306,6 @@ en_US.UTF-8 UTF-8
 
 locale-gen
 # 生成locale信息
-
 echo LANG=en_US.UTF-8 > /etc/locale.conf
 # 添加本地化文件locale.conf，用英文，使用zh_CN会导致tty中文乱码
 ```
@@ -339,30 +337,30 @@ pacman -S iw wpa_supplicant dialog
 好了，我反正用手机USB共享的网络，既然有网了，当然得学会pacman的的基本用法：
 
 ```bash
-pacman -S <packge-name>  # 安装软件(install)
-pacman -U <pkg-file>     # 安装本地包(unpack)，其扩展名为 *.tar.gz, *.tar.xz
-pacman -U <http://pkg-file>     # 安装远程包
+pacman -S <packge-name>     # 安装软件(install)
+pacman -U <pkg-file>        # 安装本地包(unpack)，其扩展名为 *.tar.gz, *.tar.xz
+pacman -U <http://pkg-file> # 安装远程包
 
-pacman -Sy               # 同步(synchronize)软件数据库，先比较是否为最新的，是的话不再下载数据库
-pacman -Syy              # 强制同步软件数据库，无论是否为最新的，都重新下载数据库
-                         # 将数据库理解成一个软件列表，从中可以知道有哪些软件
-pacman -Su               # 更新(update)整个系统，即比对数据库，有更新版本的软件，则更新
-pacman -Syu              # 先同步数据库，然后再更新系统
-pacman -Syyu             # 先强制同步数据库，然后再更新系统
-pacman -Sy <packge-name> # 先同步数据库，然后安装软件
-pacman -Ss <keywords>    # 在数据库和已安装软件包中查询(search)软件
-pacman -Si <keywords>    # 显示软件包信息(information)
-pacman -Sw <keywords>    # 下载(download)软件包，但不安装
-pacman -Sc               # 清理(clean)未安装的软件包缓存
-                         # 包文件位于 /var/cache/pacman/pkg（有软件包缓存时，下次重新安装则不用再下载）
-pacman -Scc              # 清理所有缓存软件包
+pacman -Sy                  # 同步(synchronize)软件数据库，先比较是否为最新的，是的话不再下载数据库
+pacman -Syy                 # 强制同步软件数据库，无论是否为最新的，都重新下载数据库
+                            # 将数据库理解成一个软件列表，从中可以知道有哪些软件
+pacman -Su                  # 更新(update)整个系统，即比对数据库，有更新版本的软件，则更新
+pacman -Syu                 # 先同步数据库，然后再更新系统
+pacman -Syyu                # 先强制同步数据库，然后再更新系统
+pacman -Sy <packge-name>    # 先同步数据库，然后安装软件
+pacman -Ss <keywords>       # 在数据库和已安装软件包中查询(search)软件
+pacman -Si <keywords>       # 显示软件包信息(information)
+pacman -Sw <keywords>       # 下载(download)软件包，但不安装
+pacman -Sc                  # 清理(clean)未安装的软件包缓存
+                            # 包文件位于 /var/cache/pacman/pkg（有软件包缓存时，下次重新安装则不用再下载）
+pacman -Scc                 # 清理所有缓存软件包
 
-pacman -Qs <packge-name> # 查询已安装的软件包
-pacman -Qi <packge-name> # 查询已安装软件包的信息
+pacman -Qs <packge-name>    # 查询已安装的软件包
+pacman -Qi <packge-name>    # 查询已安装软件包的信息
 
-pacman -R <packge-name>  # 删除(remove)单个软件包，保留该软件包全部的依赖
-pacman -Rs <packge-name> # 删除(remove)单个软件包，删除该软件包的依赖（如果该依赖没有与其它软件存在依赖关系）
-pacman -Rsc <packge-name> # 删除(remove)单个软件包，删除该软件包的依赖，和所以依赖该软件包的程序
+pacman -R <packge-name>     # 删除(remove)单个软件包，保留该软件包全部的依赖
+pacman -Rs <packge-name>    # 删除(remove)单个软件包，删除该软件包的依赖（如果该依赖没有与其它软件存在依赖关系）
+pacman -Rsc <packge-name>   # 删除(remove)单个软件包，删除该软件包的依赖，和所以依赖该软件包的程序
 ```
 
 ## Root密码
@@ -601,16 +599,144 @@ cp /etc/xdg/awesome/rc.lua ~/.config/awesome/
 # 如果使用xorg-init，则添加 "exec awesome" 到.xinitrc，通过startx则可以启动ie
 ```
 
-### 安装Qtile
 
-（使用Qtile我电脑启动不了）
+---
+
+---
+
+---
+
+# 我的设置 Of ArchLinux
+现在才是像其它Linux发行版安装完后，开始进行配置了。
+
+## Font
 
 ```bash
-yaourt -S qtile
-# 安装qtile
-cp  /usr/lib/python3.6/site-packages/libqtile/resources/default_config.py ~/.config/qtile/config.py
-# 添加配置文件
-python3 -m py_compile ~/.config/qtile/config.py
-# 测试配置是否有语法错误
+sudo pacman -S ttf-dejavu
+# 英文等宽字体
+sudo pacman -S wqy-microhei
+# 中文字体，包括等宽中文，用于终端和i3窗口管理器
+
+sudo pacman -S adobe-source-han-sans-cn-fonts
+# (可选)安装思源体简体中文部体，中文效果比文泉好些
+pacman -S ttf-ubuntu-font-family
+# (可选)ubuntu上的字体
 ```
+
+## 对调Esc和CapsLock
+（方便Vim使用）
+
+ - Console环境
+
+```bash
+cd /usr/share/kbd/keymaps/i386/qwerty/ 
+cp us.map.gz custom.map.gz
+# 修改custom中的Esc和CapsLock键位映射
+vim /etc/vconsole.conf
+# 添加以下内容可以变tty下的键盘布局：
+KEYMAP=custom
+```
+
+ - X11环境
+
+```bash
+vim .Xmodmap
+# 添加以下内容：
+clear Lock  
+keysym Caps_Lock = Escape  
+keysym Escape = Caps_Lock  
+add Lock = Caps_Lock  
+
+vim .zprofile
+# zsh用.zprofile，bash用.xprofile
+# 添加以下内容：
+add xmodmap ./.Xmodmap
+```
+
+## 输入法
+
+```bash
+sudo pacman -S fcitx-im
+# 安装fcitx集成包，提供对Gtk+/Qt的支持，包括gtk2/3和qt4/5
+sudo pacman -S fcitx-table-extra
+# 添加对五笔的支持
+sudo pacman -S fcitx-configtool
+# fcitx图形界面配置程序
+# 配置fcitx字体为中文字体wqy-microhei，不然乱码
+
+# 配置对X11环境支持，添加以下内容：
+# 使用登录管理器(如sddm)启动X11，则编辑.xprofile（zsh则为.zprofile）
+# 使用startx启动X11，则编辑.xinitrc
+vim ~/.xprofile
+export GTK_IM_MODULE=fcitx
+export QT_IM_MODULE=fcitx
+export XMODIFIERS=@im=fcitx
+```
+
+## 触控板
+
+ - [参数配置解释](https://wiki.archlinux.org/index.php/Touchpad_Synaptics)
+ - [手势管理](https://github.com/bulletmark/libinput-gestures)
+
+```bash
+sudo pacman -S xf86-input-libinput
+cp /usr/share/X11/xorg.conf.d/40-libinput.conf /etc/X11/xorg.conf.d/30-touchpad.conf
+# 配置触控板，/usr/share中的为默认配置，/etc/中的用户自定义配置
+
+sudo vim /etc/X11/xorg.conf.d/30-touchpad.conf
+# 触控板配置内容如下：
+Section "InputClass"
+        Identifier "libinput touchpad catchall"
+        MatchIsTouchpad "on"
+        MatchDevicePath "/dev/input/event*"
+        Driver "libinput"
+        Option "Tapping" "on"
+        Option "TapButton1" "1"
+        Option "TapButton2" "3"
+        Option "TapButton3" "2"
+        Option "VertEdgeScroll" "on"
+        Option "VertTwoFingerScroll" "on"
+        Option "HorizEdgeScroll" "on"
+        Option "HorizTwoFingerScroll" "on"
+        Option "NaturalScrolling" "on"
+EndSection
+```
+
+## i3wm配置
+i3的配置比较容易，找一份详细的配置和教程，仔细看一看就可以配置自己所想要的。
+[i3wm ArchWiki](https://wiki.archlinux.org/index.php/I3)
+[我的i3wm置文件](https://github.com/yehuohan/LinuxConfigs/tree/master/cf-i3)
+[awesome-font图标字体，直接复制使用](http://fontawesome.io/cheatsheet/)
+
+```bash
+yaourt -S i3-gaps-next-git
+# 换用i3-gaps，可以设置透明i3bar
+sudo pacman -S i3lock
+# 锁屏
+yaourt -S quickswitch-i3
+# 窗口快速切换插件
+sudo pacman -S feh 
+# 壁纸
+sudo pacman -S compton
+# 透明效果设置
+sudo pacman -S conky
+yaourt -S ttf-font-awesome
+# 用conky代替i3status，并安装图标字体
+sudo pacman -S scrot
+# 截图软件
+sudo pacman -S alsa-utils
+# 音量管理
+sudo pacman -S networkmanager network-manager-applet nm-connection-editor
+sudo systemctl start NetworkManager
+sudo systemctl enable NetworkManager
+# 网络管理及托盘图标
+sudo pacman -S xfce4-power-manager
+# xfce4的电源理软件，包括对屏幕亮度调节（可以直接再安装一个xfce桌面环境）
+sudo pacman -S xfce4-terminal
+# xfce4的终端（可以直接再安装一个xfce桌面环境）
+```
+
+---
+
+---
 

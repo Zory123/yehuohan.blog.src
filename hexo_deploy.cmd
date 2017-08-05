@@ -1,6 +1,6 @@
 
 @echo off
-echo Are you sure : Continue generate and delopy ?????
+echo This need admini and are you sure : Continue generate and delopy ?
 echo Press Ctrl + c to exit.
 pause
 

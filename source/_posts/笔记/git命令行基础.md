@@ -349,10 +349,8 @@ git remote add origin_oschina git@git.oschina.net:username/project
 ```bash
 git remote -v
 # 显示所有远程库的名称和地址。
-
 git remote rm <name>
 # 删除远程主机。
-
 git remote rename <name> <new name>
 # 重命名远程主机。
 ```
@@ -380,10 +378,8 @@ git fetch origin master
 
 git checkout origin/master
 # 切换到fetch到的分支上，这时WorkSpace区就是origin/master的WorkSpace区的内容
-
 git log -p test origin/master
 # 查看具体的文件内容改变
-
 git checkout test
 # 回到本地test分支，会发现test的WorkSpace的内容仍在
 
@@ -406,10 +402,8 @@ git pull origin master:test
 ```bash
 git branch
 # 列出本地已经存在的分支，并且在当前分支的前面加"*"号标记。
-
 git branch -r
 # 列出远程支。
-
 git branch -a
 # 列出本地分支和远程分支。
 ```
@@ -418,7 +412,6 @@ git branch -a
 git branch <name>
 # 创建名为name的新分支
 # 注意，创建后当前分支没有切换到name。
-
 git checkout <name>
 # 切换到分支name
 # 注意，切换后，分支name的WorkSpace中未commit的更改会扔掉
@@ -429,7 +422,6 @@ git branch -d <test>
 # 删除分支test
 git branch --remotes -d <origin/test>
 # 删除远程分支origin/test
-
 git branch -m <name> <new name>
 # 重命名分支。
 ```
@@ -442,15 +434,12 @@ Release是源码托管商对git的tag功能的增强，通过git提供的tag功�
 ```bash
 git tag
 # 查看所有标签
-
 git tag <tagname> <commit_id>
 # 创建轻量标签
-
 git tag -a <tagname> -m <msg> <commit_id>
 git tag -a v1.0.2 -m "Release version v1.0.2" HEAD~1
 # 创建附注标签，保存更多的附注信息
 # commit_id省略，则为最后一次提交
-
 git tag -d <tagname>
 # 删除标签
 ```
@@ -458,7 +447,6 @@ git tag -d <tagname>
 ```bash
 git show <tagname>
 # 显示<tagname>的详细信息
-
 git checkout <tagname>
 # 切换到标签
 
@@ -467,3 +455,61 @@ git push origin <tagname>
 git push origin --tags
 # 将Local中的所有标签推送到Remote中
 ```
+
+---
+# Git暂存管理
+
+>这里的暂存(stash)不是前面所讲的暂存区/索引区(index)。
+
+`stash`用于将当前WorkSpace区中的修改暂存起来，之后可以随时取出暂存的修改。
+
+```bash
+git stash
+# 暂存当前WorkSpace区中的修改
+git stash save "msg"
+# 暂存当前WorkSpace区中的修改，且添加暂存信息msg
+# 注：暂存后，当前WorkSpace就回到修改之前的状态
+```
+
+> stash的一些应用：
+> - 切换到其它分支继续工作：不暂存直接切换，当前分支WorkSpace的修改全会扔掉；
+> - `pull`当前分支，或`merge`其它分支到当前分支：当前分支有未`commit`的修改，是没法`pull`或`merge`的；
+
+```bash
+git stash list
+# 查看所有的暂存
+git stash show stash@{1}
+# 查看1号暂存基本信息
+# 省略 "stash@{1}" 则查看最后一次暂存
+# zsh中"stash@{1}" 可以直接写成 "1"
+git show stash@{0}
+# 查看0号暂存详细信息
+```
+
+```bash
+git stash apply stash@{1}
+# 应用1号暂存到当前WorkSpace区(暂存示删除)
+git stash drop stash@{1}
+# 删除1号暂存
+git stash pop stash@{1}
+# 取出1号暂存到当前WorkSpace区（相当于先apply再drop）
+# 以上三条命令，省略 "stash@{1}" 则表示对最后一次暂存操作
+
+git stash clear
+# 清除所有暂存
+```
+> 注意：`apply`或`pop`暂存时，若有冲突，需要手动修改
+
+比如如下操作，`stash`当前WorkSpace中的修改，然后`pull`当前分支，之后再`pop`回当前WorkSpace。一般不会有什么冲，但若是`stash`的修改，和`pull`下来的更新，对同一处代码进行了修改，就会产生冲突，在代码文件中会出现如下内容（搜"<<<<<<<"即可找到所有的冲突）：
+
+```c
+<<<<<<< Updated upstream
+    if IsTermType("xterm") || IsTermType("xterm-256color")
+=======
+    if IsTermType("xterm") || IsTermType("vt")
+>>>>>>> Stashed changes
+```
+
+这时，就要手动从"Updated upstream"和"Stashed changes"中选一个了，因为git不知道，到底哪个修改才是你想要的。
+
+
