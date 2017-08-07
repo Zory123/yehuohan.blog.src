@@ -701,6 +701,37 @@ Section "InputClass"
         Option "NaturalScrolling" "on"
 EndSection
 ```
+## 独显
+ [开源独显Nouveau](https://wiki.archlinux.org/index.php/Nouveau)
+ [Nouveau支持查询](https://nouveau.freedesktop.org/wiki/CodeNames/)
+ [Nouveau支持功能查询](https://nouveau.freedesktop.org/wiki/FeatureMatrix/)
+ [闭原独显Nvidia](https://wiki.archlinux.org/index.php/NVIDIA)
+ [Bumblebee](https://wiki.archlinux.org/index.php/Bumblebee)
+
+ 这里简单写下Bumblebee的安装流程：
+
+```bash
+sudo pacman -S bumblebee mesa xf86-video-intel nvidia
+# bumblebee        : 提供守护进程以及程序的主要安装包。
+# mesa             : 开源的OpenGL标准实现。
+# xf86-video-intel : Intel 驱动。
+# nvidia           : NVIDIA 驱动。
+# 最好卸了Nouveau驱动
+sudo gpasswd -a <user> bumblebee
+# 安装,并添加用户到bumblebee用户组
+systemctl enable bumblebeed.service
+# 启用bumblebee，然后重启继续
+
+optirun glxspheres64
+optirun glxspheres32
+# 运行glxspheres64测试程序，optirun用于使用独显运行程序
+# 测试(x64或x32)，会打开一个动画窗口
+sudo pacman -S bbswitch
+# Bumblebee会自动检测bbswitch，可以自动关闭N卡
+lspci | grep VGA
+# 查看独显示状态，(rev ff)表示关闭，否则为打开状态
+# 运行glxspheres64时，则不为(rev ff)
+```
 
 ## i3wm配置
 i3的配置比较容易，找一份详细的配置和教程，仔细看一看就可以配置自己所想要的。

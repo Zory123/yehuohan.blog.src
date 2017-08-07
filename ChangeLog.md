@@ -44,9 +44,7 @@
  - 3-hexo字体
 修改3-hexo\source\css\_partial\post.styl中的字体大小与行距
 
- - 3-hexo目录
-修改3-hexo\source\css\_partial\full-toc.styl中的目录高度百分比
- 
+
 ---
 # ChangeLog
 
