@@ -204,6 +204,8 @@ git init
 ```bash
 git status
 # 查看WorkSpace区和Index区状态，显示WorkSpace中有哪些修改，显示Index中有哪些提交。
+git status -s (or --short)
+# 查看简略的状态信息
 ```
 
 * add
@@ -236,13 +238,13 @@ git commit --amend -m "comments"
 * checkout
 
 ```bash
-git checkout -- <file>(or .)
+git checkout [-- <path/file>(or .)]
 # 从Index区指定恢复指定文件file（或所有文件）到WorkSpace
 # 即相当于扔掉WorkSpace中自上次执行git add以来的修改，此命令会扔掉WorkSpace中修改，使用请慎重。
 # 若是没有执行git add，则不会扔掉任何修改。
 # 注意，两横线"--"不能少，这表示后面代表的是路径或文件，而不是分支名，因为checkout来可以用于分支的切换。
 
-git checkout <branck-name> -- file(or .)
+git checkout <branck-name> [-- path/file(or .)]
 # 从分支<branck-name>的Local区恢复指定文件到当前分支的WorkSpace
 ```
 
@@ -284,11 +286,15 @@ git log | iconv -f -gbk -t utf-8
 ```
 
 ```bash
+git log [options] [-- <path/file>]
+# log基本用法，<path/file> : 可以是一个目录 或 文件
+
+git log
+# 查看提交日志
 git log <path/file>
 # 查看关于file每次提交的记录
 git log -p <path/file>
 # 查看每次修改file的详细内容
-# <path/file> : 可以是一个目录 或 文件
 ```
 
 ```bash
@@ -298,19 +304,25 @@ git reflog
 * diff
 
 ```bash
+# 两个diff的基本用法
+git diff [options] <commit1> <commit2> [-- <path/file>]
+git diff [options] <branch1> <branch2> [-- <path/file>]
+# 省略commit2或branch2，则是与当前所在的WorkSpace区比较
+# commit和branch全部省略，则与比较当前所在的WorkSpace区和Index区
+# [-- <path/file>] : 此部分参数是为了比较某个文件 或 目录
+
 git diff
 # 查看WorkSpace区和Index区差异，即显示WorkSpace中未add到Index中的修改
+git diff --stat 
+# 列出WorkSpace区中相对Index区更改的文件列表
 git diff <path/file>
 # 查看WorkSpace区file有哪些修改
-
 git diff HEAD^n [-- <path/file>]
 # 查看WorkSpace区和HEAD^n版本的差异
 git diff <commit_id1> <commit_id2> [-- <path/file>]
 # 查看两个commit版本的差异
-git diff <branch1> <branch2> [-- <path/file>]
-# 查看两个分支的差异
-
-# [-- <path/file>] : 此部分参数是为了比较某个文件 或 目录
+git diff --stat <branch1> <branch2> [-- <path/file>]
+# 列出两个分支的不同的文件列表
 ```
 
 * rm
