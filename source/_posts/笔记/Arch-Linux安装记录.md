@@ -740,7 +740,7 @@ i3的配置比较容易，找一份详细的配置和教程，仔细看一看就
 [awesome-font图标字体，直接复制使用](http://fontawesome.io/cheatsheet/)
 
 ```bash
-yaourt -S i3-gaps-next-git
+yaourt -S i3-gaps-git
 # 换用i3-gaps，可以设置透明i3bar
 sudo pacman -S i3lock
 # 锁屏
@@ -756,6 +756,7 @@ yaourt -S ttf-font-awesome
 sudo pacman -S scrot
 # 截图软件
 sudo pacman -S alsa-utils
+sudo pacman -S volumeicon
 # 音量管理
 sudo pacman -S networkmanager network-manager-applet nm-connection-editor
 sudo systemctl start NetworkManager
@@ -765,6 +766,14 @@ sudo pacman -S xfce4-power-manager
 # xfce4的电源理软件，包括对屏幕亮度调节（可以直接再安装一个xfce桌面环境）
 sudo pacman -S xfce4-terminal
 # xfce4的终端（可以直接再安装一个xfce桌面环境）
+```
+
+## 其它设置
+
+```bash
+sudo pacman -S gvfs-mtp
+# 安装mtp，支持移动设备挂载
+# 安装后xfce-thunar可以自动识别windows-ntfs硬盘和手机u盘等设备
 ```
 
 ---
