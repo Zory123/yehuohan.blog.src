@@ -1,5 +1,5 @@
 ---
-title: callback function
+title: c/c++:回调函数
 categories:
   - 片段
 mathjax: false

@@ -1,5 +1,5 @@
 ---
-title: pointer parameter
+title: c/c++:指针作为函数参数
 categories:
   - 片段
 mathjax: false

@@ -77,6 +77,7 @@ hexo server
 # GitBook
 
 GitBook是一个基于node.js的命令行工具，可使用Github/Git和Markdown来制作精美的电子书。
+[gitbook入门教程](http://www.chengweiyang.cn/gitbook/gitbook.com/edit.html)
 
 ```bash
 npm install -g gitbook-cli
@@ -90,7 +91,7 @@ gitbook serve ./docs
 
 ---
 # docsify
-docsify 是一个使用markdown动态生成文档网站的工具。不同于 GitBook、Hexo 的地方是它不会生成将 .md 转成 .html 文件，所有转换工作都是在运行时进行。
+[docsify](https://docsify.js.org/#/zh-cn/) 是一个使用markdown动态生成文档网站的工具。不同于 GitBook、Hexo 的地方是它不会生成将 .md 转成 .html 文件，所有转换工作都是在运行时进行。
 
 ```bash
 npm install -g docsify-cli

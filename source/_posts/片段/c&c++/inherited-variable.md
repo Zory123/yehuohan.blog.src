@@ -1,5 +1,5 @@
 ---
-title: inherited variable
+title: c/c++:关于类成员变量的继承
 categories:
   - 片段
 mathjax: false

@@ -1,5 +1,5 @@
 ---
-title: pointer and array
+title: c/c++:指针与数组
 categories:
   - 片段
 mathjax: false

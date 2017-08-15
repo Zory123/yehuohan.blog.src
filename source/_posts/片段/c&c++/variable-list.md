@@ -1,5 +1,5 @@
 ---
-title: variable list
+title: c/c++:可变参数用法
 categories:
   - 片段
 mathjax: false

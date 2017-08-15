@@ -1,5 +1,5 @@
 ---
-title: time as name string
+title: c/c++:生成时间string
 categories:
   - 片段
 mathjax: false

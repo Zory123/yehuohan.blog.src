@@ -1,5 +1,5 @@
 ---
-title: sizeof ptr-ar
+title: sizeof pointer and array
 categories:
   - 片段
 mathjax: false
