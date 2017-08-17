@@ -37,13 +37,14 @@ Basic Style of c and cpp.
 //===...===//
 ```
 
-## 全局定义
+## 类型定义
  * 宏定义
  大写+下划线连接，例如：BIT_SET
- * 结构体
-基本格式如下：
 
-```
+ * Struct, enum, class
+ 大写开头，例如：
+
+```cpp
 typedef struct _Str
 {
 	int var;
@@ -51,32 +52,26 @@ typedef struct _Str
 }Str;
 ```
 
-## c变量与函数
- *  基本风格一：下划线连接小字字母
- data_len, set_data()
- 
- * 基本风格二：大小字母连接
- dataLen, setData();
-  
-  
-## c++类
- * 成员变量与函数基本风格一：
-  - 变量
-  以m开头，以下划线连接，m_xxx
-  - 函数
-  小写字母和下划线连接，init_ui(), set_ui()
-	
- * 成员变量与函数基本风格二：	
-  - 变量
-  以m开头，以下划线连接，mXXX
-  - 函数
-  小写动词+大写字母，initUi(), setUi()
-  
-## 临时变量
- * 指针
- pVar或var_ptr
 
- 
+## c变量定义
+ - 基本风格一
+ 下划线连接小字字母，例如 data_len, set_data()
+
+ - 基本风格二
+ 大小字母连接，例如 dataLen, setData()
+
+
+## c++类的成员变量与成员函数
+ * 成员变量与函数基本风格一
+  - 变量：以m开头，以下划线连接，m_xxx
+  - 函数：小写字母和下划线连接，init_ui(), set_ui()
+	
+ * 成员变量与函数基本风格二	
+  - 变量：以m开头，mXXX
+  - 函数：小写动词+大写字母，initUi(), setUi()
+
+
+
 ---
 # Doxygen基本规范
  - 主页(mainpage)

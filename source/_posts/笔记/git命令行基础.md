@@ -349,6 +349,8 @@ git rm –cached <file>
 ```bash
 git clone <url>
 #从Remote克隆一个版本仓库到本地。
+git clone --depth 1 <url>
+# 使用depth指定克隆深度，这里表示只克隆最后一次commint
 ```
 
 * remote
