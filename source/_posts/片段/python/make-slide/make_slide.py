@@ -1,23 +1,3 @@
----
-title: make slide
-categories:
-  - 片段
-mathjax: false
-date: 2017-08-09 11:04:47
-tags:
- - python
----
-
-> File : [make_slide.py](make_slide.py) *(直接右键另存为下载)*
-> - Type : python
-> - Brief : commands converting markdown-file to slide-html
-
-<!-- more -->
-
----
-
-
-```python
 import os
 import sys
 
@@ -33,7 +13,6 @@ def get_mdfile(diretory):
             retlist.append(item)
     return retlist
 
-
 if __name__ == "__main__":
     mdfile = '' 
     if len(sys.argv) == 1:
@@ -47,4 +26,3 @@ if __name__ == "__main__":
 
     print('Convering {} ......'.format(mdfile))
     convert_slide(mdfile)
-```

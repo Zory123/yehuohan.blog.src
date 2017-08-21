@@ -1,22 +1,3 @@
----
-title: implement atan2 from atan
-categories:
-  - 片段
-mathjax: true
-date: 2017-08-15 17:42:53
-tags:
- - python
----
-
-> File : [atan2.py](atan2.py) *(直接右键另存为下载)*
-> Type : python
-> Brief : simple implementation of atan2 from atan
-
-<!-- more -->
-
----
-
-```python
 from math import atan
 from math import atan2
 from math import pi
@@ -47,9 +28,3 @@ if __name__ == "__main__":
     print("atan2 : {0:8f} deg".format(atan2(dy,dx)*180/pi))
     print("mytan2: {0:8f} rad".format(myatan2(dy,dx)))
     print("mytan2: {0:8f} deg".format(myatan2(dy,dx)*180/pi))
-```
-
- - atan2的范围为 [$-\pi$,$\pi$]
- - atan的范围为 [$\cfrac{-\pi}{2}$,$\cfrac{\pi}{2}$]
-
-![atan2](a2.gif)

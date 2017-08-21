@@ -1,22 +1,3 @@
----
-title: loan calculation
-categories:
-  - 片段
-mathjax: false
-date: 2017-08-09 11:26:37
-tags:
- - python
----
-
-> File : [loan_calculation.py](loan_calculation.py) *(直接右键另存为下载)*
-> Type : python
-> Brief : simple calculation of loan
-
-<!-- more -->
-
----
-
-```pyhon
 #!/usr/bin/python3
 
 ## @file loan_calculation.py
@@ -95,4 +76,3 @@ if __name__ == "__main__":
     print("\t 本息合计： {}".format(sum(m2)))
     print("\n")
 
-```
