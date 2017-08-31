@@ -8,7 +8,7 @@ tags:
  - node.js
 ---
 
-源于用于几个基于node.js的工具，记一下node.js以及相应工具的基本应用。
+几个基于node.js的工具，记一下node.js以及相应工具的基本应用。
 
 <!-- more -->
 

@@ -84,7 +84,7 @@ noremap <leader>te :NERDTreeToggle<CR>
 
 
 **最后，文章主体到此可以说是结束了。因为不管是按键配置，还是插件配置，都是长期使用过程中而慢慢添加的。后面相应具体的配置是我自己完善配置的过程，不一定适合每个人，只是起到抛砖引玉的作用。
-请记住：是因为有了需要求，才需要添加配置；而不是添加了配置，所以才有了需求。**
+请记住：是因为有了需求，才需要添加配置；而不是因为添加了配置，才有了需求。**
 
 
 ---
@@ -156,33 +156,4 @@ nnoremap <leader>iw :set invwrap<CR>
 
 ---
 # Vim之插件
-这里简单介绍一下我用的插件，也不放图片了，网上已经有很教程图文并茂的介绍了各种插件。
-
- - 移动与跳转
- smooth-scroll：实现动态滚屏
- vim-easymotion：实现精确定的行跳转，单词跳转，字母跳转
-
- - 查找与替换
- incsearch：查找时可以高亮
- vim-over：替换时可以高亮
-
- - 编辑与管理
- nerdtree：目录管理
- taglist：tag跳转
- ctrlspace：集buffer, bookmark, tab, workspace, file管理于一身
- vim-session：会话保存
- tabular：文本对齐
-
- - IDE功能
- YouCompleteMe：补全神器
- ultisnips：片段补全
- nerdcommenter：各种语言注释
- vim-surround：添加括号等
-
- - 界面优化
- indentLine：缩进显示
- airline：状态栏优化
- rainbow：彩虹括号，看代码清晰
- markdown-preview：markdown预览
- new-railscasts-theme：我用的一个主题，在使用colorschme时，需要将主题路径添加 rtp 中，具体参考我的[配置文件](https://github.com/yehuohan/LinuxConfigs)
-
+这里就不介绍了，网上已经有很教程图文并茂的介绍了各种插件。

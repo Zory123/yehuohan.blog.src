@@ -50,7 +50,8 @@ length   : 地址长度
 结束地址 : = origin + length - 1
 
 origin和length都要根据Data Manual中的Memory Maps部分进行配置。
-其次，Memory Maps中的地址空间单位是类似 4K x 16 的方式，表示 4K x 16bit，这样就是说，origin和length的单位为 16bit，即单位是 2字节，或者说 1个字
+其次，Memory Maps中的地址空间单位是类似 4K x 16 的方式，表示 4K x 16bit，
+这样就是说，origin和length的单位为 16bit，即单位是 2字节，或者说 1个字
 */
 ```
 
@@ -82,8 +83,8 @@ PAGE 1 :
 /* 如，将 .text段放入PAGE 0的RAM块 */
 .text : > RAM,  PAGE = 0
 
-/* 用户也可以自定义SECTIONS，将特定义变量放入其中 */
-/* 将UserVar段放入PAGE 1中的USER_VAR块，而UserVar段中放于变量user_var */
+/* 用户也可以自定义SECTIONS，将特定变量放入其中 */
+/* 将UserVar段放入PAGE 1中的USER_VAR块，而UserVar段中放变量user_var */
 UserVar : > USER_VAR,  PAGE = 1
 
 /* c/c++源代码中，需要按如下声明变量 */
