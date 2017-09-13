@@ -26,6 +26,7 @@ CCS v6.0的使用记录
  - 工程路径最好不要有中文，且路径长度<256
  - 补全提示：Window--Preferences--Editor--Content Assist，Delay改小，补全提示就会加快
  - 代码折叠：Window--Preferences--Editor--Folding，自己按需要勾上相应选项
+ - Release和Debug的主要区别：Properties->Optimizations中的Optimization level不同，Debug是没有优化的。
 
 ---
 # 使用

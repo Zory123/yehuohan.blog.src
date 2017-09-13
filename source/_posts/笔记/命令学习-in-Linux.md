@@ -400,6 +400,14 @@ kill [-l <信息编号>]
 # [程序]可以是程序的 PID 或是 PGID,也可以是工作编号;
 kill 2950           # 结束PID为2950的程序
 kill %n             # 结束工作号为n的程序
+
+kill -s SIGTERM 2950 # 请求正常结束程序，此为默认选项
+kill -15 2950        # 请求正常结束程序，此为默认选项
+kill -l 15           # 查看信号15的名称，会输出“TERM”，即SIGTERM信号
+
+kill -s SIGKILL 2950 # 强制结束程序
+kill -9 2950         # 强制结束程序
+kill -l SIGKILL      # 醒看信号SIGKILL的编号，会输出9
 ```
 
 ## pkill：直接杀死运行中的程序
