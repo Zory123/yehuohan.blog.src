@@ -39,7 +39,8 @@ Ctrl + Shift + MouseWheel    : 切换当前图层
  * 移动元器件时，若元器件挡信的Keet-out Layer，可以在Ctrl+D中设置Pads透明
  * 总线式布线：通俗的讲就是多条网络同时布线的问题。具体方法是，按住SHIFT，然后依次用光标移到要布线的网络，点击鼠标左键即可选中一条网络，选中所需的所有网络以后，单击工具栏汇的总线布线图标，在被选网络中任意单击即可开始多条网络同时布线。布线过程中可以按键盘上左右尖括号<>调节线间距。
  * 等长布线（即走S型线）：走线属于不同Net时，可以Add Class；走线都属于同一个Net，则可以建多个temp-Net，布好等长线后，再复制到目标Net。
- * 多原理图画Pcb： 选好原理图SCH，然后Project->Show Differences，勾选Advanced Mode，然后左边选好SCH，右边选好PCB，点OK后会出现对比界面；在对比界面中右键，选择将Update SCH >> PCB，点击Create Component Classes后，就出现像正常导入原理图到PCB的界面了。
+ * 多原理图画Pcb： Project->Show Differences，勾选Advanced Mode，然后左边选好SCH，右边选好PCB，点OK后会出现对比界面；在对比界面中右键，选择将Update SCH >> PCB，点击Create Component Classes后，就出现像正常导入原理图到PCB的界面了。
+ * 多层板：Layer是正片，走线的地方即是敷铜的地方，用于信号层；Plane是负片，走线用于分割平面，每个分割出来的子平面都可单独设置Net（双击分割的子平面即可设置），用于电源层和地层。
 
 
 
