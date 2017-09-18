@@ -278,6 +278,29 @@ git reset --hard HEAD"^"2 (or "HEAD^2")
 本地git命令间的基本关系：
 {% asset_img 02.jpg %}
 
+* revert
+
+```bash
+git revert <commit_id>
+# 撤消commit_id的更改，并将撤消操作当作一个新的提交
+# 用下例来解释revert具体过程：
+git revert HEAD~2
+# 第1步：撤消HEAD~2的更改，此时只有WorkSpace的区内容变了。
+#       （相当于在WorkSpace里“减去”HEAD~2的更改，但不会减去HEAD~1和HEAD的更改）
+# 第2步：将第1步的操作提交，即相当于执行依次 git add 和 commimt
+
+git revert -e <commit_id>
+git revert --edit <commit_id>
+# 为revert操作添加注释
+
+git revert --no-edit <commit_id>
+# 不添加注释，而是使用默认的注释信息
+
+git revert -n <commit_id>
+git revert --no-commint <commit_id>
+# 进行完撤消操作后(前面例子中和第1步)，不自动提交
+```
+
 * log
 
 ```bash
