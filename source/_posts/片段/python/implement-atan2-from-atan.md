@@ -22,6 +22,7 @@ from math import atan2
 from math import pi
 
 # atan2 implementation from atan
+# atan2(sin, cos)
 def myatan2(dy, dx):
     if dx == 0:
         if dy > 0:
