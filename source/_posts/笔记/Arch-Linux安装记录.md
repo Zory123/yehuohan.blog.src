@@ -468,8 +468,11 @@ sudo vim /etc/pacman.conf
 SigLevel = Optional TrustAll
 Server   = http://repo.archlinuxcn.org/$arch
 
-sudo pacman -Syu yaourt
+sudo pacman -Sy
+sudo pacman -S yaourt
 # 安装yaourt，yaourt命令类似于pacman
+suso pacman -S zsh-completions
+# yaourt自动补全
 ```
 
 
@@ -616,6 +619,8 @@ sudo pacman -S ttf-dejavu
 # 英文等宽字体
 sudo pacman -S wqy-microhei
 # 中文字体，包括等宽中文，用于终端和i3窗口管理器
+yaourt -S ttf-dejavu-sans-mono-powerline-git
+# 打补丁的dejavu字体，包含powerline图标字体
 
 sudo pacman -S adobe-source-han-sans-cn-fonts
 # (可选)安装思源体简体中文部体，中文效果比文泉好些

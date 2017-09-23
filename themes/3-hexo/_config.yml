@@ -128,8 +128,8 @@ gentie:
 
 gitment:
   on: false
-  owner: yelog
-  repo: yelog.github.io
+  owner: yehuohan
+  repo: yehuohan.github.io
   client_id: d64ceca0d8a4e8a1f5c9
   client_secret: fb17d5f0aba31372f61a03df707b320a39a73a06
   # gitment : 通过github issue实现的评论系统
