@@ -1,5 +1,5 @@
 ---
-title: 'C++C++的public,protected,private与继承的关系'
+title: 'C++中public,protected,private与继承的关系'
 categories:
   - 杂记
 mathjax: false
