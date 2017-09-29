@@ -1,5 +1,5 @@
 ---
-title: const value address as pointer
+title: c/c++:常量作为地址
 categories:
   - 片段
 mathjax: false

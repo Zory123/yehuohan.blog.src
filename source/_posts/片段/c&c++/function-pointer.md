@@ -1,5 +1,5 @@
 ---
-title: function pointer
+title: c/c++:function pointer
 categories:
   - 片段
 mathjax: false

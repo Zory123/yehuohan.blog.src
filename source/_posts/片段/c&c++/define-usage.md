@@ -1,5 +1,5 @@
 ---
-title: define usage
+title: c/c++:define usage
 categories:
   - 片段
 mathjax: false

@@ -1,5 +1,5 @@
 ---
-title: path define
+title: c/c++:用宏配置路径
 categories:
   - 片段
 mathjax: false

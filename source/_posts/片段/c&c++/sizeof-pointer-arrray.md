@@ -1,5 +1,5 @@
 ---
-title: sizeof pointer and array
+title: c/c++:sizeof pointer and array
 categories:
   - 片段
 mathjax: false

@@ -1,5 +1,5 @@
 ---
-title: const decoration
+title: c/c++:const修饰函数
 categories:
   - 片段
 mathjax: false

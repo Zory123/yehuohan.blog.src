@@ -1,5 +1,5 @@
 ---
-title: make dll
+title: c/c++:dll动态库生成
 categories:
   - 片段
 mathjax: false

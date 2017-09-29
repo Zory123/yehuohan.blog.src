@@ -1,5 +1,5 @@
 ---
-title: throw and catch
+title: c/c++:异常抛出(throw and catch)
 categories:
   - 片段
 mathjax: false

@@ -1,5 +1,5 @@
 ---
-title: main parameter
+title: c/c++:主函数参数使用
 categories:
   - 片段
 mathjax: false
