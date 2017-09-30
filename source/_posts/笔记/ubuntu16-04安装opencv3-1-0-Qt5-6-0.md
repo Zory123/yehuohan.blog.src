@@ -115,7 +115,7 @@ int main()
 ```
 
 ---
-## 方法一：使用CMake生成OpenCv工程
+## 1:用CMake生成OpenCv工程
  -  编写CMakeLists.txt
 
 ```bash
@@ -160,7 +160,7 @@ make
 ```
 
 ---
-## 方法二：使用Qt作为IDE环境生成opencv工程
+## 2:用Qt作为IDE环境生成opencv工程
  - 配置qt的cmake构建方案（需要安装cmake）：
  1、打开Qt，找到 “工具->选项->构建和运行->构建套件"，如下图设置：
 {% asset_img 02.png %}
@@ -193,7 +193,7 @@ make
 
 
 ---
-## 方法三：使用Makefile生成opencv工程
+## 3:用Makefile生成opencv工程
  - main.cpp使用之前的即，建立如下Makefile文件
 
 ```bash
@@ -220,7 +220,7 @@ TARGET:
 
 
 ---
-## 方法四：使用qmake生成opencv工程
+## 4:用qmake生成opencv工程
 qmake需要编写pro文件，如下test.pro：
 
 ```bash

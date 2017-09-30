@@ -22,8 +22,8 @@ tags: linux
  - "/"     : 根目录
  - "root"  : root用户相关文件，root登录时，"～/"就是此目录
  - "home"  : 普通用户存放目录，"~/"就是当前登录用户的个人目录
- - "bin"   : 存放普通命令的目录
- - "sbin"  : 存放需要一定权限的命令的目录
+ - "bin"   : 存放普通命令的目录，如ls,cp等
+ - "sbin"  : 存放需要一定权限的命令，如cfdisk,reboot等
  - "mnt"   : 默认挂载目录
  - "boot"  : 存放系统引导文件
  - "etc"   : 存放配置相关文件
@@ -82,10 +82,11 @@ S开头的，系统将启动对应的服务
 
 
 # **/usr**
- - /usr/local/bin    : 可以放用户自己的程序，程序或链接放到这后，在终端输入程序文件名就可以运行，[相关的一例](http : //blog.csdn.net/yehuohan/article/details/51333880)
- - /usr/local/lib    : 用户库文件位置
- - /usr/local/etc    : 用户配置文件位置
- - /usr /local/share : 用户其它的资源文件位置
+ - /usr/bin:主是应用软件和工具，如gcc,make,man等
+ - /usr/local/bin: 可以放用户自己的程序，程序或链接放到这后，在终端输入程序文件名就可以运行，[相关的一例](http : //blog.csdn.net/yehuohan/article/details/51333880)
+ - /usr/local/lib: 用户库文件位置
+ - /usr/local/etc: 用户配置文件位置
+ - /usr/local/share: 用户其它的资源文件位置
 
 
 # **/home**
