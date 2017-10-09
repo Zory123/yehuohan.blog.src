@@ -3,7 +3,7 @@ title: {{ title }}
 date: {{ date }}
 tags:
 categories:
- - 片段
+ - Gist
 mathjax: false
 ---
 
