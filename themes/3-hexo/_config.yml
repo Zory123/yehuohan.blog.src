@@ -68,7 +68,7 @@ table: green_title
 highlight:
   on: true # true开启代码高亮
   lineNum: false # true显示行号
-  theme: railscasts
+  theme: github
 # 代码高亮主题,效果可以查看 https://highlightjs.org/static/demo/
 # 支持主题：
 # sublime : 参考sublime的高亮主题
