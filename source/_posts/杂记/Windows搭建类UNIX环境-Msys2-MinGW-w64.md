@@ -1,7 +1,7 @@
 ---
 title: 'Windows搭建类UNIX环境: Msys2+MinGW-w64'
 categories:
- - 笔记
+ - 杂记
 date: 2017-06-09 00:36:01
 tags: 
  - msys2

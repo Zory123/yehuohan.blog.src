@@ -1,5 +1,5 @@
 ---
-title: vim加几行代码实现qmake工程的构建
+title: Vim加几行代码实现qmake工程的构建
 categories:
   - 杂记
 mathjax: false

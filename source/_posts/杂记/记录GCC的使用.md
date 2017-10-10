@@ -7,7 +7,7 @@ tags:
  - c/c++
  - linux
 categories:
- - 笔记
+ - 杂记
 ---
 
 
