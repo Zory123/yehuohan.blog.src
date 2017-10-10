@@ -2,7 +2,7 @@
 # Have a look
  - [yehuohan.github.io](https://yehuohan.github.io)
 
- - [yehuohan.oschina.io](http://yehuohan.oschina.io)
+ - [yehuohan.gitee.io](http://yehuohan.gitee.io)
 
 ![yhhx.tech](/img/y.png)
 

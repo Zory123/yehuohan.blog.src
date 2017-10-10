@@ -93,6 +93,9 @@ mathjax:
   on: true  # 是否启用
   per_page: false # 若只渲染单个页面，此选项设为false，页面内加入 mathjax: true
 
+# 友情链接
+friends:
+  Yehuohan: http://yehuohan.gitee.io/
 
 #===============================================================================
 # 评论设置
@@ -107,7 +110,7 @@ preload_comment: true
 
 disqus:
   on: true
-  shortname: yehuohan
+  shortname: yelog
   # disqus评论系统， 2016年9月被GFW认证，大陆不能使用。
   # https://help.disqus.com/customer/en/portal/articles/466208-what-s-a-shortname-
 
@@ -128,8 +131,8 @@ gentie:
 
 gitment:
   on: false
-  owner: yehuohan
-  repo: yehuohan.github.io
+  owner: yelog
+  repo: yelog.github.io
   client_id: d64ceca0d8a4e8a1f5c9
   client_secret: fb17d5f0aba31372f61a03df707b320a39a73a06
   # gitment : 通过github issue实现的评论系统

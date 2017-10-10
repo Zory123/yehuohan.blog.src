@@ -5,6 +5,6 @@
 [yehuohan.github.io](https://yehuohan.github.io)
 
 ---
-# yehuohan.oschina.io
+# yehuohan.gitee.io
 
-[yehuohan.oschina.io](http://yehuohan.oschina.io)
+[yehuohan.gitee.io](http://yehuohan.oschina.io)
