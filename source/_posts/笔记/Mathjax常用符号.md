@@ -403,6 +403,31 @@ $$
 ---
 ## 字体
 
+### 常规
+
+$$
+0123456789-ABCDEFGHIJKLMnopqrstuvwxyz \\
+\alpha \beta \gamma \delta \epsilon \zeta \eta \theta \iota \kappa \lambda \mu
+\nu \xi \omicron \pi \rho \sigma \tau \upsilon \phi \chi \psi \omega
+$$
+
+### 粗体
+
+```tex
+$$
+\boldsymbol{0123456789-ABCDEFGHIJKLMnopqrstuvwxyz} \\
+\boldsymbol{\alpha \beta \gamma \delta \epsilon \zeta \eta \theta \iota \kappa \lambda \mu
+\nu \xi \omicron \pi \rho \sigma \tau \upsilon \phi \chi \psi \omega}
+$$
+```
+
+$$
+\boldsymbol{0123456789-ABCDEFGHIJKLMnopqrstuvwxyz} \\
+\boldsymbol{\alpha \beta \gamma \delta \epsilon \zeta \eta \theta \iota \kappa \lambda \mu
+\nu \xi \omicron \pi \rho \sigma \tau \upsilon \phi \chi \psi \omega}
+$$
+
+
 ### 黑板粗体
 
 ```tex
@@ -418,51 +443,51 @@ $$
 ### 黑体
 
 ```tex
-\mathbf{0123456789-ABCDEFGHIJKLMnopqrstuvwxyz} \\
+\mathbf{0123456789-ABCDEFGHIJKLMnopqrstuvwxyz}
 ```
 
 $$
-\mathbf{0123456789-ABCDEFGHIJKLMnopqrstuvwxyz} \\
+\mathbf{0123456789-ABCDEFGHIJKLMnopqrstuvwxyz}
 $$
 
 ### 打印机字体
 
 ```tex
-\mathtt{0123456789-ABCDEFGHIJKLMnopqrstuvwxyz} \\
+\mathtt{0123456789-ABCDEFGHIJKLMnopqrstuvwxyz}
 ```
 
 $$
-\mathtt{0123456789-ABCDEFGHIJKLMnopqrstuvwxyz} \\
+\mathtt{0123456789-ABCDEFGHIJKLMnopqrstuvwxyz}
 $$
 
 ### 罗马字体
 
 ```tex
-\mathrm{0123456789-ABCDEFGHIJKLMnopqrstuvwxyz} \\
+\mathrm{0123456789-ABCDEFGHIJKLMnopqrstuvwxyz}
 ```
 
 $$
-\mathrm{0123456789-ABCDEFGHIJKLMnopqrstuvwxyz} \\
+\mathrm{0123456789-ABCDEFGHIJKLMnopqrstuvwxyz}
 $$
 
 ### 手写体
 
 ```tex
-\mathscr{0123456789-ABCDEFGHIJKLMnopqrstuvwxyz} \\
+\mathscr{0123456789-ABCDEFGHIJKLMnopqrstuvwxyz}
 ```
 
 $$
-\mathscr{0123456789-ABCDEFGHIJKLMnopqrstuvwxyz} \\
+\mathscr{0123456789-ABCDEFGHIJKLMnopqrstuvwxyz}
 $$
 
 ### Fraktur字体
 
 ```tex
-\mathfrak{0123456789-ABCDEFGHIJKLMnopqrstuvwxyz} \\
+\mathfrak{0123456789-ABCDEFGHIJKLMnopqrstuvwxyz}
 ```
 
 $$
-\mathfrak{0123456789-ABCDEFGHIJKLMnopqrstuvwxyz} \\
+\mathfrak{0123456789-ABCDEFGHIJKLMnopqrstuvwxyz}
 $$
 
 
