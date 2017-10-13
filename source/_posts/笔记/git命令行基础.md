@@ -193,6 +193,7 @@ git config <--type>
 git config --list
 # 查看已有的配置信息
 ```
+## 仓库的建立与提交
 
 * init
 
@@ -220,6 +221,19 @@ git add <file> (or .)
 git add -all (or -A)
 # 添加WorkSpace中所有修改到Index，包括delete的。
 ```
+
+* rm
+
+```bash
+rm <file>
+# 删除文件，和git没有任何关系
+git rm
+# 删除git对file的追踪，同时删除WorkSpace中的file文件
+git rm –cached <file>
+# 删除git对file的追踪，但是不删除WorkSpace中的file文件
+# 注意：如果想去除对文件或目录的追踪，除了更改.gitignore，还需要用git rm --cached删除追踪关系
+```
+
 
 * commit
 
@@ -301,6 +315,8 @@ git revert --no-commint <commit_id>
 # 进行完撤消操作后(前面例子中和第1步)，不自动提交
 ```
 
+## 查看相关信息
+
 * log
 
 ```bash
@@ -320,6 +336,26 @@ git log <path/file>
 # 查看关于file每次提交的记录
 git log -p <path/file>
 # 查看每次修改file的详细内容
+
+git log --pretty=format:"<...>"
+git log --pretty=format:%s
+# 按照指定的格式 <...> 显示提交记录
+# <...> 格式如下：
+# %H      提交对象（commit）的完整哈希字串
+# %h      提交对象的简短哈希字串
+# %T      树对象（tree）的完整哈希字串
+# %t      树对象的简短哈希字串
+# %P      父对象（parent）的完整哈希字串
+# %p      父对象的简短哈希字串
+# %an     作者（author）的名字
+# %ae     作者的电子邮件地址
+# %ad     作者修订日期（可以用 -date= 选项定制格式）
+# %ar     作者修订日期，按多久以前的方式显示
+# %cn     提交者(committer)的名字
+# %ce     提交者的电子邮件地址
+# %cd     提交日期
+# %cr     提交日期，按多久以前的方式显示
+# %s      提交说明
 ```
 
 ```bash
@@ -349,19 +385,6 @@ git diff <commit_id1> <commit_id2> [-- <path/file>]
 git diff --stat <branch1> <branch2> [-- <path/file>]
 # 列出两个分支的不同的文件列表
 ```
-
-* rm
-
-```bash
-rm <file>
-# 删除文件，和git没有任何关系
-git rm
-# 删除git对file的追踪，同时删除WorkSpace中的file文件
-git rm –cached <file>
-# 删除git对file的追踪，但是不删除WorkSpace中的file文件
-# 注意：如果想去除对文件或目录的追踪，除了更改.gitignore，还需要用git rm --cached删除追踪关系
-```
-
 
 ---
 # Git远程仓库管理
