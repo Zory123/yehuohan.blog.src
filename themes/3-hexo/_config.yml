@@ -97,6 +97,7 @@ mathjax:
 friends:
   Yehuohan: http://yehuohan.gitee.io/
 
+
 #===============================================================================
 # 评论设置
 #===============================================================================
@@ -110,7 +111,7 @@ preload_comment: true
 
 disqus:
   on: true
-  shortname: yelog
+  shortname: yehuohan 
   # disqus评论系统， 2016年9月被GFW认证，大陆不能使用。
   # https://help.disqus.com/customer/en/portal/articles/466208-what-s-a-shortname-
 
@@ -154,4 +155,3 @@ CDN:
   font_awsome: //cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css
   nprogres_js: //cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.js
   mathjax: //cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML
-##############################
