@@ -1,7 +1,7 @@
 ---
 title: MathJax常用符号
 categories:
-  - 笔记
+  - 杂记
 mathjax: true
 date: 2017-10-10 21:22:55
 tags:

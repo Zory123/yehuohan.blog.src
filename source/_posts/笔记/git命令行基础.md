@@ -197,9 +197,11 @@ git config --list
 
 * init
 
-```
+```bash
 git init            
-# 初始化git，会建立.git文件夹
+# 在当前文夹初始化git，当前文件夹即为WorkSpace区，且会建立.git文件夹
+git init test
+# 在test初始化git，且test为WorkSpace区
 ```
 
 * status
@@ -394,9 +396,17 @@ git diff --stat <branch1> <branch2> [-- <path/file>]
 
 ```bash
 git clone <url>
-#从Remote克隆一个版本仓库到本地。
+git clone <url> test
+# 从Remote克隆一个版本仓库到当前文件夹（或test文件夹）
 git clone --depth 1 <url>
 # 使用depth指定克隆深度，这里表示只克隆最后一次commint
+
+git init --bare test.git
+# 建立一个祼库，test.git文件夹即为.git的内容，没有WorkSpace区
+git clone test.git test
+# 从本地test.git克隆到test；
+# test文件夹即相当于WorkSpace区，在test中可以进行status, add, commit, push, pull等操作，
+# push即推送到test.git中，同样pull也是从test.git中拉取
 ```
 
 * remote
@@ -564,7 +574,7 @@ git stash clear
 
 比如如下操作，`stash`当前WorkSpace中的修改，然后`pull`当前分支，之后再`pop`回当前WorkSpace。一般不会有什么冲，但若是`stash`的修改，和`pull`下来的更新，对同一处代码进行了修改，就会产生冲突，在代码文件中会出现如下内容（搜"<<<<<<<"即可找到所有的冲突）：
 
-```c
+```text
 <<<<<<< Updated upstream
     if IsTermType("xterm") || IsTermType("xterm-256color")
 =======
@@ -575,3 +585,93 @@ git stash clear
 这时，就要手动从"Updated upstream"和"Stashed changes"中选一个了，因为git不知道，到底哪个修改才是你想要的。
 
 
+---
+# Git子模块管理
+
+当一个项目比较大时，管理起来就很麻烦，比如一个项目的结构如下：
+
+```text
+project
+    |-- docs       : 工程文档
+    |-- pcb        : pcb工程
+    |-- dsp        : 单片机程序
+    |-- sim        : matlab仿真文件
+    |-- misc       : 杂项文件
+```
+
+项目不但大，且内容也杂，commit的注释信息都不好写。这种时候，使用子模块`submodule`管理就方便多了。
+首先理清几个要点(以用户`https://github.com/user`为例)：
+ - project为父项目，docs, pcb, dsp, sim, misc等为子项目；
+ - 父项目有独立的仓库，为`https://github.com/user/project`；
+ - 子项目有独立的仓库，为`https://github.com/user/docs`，其它的类似；
+ - 父项目**不记录**子项目的内容，只记录子项目的一个commit；
+
+## add子模块
+
+```bash
+cd project
+git submodule add https://github.com/user/docs
+# 将docs添加为project的子项目，会新建.gitmodules文件docs文件夹
+# 在.gitmodules中包含了子项目docs的路径和url
+# docs文件夹是子项目对应commit的克隆（不一定是最新的版本）
+```
+
+添加子模块后，再push到github，可以看到docs文件夹后标标了一个commit-id，这即是子项目的一个commit-id，但不一定是子项目最新的commit版本，如下图：
+
+![sub1](sub1.png)
+
+此时将父项目clone下来（子项目也一并clone），子项目docs的对应的版本就是commit-id(`49fcdac`)对应的内容，即使docs有更新的版本。
+在`project/docs`进行了更改，并push到子项目后，在project下执行`git diff`可以看到如下比较结果：
+
+```diff
+diff --git a/docs b/docs
+index 49fcdac..28ea4cb 160000
+--- a/docs
++++ b/docs
+@@ -1 +1 @@
+-Subproject commit 49fcdac59acfceb1ea60d7d73652a00ee1d2510a
++Subproject commit 28ea4cbe88d5a4fa7b730cde663aae6a174d322d
+```
+
+可以看到，父项目中只显示了子项目的最新版本commit-id的变化。
+
+
+## clone父项目
+
+```bash
+git clone git@github.com:user/project.git --recursive
+# 方法一：recursive参数会递归的clone整个项目，所有子项目也会clone下来
+
+git clone git@github.com:user/project.git
+cd docs
+git submodule init
+git submodule update
+# 方法二：先clone父项目，在逐个更新submodule
+```
+
+
+## pull子项目
+
+```bash
+git submodule foreach [--recursive] <command>
+git submodule foreach --recursive git pull
+# 方法一：使用submodule foreach命令
+
+cd docs
+git pull
+# 方法二：逐个pull子项目即可
+```
+
+## delete子项目
+
+```bash
+git rm --cache docs
+# 删除对docs的track
+rm -rdf docs
+# 删除docs文件夹
+vim .gitmodules
+# 删除.gitmodules中的docs的信息，如果要删除所有子项目，则直接 rm .gitmodules即可
+vim .git/config
+# 删除config中的docs的信息
+# 最后push即完成了子项目的删除
+```

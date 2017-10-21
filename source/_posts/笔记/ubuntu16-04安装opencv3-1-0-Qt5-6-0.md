@@ -1,5 +1,5 @@
 ---
-title: ubuntu16.04安装opencv3.1.0+Qt5.6.0
+title: linux下opencv3.1.0的基本使用
 categories:
  - 笔记
 date: 2017-06-09 00:11:05
