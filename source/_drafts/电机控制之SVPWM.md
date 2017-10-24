@@ -22,12 +22,13 @@ tags:
 ---
 # 回顾PMSM模型
 
-| PMSM     | 面装式                                                                                                                 | 插入式、内装式                                                                                                             |
-| :---     | :---                                                                                                                   | :---                                                                                                                       |
-| 基本方程 | ${\boldsymbol u_s} = R_s{\boldsymbol i_s} + \cfrac{d\boldsymbol {\psi_s}}{dt}$                                         | ${\boldsymbol u_s} = R_s{\boldsymbol i_s} + \cfrac{d\boldsymbol {\psi_s}}{dt}$                                             |
-| 同步电感 | $L_s = L_d = L_q$                                                                                                      | $L_{md} < L_{mq}$                                                                                                          |
-| 数学模型 | ${\boldsymbol u_s} = R_s {\boldsymbol i_s} + L_s \cfrac{d \boldsymbol{i_s}}{dt} +  \cfrac{d \boldsymbol {\psi_f}}{dt}$ | $u_d = R_s i_d + {\cfrac {d\psi_d} {dt}} - \omega_r \psi_q$ <br> $u_q = R_s i_q + \cfrac{d\psi_q} {dt} + \omega_r \psi_d $ |
-| 转矩方程 | $t_e = p_0 \psi_f i_s sin\beta = p_0 \psi_f i_q$                                                                       | $t_e = p_0[\psi_f i_q + (L_d - L_q)i_d i_q]$                                                                               |
+在{% post_link 笔记/电机控制之永磁同步电机矢量控制 %}中，已经初步介绍了矢量控制的基本过程：
+
+> 转速$n \to \;$ 电流$i_q \to \;$ 电压$u_d^\*,u_q^\* \to \;$ 电压$\boldsymbol{u_s}(u_A^\* \; u_B^\* \; u_C^\*) \to \;$ 逆变模块 $\to \;$ 电机
+> 转速$n \to \;$ 电流$i_q \to \;$ 电流$i_d^\*,i_q^\* \to \;$ 电流$\boldsymbol{i_s}(i_A^\* \; i_B^\* \; i_C^\*) \to \;$ 逆变模块 $\to \;$ 电机
+
+SVPWM是通过控制输出电压 $\boldsymbol{u_s}(u_A^\* \; u_B^\* \; u_C^\*)$，来控制电机。通过反馈调节（如PID），再结合Clarke和Park变换，即可得到$\boldsymbol{u_s}(u_A^\* \; u_B^\* \; u_C^\*)$。
+此篇文章将具体介绍，如何输出电压矢量$\boldsymbol{u_s}$到电机。
 
 
 ---
@@ -37,9 +38,14 @@ SVPWM是电压矢量空间控制，其三相逆变电路原理图如[图1-1](#�
 <span id = "图1-1"></span>
 > ![图1-1 三相逆变电路原理图](1-01.png) 
 
+这里约定
 
 ---
 # SVPWM合成
+
+
+
+
 
 
 iq -> Te -> n -> 电压矢量（u-alpha, u-beta）
