@@ -3,6 +3,7 @@
 
 
 *.swp
+*.dia~
 *.log
 .DS_Store
 Thumbs.db
