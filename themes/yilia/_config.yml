@@ -111,7 +111,12 @@ changyan_conf: false
 #4、Disqus 在hexo根目录的config里也有disqus_shortname字段，优先使用yilia的
 disqus: yehuohan
 
-
+#5、Gitment
+gitment_owner: false                    #你的 GitHub ID
+gitment_repo: yehuohan.github.io        #存储评论的 repo
+gitment_oauth:
+  client_id: c3e5df25f83b4a4ea65c                                 #client ID
+  client_secret: 5aaf3d77568b3e4699a75b387ae5852c53eb4d4a         #client secret
 
 #===============================================================================
 # 样式定制 - 一般不需要修改，除非有很强的定制欲望…
