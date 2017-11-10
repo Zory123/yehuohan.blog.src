@@ -239,7 +239,7 @@ CONFIG += \
 PKGCONFIG += opencv
 
 # 添加opencv第三方库ippicv
-LIBS += -L /usr/local/share/OpenCV/3rdparty/lib -lippicv
+LIBS += -L/usr/local/share/OpenCV/3rdparty/lib -lippicv
 	
 # 源文件
 SOURCES += \

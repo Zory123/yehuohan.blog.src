@@ -37,7 +37,7 @@ def main():
     time = N*(1/F)      # 信号时间长度
     # 时域自变量：时间区间为[start, stop]，采样频率为num/(stop-start)
     t = np.linspace(start=0, stop=time, num=N)
-    # 时域信号：频率为 180， 390， 600
+    # 时域信号：频率为 150， 700， 1000
     y = func_sin_wave(t, [[7,150], [3,700], [5,1000]])
     # 频域自变量
     x_f = np.linspace(start=0, stop=F, num=N)
