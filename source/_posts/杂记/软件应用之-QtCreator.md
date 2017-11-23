@@ -23,6 +23,28 @@ QtCreator使用记录。
 
 # Pro文件配置
  - 库LIBS设置：相对路径使用$$PWD，别用点。
+ - LIBS和INCLUDEPATH示例：
+
+```
+# INCLUDEPATH
+win32:INCLUDEPATH += "C:/mylibs/extra headers"
+unix:INCLUDEPATH += "/home/user/extra headers"
+INCLUDEPATH += $$quote(C:/Program Files (x86)/Windows Kits/8.1/Include/winrt)
+INCLUDEPATH += $$OPENCV_DIR/include
+
+# LIBS
+win32:LIBS += "C:/mylibs/extra libs/extra.lib"
+unix:LIBS += "-L/home/user/extra libs" -lextra
+LIBS += \
+    -L$$"C:/Program Files (x86)/Windows Kits/8.1/Lib/winv6.3/um/x64" \
+    -lUser32
+
+CV_LIB_NAMES = core imgproc highgui calib3d feature2d flann
+for(lib,CV_LIB_NAMES){
+    CV_LIBS_DEBUG +=-lopencv_$${lib}d
+}
+LIBS += -L$$OPENCV_LIB_DIR $$CV_LIBS_DEBUG
+```
  
  
 # VS添加Qt
