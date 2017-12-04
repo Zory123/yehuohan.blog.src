@@ -726,6 +726,8 @@ sudo gpasswd -a <user> bumblebee
 # 安装,并添加用户到bumblebee用户组
 systemctl enable bumblebeed.service
 # 启用bumblebee，然后重启继续
+# bumblebee的作用是禁用nvidia独立显卡,
+# 需要使用独显时，使用”optirun 程序名“开启nvidia来运行需要加速的程序。
 
 optirun glxspheres64
 optirun glxspheres32

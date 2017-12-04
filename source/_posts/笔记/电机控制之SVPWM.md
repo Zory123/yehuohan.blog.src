@@ -290,17 +290,17 @@ $$
 \hline
 \text{扇区} &\qquad \boldsymbol{u_a} \quad&\quad \boldsymbol{u_b} \qquad&\qquad T_a \qquad\quad&\quad\qquad T_b \\
 \hline
-I      & \mathtt{\boldsymbol{u_4}(100)} & \mathtt{\boldsymbol{u_6}(110)} & \mathtt{\cfrac{\sqrt{3}T_s}{2U_d}(\sqrt{3}U_\alpha - U_\beta)}  & \mathtt{\cfrac{\sqrt{3}T_s}{U_d}U_\beta} \\
+I      & \boldsymbol{u_4}(100) & \boldsymbol{u_6}(110) & \cfrac{\sqrt{3}T_s}{2U_d}(\sqrt{3}U_\alpha - U_\beta)  & \cfrac{\sqrt{3}T_s}{U_d}U_\beta \\
 \hline
-II     & \mathtt{\boldsymbol{u_6}(110)} & \mathtt{\boldsymbol{u_2}(010)} & \mathtt{\cfrac{\sqrt{3}T_s}{2U_d}(\sqrt{3}U_\alpha + U_\beta)}  & \mathtt{\cfrac{\sqrt{3}T_s}{2U_d}(-\sqrt{3}U_\alpha + U_\beta)} \\
+II     & \boldsymbol{u_6}(110) & \boldsymbol{u_2}(010) & \cfrac{\sqrt{3}T_s}{2U_d}(\sqrt{3}U_\alpha + U_\beta)  & \cfrac{\sqrt{3}T_s}{2U_d}(-\sqrt{3}U_\alpha + U_\beta) \\
 \hline
-III    & \mathtt{\boldsymbol{u_2}(010)} & \mathtt{\boldsymbol{u_3}(011)} & \mathtt{\cfrac{\sqrt{3}T_s}{U_d}U_\beta}                        & \mathtt{\cfrac{\sqrt{3}T_s}{2U_d}(-\sqrt{3}U_\alpha - U_\beta)} \\
+III    & \boldsymbol{u_2}(010) & \boldsymbol{u_3}(011) & \cfrac{\sqrt{3}T_s}{U_d}U_\beta                        & \cfrac{\sqrt{3}T_s}{2U_d}(-\sqrt{3}U_\alpha - U_\beta) \\
 \hline
-IV     & \mathtt{\boldsymbol{u_3}(011)} & \mathtt{\boldsymbol{u_1}(001)} & \mathtt{\cfrac{\sqrt{3}T_s}{2U_d}(-\sqrt{3}U_\alpha + U_\beta)} & \mathtt{-\cfrac{\sqrt{3}T_s}{U_d}U_\beta} \\
+IV     & \boldsymbol{u_3}(011) & \boldsymbol{u_1}(001) & \cfrac{\sqrt{3}T_s}{2U_d}(-\sqrt{3}U_\alpha + U_\beta) & -\cfrac{\sqrt{3}T_s}{U_d}U_\beta \\
 \hline
-V      & \mathtt{\boldsymbol{u_1}(001)} & \mathtt{\boldsymbol{u_5}(101)} & \mathtt{\cfrac{\sqrt{3}T_s}{2U_d}(-\sqrt{3}U_\alpha - U_\beta)} & \mathtt{\cfrac{\sqrt{3}T_s}{2U_d}(\sqrt{3}U_\alpha - U_\beta)} \\
+V      & \boldsymbol{u_1}(001) & \boldsymbol{u_5}(101) & \cfrac{\sqrt{3}T_s}{2U_d}(-\sqrt{3}U_\alpha - U_\beta) & \cfrac{\sqrt{3}T_s}{2U_d}(\sqrt{3}U_\alpha - U_\beta) \\
 \hline
-VI     & \mathtt{\boldsymbol{u_5}(101)} & \mathtt{\boldsymbol{u_4}(100)} & \mathtt{-\cfrac{\sqrt{3}T_s}{U_d}U_\beta}                       & \mathtt{\cfrac{\sqrt{3}T_s}{2U_d}(\sqrt{3}U_\alpha + U_\beta)} \\
+VI     & \boldsymbol{u_5}(101) & \boldsymbol{u_4}(100) & -\cfrac{\sqrt{3}T_s}{U_d}U_\beta                       & \cfrac{\sqrt{3}T_s}{2U_d}(\sqrt{3}U_\alpha + U_\beta) \\
 \hline
 \end{array}
 \\
@@ -351,7 +351,39 @@ $$
 
 ## 时间分配
 电压矢量时间分配，其实是说零矢量的分配。通过前面已经知道，零矢量有$\boldsymbol{u_0} (000)$ 和 $\boldsymbol{u_7} (111)$ 两个，七段式SVPWM使用2个零矢量，而五段式SVPWM只使用1个零矢量。
-这里简单说下七段式SVPWM的矢量时间的分配。如[图3-3](#图3-3)所示，为第$I$扇区内的矢量时间分配。在相应的跳变沿时刻($t_a, t_b, t_c, t_c', t_b', t_a'$)，切换逆变电路对应的功率开关，即可实现输出电压矢量的切换。
+这里简单说下七段式SVPWM的矢量时间的分配。首先，为了使$T_a, \quad T_b$ 变化连接，将第2、4、6扇区的 $\boldsymbol{u_a}, \quad \boldsymbol{u_b}$对调，得到的七段式电压矢量时间分配如下表所示：
+
+$$
+\begin{cases}
+X &= \cfrac{\sqrt{3}T_s}{2U_d}(\sqrt{3}U_\alpha + U_\beta) \\
+Y &= \cfrac{\sqrt{3}T_s}{2U_d}(\sqrt{3}U_\alpha - U_\beta) \\
+Z &= \cfrac{\sqrt{3}T_s}{2U_d}(2U_\beta) \\
+\end{cases}
+$$
+
+$$
+\begin{array}{l | c c | c | c }
+\hline
+\text{扇区} & \boldsymbol{u_a}      & \boldsymbol{u_b}      & T_a & T_b \\
+\hline
+I           & \boldsymbol{u_4}(100) & \boldsymbol{u_6}(110) & Y   & Z \\
+\hline
+II          & \boldsymbol{u_2}(010) & \boldsymbol{u_6}(110) & -Y  & X \\
+\hline
+III         & \boldsymbol{u_2}(010) & \boldsymbol{u_3}(011) & Z   & -X \\
+\hline
+IV          & \boldsymbol{u_1}(001) & \boldsymbol{u_3}(011) & -Z  & -Y \\
+\hline
+V           & \boldsymbol{u_1}(001) & \boldsymbol{u_5}(101) & -X  & Y \\
+\hline
+VI          & \boldsymbol{u_4}(100) & \boldsymbol{u_5}(101) & X   & -Z \\
+\hline
+\end{array}
+\\
+\text{表3-2 七段式电压矢量时间分配}
+$$
+
+一个`控制周期`内具体的时间分配，如[图3-3](#图3-3)所示，为第$I$扇区内的矢量时间分配。在相应的跳变沿时刻($t_a, t_b, t_c, t_c', t_b', t_a'$)，切换逆变电路对应的功率开关，即可实现输出电压矢量的切换。
 
 <span id = "图3-3"></span>
 > ![图3-2 时间分配](3-03.png)
