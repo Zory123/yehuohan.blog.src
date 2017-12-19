@@ -45,38 +45,58 @@ Basic Style of c and cpp.
 
 ```cpp
 // 大写开头
-typedef struct _Str
+typedef struct _StrOk
 {
 	int var;
 	_Str(int _var):var(_var){}
-}Str;
+}StrOk;
 
 // 小写带后缀
-typedef struct str_s
+typedef struct str_ok_s
 {
     int val;
-}str_t;
+}str_ok_t;
 ```
 
 
-## c变量定义
- - 基本风格一
- 下划线连接小字字母，例如 data_len, set_data
+## c变量和函数定义
+ - 下划线连接小字字母，可以添加前缀
 
- - 基本风格二
- 大小字母连接，例如 dataLen, setData()
+```
+int     data_len;
+void    set_data();
 
+void    ty_set_data();
+void    ty_is_equal();
+```
 
 ## c++类的成员变量与成员函数
- * 成员变量与函数基本风格一
-  - 变量：以s/m/p(static, member, pointer)开头，以下划线连接，m_xxx
-  - 函数：小写字母和下划线连接，init_ui(), set_ui()
-	
- * 成员变量与函数基本风格二	
-  - 变量：以s/m/p(static, member, pointer)开头，mXXX
-  - 函数：小写动词+大写字母，initUi(), setUi()
+ - 小写字母和下划线连接
 
+```
+int     s_num;      // static
+int     m_size;     // member
+int*    p_array;    // pointer
+void    init_ui();
+```
 
+ - 小写字母开头和大写字母分段
+
+```
+int     sNum;       // static
+int     mSize;      // member
+int*    pArray;     // pointer
+void    initUi();
+```
+
+其实混合风格也不错：
+
+```
+int     s_num;      // static
+int     m_size;     // member
+int*    p_array;    // pointer
+void    initUi();
+```
 
 ---
 # Doxygen基本规范
