@@ -72,6 +72,8 @@ void get6()
 }
 
 // 申请二组数组的内存空间
+// 格式： T* x = new T[n]
+// 格式： T* x = (T*)malloc(sizeof(T) * n);
 // n1 : 第一组的长度，即二维数组的行
 void get7(int n1,char**& p)
 {

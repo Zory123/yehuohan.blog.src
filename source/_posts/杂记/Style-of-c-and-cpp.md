@@ -41,15 +41,21 @@ Basic Style of c and cpp.
  * 宏定义
  大写+下划线连接，例如：BIT_SET
 
- * Struct, enum, class
- 大写开头，例如：
+ * struct, enum, class：
 
 ```cpp
+// 大写开头
 typedef struct _Str
 {
 	int var;
 	_Str(int _var):var(_var){}
 }Str;
+
+// 小写带后缀
+typedef struct str_s
+{
+    int val;
+}str_t;
 ```
 
 
