@@ -70,16 +70,13 @@ UserVar : > USER_VAR,  PAGE = 1
 #ifdef __cplusplus
 #pragma DATA_SECTION("UserVar")
 #else
-#pragma DATA_SECTION(user_var,"UserVar");
+#pragma DATA_SECTION(my_var,"UserVar");
 #endif
-int my_var[10000];
+int my_var[100];
 
 /* asm源码如下 */
-    .sect "UserVar"
-my_code:
-    SUB    ACC,#1
-    BF     my_code,GEQ    
-    LRETR 
+            .global _my_var
+_my_var:    .usect "UserVar",200
 ```
 
 一个CMD部分如下：
