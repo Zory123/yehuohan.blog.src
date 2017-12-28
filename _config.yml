@@ -84,6 +84,9 @@ pagination_dir: page
 theme: 3-hexo 
 # require: (highlight: enable: false)
 
+search:
+  path: search.xml
+  field: post
   
 #===============================================================================
 # Deployment
