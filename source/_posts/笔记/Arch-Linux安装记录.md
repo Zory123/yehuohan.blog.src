@@ -626,7 +626,18 @@ sudo pacman -S adobe-source-han-sans-cn-fonts
 # (可选)安装思源体简体中文部体，中文效果比文泉好些
 pacman -S ttf-ubuntu-font-family
 # (可选)ubuntu上的字体
+
+# 手动安装consolas安体
+cd /usr/share/fonts
+mkdir consolas
+# copy consolas-font to /usr/share/fonts/consolas
+cd consolas
+sudo chmod 664 *.ttf
+sudo mkfontscale
+sudo mkfontdir
+sudo fc-cache -fv
 ```
+附：[consolas字体](https://github.com/yehuohan/dotconfigs/tree/master/cf-font)
 
 ## 对调Esc和CapsLock
 （方便Vim使用）
