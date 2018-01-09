@@ -25,7 +25,7 @@ public:
     constTest(int x):data(x){}
     ~constTest(){}
     
-    int set1(const int &n)
+    int set1(const int& n)
     {
         //n++;                  //error
         data = n;
@@ -38,9 +38,19 @@ public:
         //return data++;        //error
     }
     
-    const int get2()
+    int get2()
     {
         return data++;          //ok
+    }
+
+    int& get3()                 //用于修改data
+    {
+        return data;
+    }
+
+    const int& get4() const     //用于const constTest访问data，但不能修改data
+    {
+        return data;
     }
     
 private:
