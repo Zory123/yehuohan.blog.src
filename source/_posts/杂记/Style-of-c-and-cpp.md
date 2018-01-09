@@ -89,7 +89,7 @@ int*    pArray;     // pointer
 void    initUi();
 ```
 
-其实混合风格也不错：
+其实混合风格也不错，自己能坚持下就行：
 
 ```
 int     s_num;      // static
@@ -101,11 +101,11 @@ void    initUi();
 ---
 # Doxygen基本规范
  - 主页(mainpage)
- 写在一个主头件中，并将README.md作为subpage
+ 写在一个主头件中，并将README.md作为subpage。
  
  - 模块(group)
- 将所有defgroup写在一个文件（如：一个模块的主头文件中）中，使用addtogroup添加模块内容
+ 将所有defgroup写在一个文件（如：一个模块的主头文件中）中，使用addtogroup添加模块内容。
  
  - 文件列表(file)
- 只添加头文件
+ 只在头文件添加。
 
