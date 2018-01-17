@@ -243,7 +243,7 @@ git rm –cached <file>
 git commit -m "comments" (or 'comments')
 # 将Index中的内容提交到Local，并添加备注信息（使用单引号，可以输入多行comments）。
 
-git commit -m "comments" /file /dir
+git commit -m "comments" [-- /file /dir]
 # 只提交指定文件或目录到Local，多个文件或目录用空格隔开
 ```
 
@@ -386,6 +386,8 @@ git diff <commit_id1> <commit_id2> [-- <path/file>]
 # 查看两个commit版本的差异
 git diff --stat <branch1> <branch2> [-- <path/file>]
 # 列出两个分支的不同的文件列表
+git show <commit-id>
+# 直接查看某次commit的修改内容
 ```
 
 ---

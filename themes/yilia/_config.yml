@@ -4,9 +4,10 @@
 #===============================================================================
 menu:
   主页: /
-  #笔记: /categories/笔记/
-  #杂记: /categories/杂记/
+  笔记: /categories/笔记/
+  杂记: /categories/杂记/
   随笔: /categories/随笔/
+  Gist: /categories/Gist/
   #归档: /archives
   #标签: /tags
 
