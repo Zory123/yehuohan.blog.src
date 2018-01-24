@@ -332,7 +332,7 @@ U_s \le \cfrac{U_d}{\sqrt{3}cos\left(\theta - \cfrac{\pi}{6} \right)}
 \tag{3-11}\label{3-11}
 $$
 
-根据式$\eqref{3-11}，在输出圆形轨迹电压矢量的前提下，$U_s$的最大值为：
+根据式$\eqref{3-11}$，在输出圆形轨迹电压矢量的前提下，$U_s$的最大值为：
 
 $$
 U_{smax} = \cfrac{U_d}{\sqrt{3}}

@@ -1,5 +1,5 @@
 ---
-title: python function decorator
+title: py:function decorator
 categories:
   - Gist
 mathjax: false

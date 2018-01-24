@@ -1,5 +1,5 @@
 ---
-title: implement atan2 from atan
+title: py:implement atan2 from atan
 categories:
   - Gist
 mathjax: true
