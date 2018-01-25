@@ -5,6 +5,7 @@ categories:
 mathjax: false
 date: 2018-01-24 15:22:12
 tags:
+ - c/c++
 ---
 
 > File : auto.cpp

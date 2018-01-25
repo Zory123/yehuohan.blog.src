@@ -5,6 +5,7 @@ categories:
 mathjax: false
 date: 2018-01-18 15:46:56
 tags:
+ - c/c++
 ---
 
 > File : lambda.cpp
