@@ -1,5 +1,5 @@
 ---
-title: 从三角单位圆看Fourier
+title: gsp:从三角单位圆看Fourier
 categories:
   - Gist
 mathjax: false
