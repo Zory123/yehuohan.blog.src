@@ -74,7 +74,7 @@
 \draw [line width=1.5pt] [-latex] (us0)--++(\tris:1.2) coordinate (us1);
 \draw (us1)+(-0,-0.8) node {\Large \bm{$R_si_s$}};
 \draw [line width=1.5pt] [-latex] (us1)--+(\tris+90:3.3) coordinate (us2);
-\draw (us2)+(1.5,1.2) node [above left]{\Large \bm{$j\omega_sL_si_i$}};
+\draw (us2)+(1.5,1.2) node [above left]{\Large \bm{$j\omega_sL_si_s$}};
 
 % us轴
 \draw [line width=1.5pt] [-latex] (O1)--+(us2);
@@ -116,7 +116,7 @@
 \draw [line width=1.5pt] [-latex] (us0)--++(\tris:1.2) coordinate (us1);
 \draw (us1)+(-0,-0.8) node {\Large \bm{$R_s\dot{I}_s$}};
 \draw [line width=1.5pt] [-latex] (us1)--+(\tris+90:3.3) coordinate (us2);
-\draw (us2)+(1.5,1.2) node [above left]{\Large \bm{$j\omega_sL_s\dot{I}_i$}};
+\draw (us2)+(1.5,1.2) node [above left]{\Large \bm{$j\omega_sL_s\dot{I}_s$}};
 
 \draw [line width=1.5pt] [-latex] (O2)--(us2); 
 \draw (us2)+(1.5,-1) node [below left] {\LARGE \bm{$\dot{U}_s$}};
