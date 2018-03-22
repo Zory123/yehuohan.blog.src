@@ -11,8 +11,6 @@ mathjax: false
 > Type :
 > Brief :
 
-<!-- more -->
-
 ---
 
 ```type

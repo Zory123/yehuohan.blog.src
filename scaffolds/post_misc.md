@@ -7,4 +7,3 @@ categories:
 mathjax: false
 ---
 
-<!-- more -->
