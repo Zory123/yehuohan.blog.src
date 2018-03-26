@@ -43,6 +43,16 @@ typedef struct StrOk
 }StrOk;
 ```
 
+ - struct, enum, class： 小写开头+下划线母分段
+
+```cpp
+typedef struct str_ok_s
+{
+	int var;
+	str_ok_s(int _var):var(_var){}
+}str_ok_t;
+```
+
 ### c变量和函数定义
  - 小写字母+下划线，以前缀分类
 
