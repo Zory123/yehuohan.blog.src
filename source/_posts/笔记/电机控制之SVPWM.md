@@ -388,10 +388,40 @@ $$
 <span id = "图3-3"></span>
 > ![图3-2 时间分配](3-03.png)
 
+切换时刻计算公式如下：
+
+$$
+\begin{cases}
+t_a &= \cfrac{T_s - T_a - T_b}{4} \\
+t_b &= t_a + \cfrac{T_a}{2} = \cfrac{T_s + T_a - T_b}{4} \\
+t_c &= t_b + \cfrac{T_b}{2} = \cfrac{T_s + T_a + T_b}{4} \\
+\end{cases}
+$$
+
+而$t_a', t_b', t_c'$由对称关系可以即可求取。
 所有扇区的矢量时间分配如[图3-4](#图3-4)所示：
 
 <span id = "图3-4"></span>
 > ![图3-4 时间分配](3-04.png)
+
+所有扇区的切换时刻如下表所示（$TCM_a,TCM_b,TCM_c$分别表示三相的切换时刻）：
+
+$$
+\begin{array}{l | c c c c c c }
+\hline
+\text{扇区} &I   &II  &III &IV  &V   &VI \\
+\hline
+TCM_a       &t_a &t_b &t_c &t_c &t_b &t_a \\
+\hline
+TCM_b       &t_b &t_a &t_a &t_b &t_c &t_c \\
+\hline
+TCM_c       &t_c &t_c &t_b &t_a &t_a &t_b \\
+\hline
+\end{array}
+\\
+\text{表3-3 七段式通切换时刻}
+$$
+
 
 矢量时间分配对应的电流仿真波形如[图3-5](#图3-5)所示：
 

@@ -1,5 +1,5 @@
 ---
-title: 常用工具之matplotlib基本使用
+title: 常用工具之matplotlib使用
 categories:
   - 笔记
 mathjax: false
