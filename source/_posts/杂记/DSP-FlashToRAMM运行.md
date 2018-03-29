@@ -13,7 +13,7 @@ tags:
 <!-- more -->
 
 
- 
+
 ---
 # CMD基本介绍
  - MEMORY(资源空间声明)
@@ -90,8 +90,8 @@ SECTIONS
 
     /* Allocate data areas: */
     .const           : > DRAMH0,      PAGE = 1
-    .econst          : > DRAMH0,      PAGE = 1      
-   
+    .econst          : > DRAMH0,      PAGE = 1
+
     /* Allocate user var:   */
     UserVar          : > USER_VAR,    PAGE = 1
 ```
@@ -121,7 +121,7 @@ code_start -> wd_disable -> c_int00 -> main() -> ...
 code_start -> wd_disable -> c_int00 -> main() -> memcpy() -> ...
 其中，memcpy()用于将Flash中的代码复制到RAM中。
 ```
- 
+
  - 从Flash复制所有代码到RAM中运行：
 
 ```
@@ -132,32 +132,40 @@ code_start -> wd_disable -> copy_sections -> c_int00 -> main() -> ...
 
 ## 从Flash到RAM的CMD编写
 
- - code_start, wd_disable, copy_sections需要在Flash中运行： 
+ - code_start, wd_disable, copy_sections需要在Flash中运行：
 
 ```
     codestart       : > BEGIN_FLASH,    PAGE = 0
-    wddisable       : > FLASHA,         PAGE = 0    
+    wddisable       : > FLASHA,         PAGE = 0
     copysections    : > FLASHA,         PAGE = 0
 ```
 
  - 已初始化段需要放于Flash中，通过copy_sections复制到RAM中：
 
-| Initialized Sections                                 | Uninitialized Sections                       |
-| :---                                                 | :---                                         |
-| .cinit, .const, .econst, <br> .pinit, .switch, .text | .bss, .ebss, .stack, <br> .sysmem, .esysmeme |
+| Initialized Sections                            | Uninitialized Sections   |
+| :---                                            | :---                     |
+| .binit, .cinit, .econst, .pinit, .switch, .text | .ebss, .stack, .esysmeme |
 
-以.text为例：
+（.bss, .const, .sysmem是旧的段分配模型，已经不再支持。）
+
+各段的解释如下：
+![Initialized Sections](1.png)
+![Uninitialized Sections](2.png)
+
+copysections的代码，以.text为例：
+
 ```
-    .text           :   LOAD = FLASHA,      PAGE = 0   /* can be ROM */ 
+    .text           :   LOAD = FLASHA,      PAGE = 0   /* can be ROM */
                         RUN = RAM_L0L1L2L3, PAGE = 0   /* must be CSM secured RAM */
-                        LOAD_START(_text_loadstart),   /* 定义.text段的加载起始地址为_text_loadstart */    
+                        LOAD_START(_text_loadstart),   /* 定义.text段的加载起始地址为_text_loadstart */
                         RUN_START(_text_runstart),     /* 定义.text段的运行起始地址为_text_runstart */
                         SIZE(_text_size)               /* 定义.text段的代码长度为_text_size */
-    /* 
+    /*
     按上述CMD代码定义，.text段的代码会烧到FLASHA中，开电运行时，会选将FLASHA中
     的.text代码复制到RAM_L0L1L2L3中再运行
     */
 ```
+
 LOAD_START, RUN_START, SIZE的具体意义，可以[参考汇编手册](http://www.ti.com/lit/ug/spru513n/spru513n.pdf)
 在CMD中定义的变量(`_text_loadstart`等)用于copy_sections中，实现从Flash到RAM的复制，部分copy_sections代码如下：
 
@@ -172,7 +180,7 @@ copy_sections:
     LCR  copy                           ; Branch to Copy
     LB _c_int00                         ; Branch to start of boot.asm in RTS library
 
-copy:   
+copy:
     B return,EQ                         ; Return if ACC is Zero (No section to copy)
     SUBB ACC,#1
     RPT AL                              ; Copy Section From Load Address to
@@ -192,9 +200,3 @@ LOAD_START(_RamfuncsLoadStart)
 /* 附：C/C++中变量编译成汇编代码时，会在变量前加下划线，可查看map文件了解 */
 extern Uint16 RamfuncsLoadStart
 ```
-
-
-
-
-
- 

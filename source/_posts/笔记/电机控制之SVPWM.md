@@ -404,18 +404,18 @@ $$
 <span id = "图3-4"></span>
 > ![图3-4 时间分配](3-04.png)
 
-所有扇区的切换时刻如下表所示（$TCM_a,TCM_b,TCM_c$分别表示三相的切换时刻）：
+所有扇区的切换时刻如下表所示（$Tcm1,Tcm2,Tcm3$分别表示三相的切换时刻）：
 
 $$
 \begin{array}{l | c c c c c c }
 \hline
 \text{扇区} &I   &II  &III &IV  &V   &VI \\
 \hline
-TCM_a       &t_a &t_b &t_c &t_c &t_b &t_a \\
+Tcm1        &t_a &t_b &t_c &t_c &t_b &t_a \\
 \hline
-TCM_b       &t_b &t_a &t_a &t_b &t_c &t_c \\
+Tcm2        &t_b &t_a &t_a &t_b &t_c &t_c \\
 \hline
-TCM_c       &t_c &t_c &t_b &t_a &t_a &t_b \\
+Tcm3        &t_c &t_c &t_b &t_a &t_a &t_b \\
 \hline
 \end{array}
 \\
