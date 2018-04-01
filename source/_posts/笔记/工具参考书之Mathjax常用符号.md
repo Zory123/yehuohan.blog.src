@@ -1,5 +1,5 @@
 ---
-title: MathJax常用符号
+title: 工具参考书之Mathjax常用符号
 categories:
   - 笔记
 mathjax: true

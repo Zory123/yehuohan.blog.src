@@ -1,6 +1,6 @@
 
 ---
-title: 记录GCC,GDB的使用
+title: 工具参考书之GCC基本使用
 date: 2017-06-07 01:05:36
 tags:
  - gcc

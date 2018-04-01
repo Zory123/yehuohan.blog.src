@@ -34,7 +34,7 @@ origin和length都要根据Data Manual中的Memory Maps部分进行配置。
 */
 ```
 
-一个简单的实例，如下：
+一个简单的实例，如下(数值用16进制表示，与Memory Maps中相对应，方便查看)：
 
 ```cpp
 MEMORY
@@ -146,7 +146,7 @@ code_start -> wd_disable -> copy_sections -> c_int00 -> main() -> ...
 | :---                                            | :---                     |
 | .binit, .cinit, .econst, .pinit, .switch, .text | .ebss, .stack, .esysmeme |
 
-（.bss, .const, .sysmem是旧的段分配模型，已经不再支持。）
+（.bss, .const, .sysmem是旧的段分配模型，已经不再使用。）
 
 各段的解释如下：
 ![Initialized Sections](1.png)
