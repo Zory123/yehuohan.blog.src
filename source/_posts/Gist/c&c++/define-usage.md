@@ -1,11 +1,11 @@
 ---
-title: c/c++:define usage
+title: 'c/c++:define usage'
 categories:
   - Gist
 mathjax: false
-date: 2017-08-09 13:23:36
 tags:
- - c/c++
+  - c/c++
+date: 2017-08-09 13:23:36
 ---
 
 > File : define usage.h

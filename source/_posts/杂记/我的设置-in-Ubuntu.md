@@ -1,11 +1,11 @@
 ---
 title: 我的设置 in Ubuntu
-date: 2017-06-07 00:38:29
 tags:
- - linux
- - ubuntu
+  - linux
+  - ubuntu
 categories:
- - 杂记
+  - 杂记
+date: 2017-06-07 00:38:29
 ---
 
 

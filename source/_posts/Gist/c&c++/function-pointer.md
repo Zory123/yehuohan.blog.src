@@ -1,11 +1,11 @@
 ---
-title: c/c++:function pointer
+title: 'c/c++:function pointer'
 categories:
   - Gist
 mathjax: false
-date: 2017-08-09 13:28:41
 tags:
- - c/c++
+  - c/c++
+date: 2017-08-09 13:28:41
 ---
 
 > File : func_ptr.cpp

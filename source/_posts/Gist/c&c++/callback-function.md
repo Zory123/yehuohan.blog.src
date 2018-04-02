@@ -1,11 +1,11 @@
 ---
-title: c/c++:回调函数
+title: 'c/c++:回调函数'
 categories:
   - Gist
 mathjax: false
-date: 2017-08-09 13:20:28
 tags:
- - c/c++
+  - c/c++
+date: 2017-08-09 13:20:28
 ---
 
 > File : cbfunc.cpp

@@ -3,9 +3,9 @@ title: DSP FlashToRAM运行
 categories:
   - 杂记
 mathjax: false
-date: 2017-09-08 19:15:09
 tags:
- - dsp
+  - dsp
+date: 2017-09-08 19:15:09
 ---
 
 简单介绍DSP的CMD文件，以及FlashToRAM配置。

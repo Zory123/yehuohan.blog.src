@@ -1,12 +1,11 @@
-
 ---
 title: Arch Linux安装记录
 categories:
   - 笔记
-date: 2017-06-11 23:36:58
 tags:
- - linux
- - arch
+  - linux
+  - arch
+date: 2017-06-11 23:36:58
 ---
 
 记录Arch Linux的安装过程。

@@ -2,10 +2,10 @@
 title: Ubuntu16.04搭建LAMP架构服务器
 categories:
   - 杂记
-date: 2017-06-09 00:21:01
 tags:
- - ubuntu
- - lamp
+  - ubuntu
+  - lamp
+date: 2017-06-09 00:21:01
 ---
 
 

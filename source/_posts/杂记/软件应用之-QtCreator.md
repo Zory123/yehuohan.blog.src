@@ -2,9 +2,9 @@
 title: 软件应用之 QtCreator
 categories:
   - 杂记
-date: 2017-07-03 17:52:50
 tags: qt
 mathjax: false
+date: 2017-07-03 17:52:50
 ---
 
 QtCreator使用记录。

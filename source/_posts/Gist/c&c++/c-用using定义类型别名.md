@@ -3,9 +3,9 @@ title: 'c++:用using定义类型别名'
 categories:
   - Gist
 mathjax: false
-date: 2018-02-01 16:14:03
 tags:
   - c/c++
+date: 2018-02-01 16:14:03
 ---
 
 > File : using.cpp

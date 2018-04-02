@@ -1,11 +1,11 @@
 ---
-title: c/c++:指针与数组
+title: 'c/c++:指针与数组'
 categories:
   - Gist
 mathjax: false
-date: 2017-08-09 13:17:57
 tags:
- - c/c++
+  - c/c++
+date: 2017-08-09 13:17:57
 ---
 
 > File : pointer and array.cpp

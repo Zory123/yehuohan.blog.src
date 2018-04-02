@@ -1,11 +1,11 @@
 ---
-title: c/c++:const修饰函数
+title: 'c/c++:const修饰函数'
 categories:
   - Gist
 mathjax: false
-date: 2017-08-09 13:22:04
 tags:
- - c/c++
+  - c/c++
+date: 2017-08-09 13:22:04
 ---
 
 > File : const_decoration.cpp

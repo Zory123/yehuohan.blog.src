@@ -1,11 +1,11 @@
 ---
-title: py:function decorator
+title: 'py:function decorator'
 categories:
   - Gist
 mathjax: false
-date: 2017-08-09 21:16:24
 tags:
- - python
+  - python
+date: 2017-08-09 21:16:24
 ---
 
 > File : func_decorator.py

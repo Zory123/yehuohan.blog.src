@@ -3,9 +3,9 @@ title: loan calculation
 categories:
   - Gist
 mathjax: false
-date: 2017-08-09 11:26:37
 tags:
- - python
+  - python
+date: 2017-08-09 11:26:37
 ---
 
 > File : [loan_calculation.py](loan_calculation.py) *(直接右键另存为下载)*

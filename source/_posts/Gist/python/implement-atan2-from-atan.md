@@ -1,11 +1,11 @@
 ---
-title: py:implement atan2 from atan
+title: 'py:implement atan2 from atan'
 categories:
   - Gist
 mathjax: true
-date: 2017-08-15 17:42:53
 tags:
- - python
+  - python
+date: 2017-08-15 17:42:53
 ---
 
 > File : [atan2.py](atan2.py) *(直接右键另存为下载)*

@@ -3,9 +3,9 @@ title: 'c/c++:在main之前运行指定代码'
 categories:
   - Gist
 mathjax: false
-date: 2018-03-18 23:40:05
 tags:
- - c/c++
+  - c/c++
+date: 2018-03-18 23:40:05
 ---
 
 > File : before_main.cpp

@@ -3,9 +3,9 @@ title: 电机控制之SVPWM
 categories:
   - 笔记
 mathjax: true
-date: 2017-10-29 23:20:43
 tags:
- - 电机控制
+  - 电机控制
+date: 2017-10-29 23:20:43
 ---
 
 

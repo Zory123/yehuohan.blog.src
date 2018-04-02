@@ -2,8 +2,8 @@
 title: 文件系统 of Linux
 categories:
   - 杂记
-date: 2017-06-09 00:02:37
 tags: linux
+date: 2017-06-09 00:02:37
 ---
 
 记录平时了解到的Linux中的一些文件目录的作用

@@ -1,12 +1,12 @@
 ---
 title: U盘中的Boot
 categories:
- - 笔记
+  - 笔记
+tags:
+  - boot
+  - refind
+  - grub4dos
 date: 2017-06-08 23:32:50
-tags: 
- - boot
- - refind
- - grub4dos
 ---
 
 

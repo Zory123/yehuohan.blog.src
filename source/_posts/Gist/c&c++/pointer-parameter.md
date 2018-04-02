@@ -1,11 +1,11 @@
 ---
-title: c/c++:指针作为函数参数
+title: 'c/c++:指针作为函数参数'
 categories:
   - Gist
 mathjax: false
-date: 2017-08-09 13:37:27
 tags:
- - c/c++
+  - c/c++
+date: 2017-08-09 13:37:27
 ---
 
 > File : pointer parameter.cpp

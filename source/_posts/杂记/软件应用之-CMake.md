@@ -1,11 +1,11 @@
 ---
 title: 软件应用之 CMake
 categories:
- - 杂记
+  - 杂记
 mathjax: false
-date: 2017-06-17 00:21:49
 tags:
- - cmake
+  - cmake
+date: 2017-06-17 00:21:49
 ---
 
 CMake使用记录。

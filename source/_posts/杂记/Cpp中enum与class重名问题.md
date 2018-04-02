@@ -3,9 +3,9 @@ title: C++中enum和class重名问题
 categories:
   - 杂记
 mathjax: false
-date: 2017-10-02 23:10:37
 tags:
- - c/c++
+  - c/c++
+date: 2017-10-02 23:10:37
 ---
 
 C++中enum和class重名的时候，会有一个很坑人的提示。

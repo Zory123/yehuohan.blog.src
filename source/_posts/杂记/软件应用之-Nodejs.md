@@ -3,9 +3,9 @@ title: 软件应用之 node.js
 categories:
   - 杂记
 mathjax: false
-date: 2017-08-11 23:02:41
 tags:
- - node.js
+  - node.js
+date: 2017-08-11 23:02:41
 ---
 
 几个基于node.js的工具，记一下node.js以及相应工具的基本应用。

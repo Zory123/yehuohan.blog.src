@@ -3,9 +3,9 @@ title: make slide
 categories:
   - Gist
 mathjax: false
-date: 2017-08-09 11:04:47
 tags:
- - python
+  - python
+date: 2017-08-09 11:04:47
 ---
 
 > File : [make_slide.py](make_slide.py) *(直接右键另存为下载)*

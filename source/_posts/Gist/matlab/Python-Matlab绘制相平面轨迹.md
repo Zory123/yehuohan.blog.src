@@ -3,10 +3,10 @@ title: Python-Matlab绘制相平面轨迹
 categories:
   - Gist
 mathjax: true
-date: 2017-12-19 11:20:00
 tags:
- - python
- - matlab
+  - python
+  - matlab
+date: 2017-12-19 11:20:00
 ---
 
 > File : [python实现-phase.py](phase.py)

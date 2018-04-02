@@ -3,9 +3,9 @@ title: Qt结束线程
 categories:
   - Gist
 mathjax: false
-date: 2017-10-09 18:59:23
 tags:
- - qt
+  - qt
+date: 2017-10-09 18:59:23
 ---
 
 > File : thread.h

@@ -1,11 +1,11 @@
 ---
-title: c/c++:dll动态库生成
+title: 'c/c++:dll动态库生成'
 categories:
   - Gist
 mathjax: false
-date: 2017-08-09 15:50:46
 tags:
- - c/c++
+  - c/c++
+date: 2017-08-09 15:50:46
 ---
 
 > File : make_dll.h, make_dll.c

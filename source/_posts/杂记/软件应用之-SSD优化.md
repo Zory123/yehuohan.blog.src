@@ -2,8 +2,8 @@
 title: 软件应用之 SSD优化
 categories:
   - 杂记
-date: 2017-06-17 00:52:53
 tags: ssd
+date: 2017-06-17 00:52:53
 ---
 
 关于SSD一些优化的建议。

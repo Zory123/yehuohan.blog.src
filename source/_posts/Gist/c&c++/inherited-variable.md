@@ -1,11 +1,11 @@
 ---
-title: c/c++:关于类成员变量的继承
+title: 'c/c++:关于类成员变量的继承'
 categories:
   - Gist
 mathjax: false
-date: 2017-08-09 13:30:56
 tags:
- - c/c++
+  - c/c++
+date: 2017-08-09 13:30:56
 ---
 
 > File : inherited variable.cpp

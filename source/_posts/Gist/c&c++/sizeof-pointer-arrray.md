@@ -1,11 +1,11 @@
 ---
-title: c/c++:sizeof pointer and array
+title: 'c/c++:sizeof pointer and array'
 categories:
   - Gist
 mathjax: false
-date: 2017-08-09 13:08:56
 tags:
- - c/c++
+  - c/c++
+date: 2017-08-09 13:08:56
 ---
 
 > File : sizeof_ptrar.cpp

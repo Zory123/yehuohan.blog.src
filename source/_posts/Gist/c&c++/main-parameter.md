@@ -1,11 +1,11 @@
 ---
-title: c/c++:主函数参数使用
+title: 'c/c++:主函数参数使用'
 categories:
   - Gist
 mathjax: false
-date: 2017-08-09 13:33:18
 tags:
- - c/c++
+  - c/c++
+date: 2017-08-09 13:33:18
 ---
 
 > File : main_param.cpp

@@ -3,9 +3,9 @@ title: 'C++中public,protected,private与继承的关系'
 categories:
   - 杂记
 mathjax: false
-date: 2017-09-30 00:02:39
 tags:
- - c/c++
+  - c/c++
+date: 2017-09-30 00:02:39
 ---
 
 记下public, protected, private与类继承的基本关系。

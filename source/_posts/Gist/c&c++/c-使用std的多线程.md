@@ -3,9 +3,9 @@ title: 'c++:使用std的多线程'
 categories:
   - Gist
 mathjax: false
-date: 2018-01-25 10:26:09
 tags:
- - c/c++
+  - c/c++
+date: 2018-01-25 10:26:09
 ---
 
 > File : [thread.cpp](thread.cpp) *(直接右键另存为下载)*

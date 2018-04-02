@@ -1,11 +1,11 @@
 ---
-title: c/c++:常量作为地址
+title: 'c/c++:常量作为地址'
 categories:
   - Gist
 mathjax: false
-date: 2017-08-09 13:38:49
 tags:
- - c/c++
+  - c/c++
+date: 2017-08-09 13:38:49
 ---
 
 > File : const value address.cpp

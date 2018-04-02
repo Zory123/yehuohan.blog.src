@@ -2,10 +2,10 @@
 title: ubuntu建立qt的默认打开方式
 categories:
   - 杂记
+tags:
+  - qt
+  - ubuntu
 date: 2017-06-08 00:50:17
-tags: 
- - qt
- - ubuntu
 ---
 
 

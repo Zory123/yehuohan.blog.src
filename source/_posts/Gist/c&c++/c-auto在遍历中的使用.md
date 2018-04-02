@@ -3,9 +3,9 @@ title: 'c++:auto在遍历中的使用'
 categories:
   - Gist
 mathjax: false
-date: 2018-01-24 15:22:12
 tags:
- - c/c++
+  - c/c++
+date: 2018-01-24 15:22:12
 ---
 
 > File : auto.cpp

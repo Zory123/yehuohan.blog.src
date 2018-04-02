@@ -1,11 +1,11 @@
 ---
-title: c/c++:用宏配置路径
+title: 'c/c++:用宏配置路径'
 categories:
   - Gist
 mathjax: false
-date: 2017-08-09 11:17:04
 tags:
- - c/c++
+  - c/c++
+date: 2017-08-09 11:17:04
 ---
 
 > File : path_define.h

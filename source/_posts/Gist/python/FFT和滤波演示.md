@@ -3,9 +3,9 @@ title: FFT和滤波演示
 categories:
   - Gist
 mathjax: false
-date: 2017-08-21 21:45:09
 tags:
- - python
+  - python
+date: 2017-08-21 21:45:09
 ---
 
 > File : [fft_and_filter.py](fft_and_filter.py) *(直接右键另存为下载)*

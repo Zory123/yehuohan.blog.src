@@ -3,9 +3,9 @@ title: 'c++:lambda表达式'
 categories:
   - Gist
 mathjax: false
-date: 2018-01-18 15:46:56
 tags:
- - c/c++
+  - c/c++
+date: 2018-01-18 15:46:56
 ---
 
 > File : lambda.cpp

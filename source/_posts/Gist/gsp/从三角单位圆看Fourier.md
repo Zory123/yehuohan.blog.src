@@ -1,11 +1,11 @@
 ---
-title: gsp:从三角单位圆看Fourier
+title: 'gsp:从三角单位圆看Fourier'
 categories:
   - Gist
 mathjax: false
-date: 2017-08-17 15:07:56
 tags:
- - gsp
+  - gsp
+date: 2017-08-17 15:07:56
 ---
 
 > File : [Fourier_square_wave.gsp](Fourier_square_wave.gsp) *(几何画板文件，直接右键另存为下载)*

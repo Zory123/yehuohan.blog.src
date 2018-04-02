@@ -1,11 +1,11 @@
 ---
-title: c/c++:生成时间string
+title: 'c/c++:生成时间string'
 categories:
   - Gist
 mathjax: false
-date: 2017-08-09 13:05:30
 tags:
- - c/c++
+  - c/c++
+date: 2017-08-09 13:05:30
 ---
 
 > File : time2string.cpp

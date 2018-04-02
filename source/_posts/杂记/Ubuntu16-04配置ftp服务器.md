@@ -1,11 +1,11 @@
 ---
 title: Ubuntu16.04配置ftp服务器
 categories:
- - 杂记
+  - 杂记
+tags:
+  - linux
+  - ftp
 date: 2017-06-09 00:31:28
-tags: 
- - linux
- - ftp
 ---
 
 

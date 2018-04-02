@@ -1,12 +1,12 @@
 ---
 title: linux下opencv3.1.0的基本使用
 categories:
- - 笔记
+  - 笔记
+tags:
+  - ubuntu
+  - opencv
+  - qt
 date: 2017-06-09 00:11:05
-tags: 
- - ubuntu
- - opencv
- - qt
 ---
 
 

@@ -3,9 +3,9 @@ title: '[转]cin.tie与sync_with_stdio加速输入输出'
 categories:
   - 杂记
 mathjax: false
-date: 2018-03-19 00:00:00
 tags:
- - c/c++
+  - c/c++
+date: 2018-03-19 00:00:00
 ---
 
 [文章原链接：cin.tie与sync_with_stdio加速输入输出](http://www.hankcs.com/program/cpp/cin-tie-with-sync_with_stdio-acceleration-input-and-output.html)

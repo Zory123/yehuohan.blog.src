@@ -1,11 +1,11 @@
 ---
-title: c/c++:可变参数用法
+title: 'c/c++:可变参数用法'
 categories:
   - Gist
 mathjax: false
-date: 2017-08-09 13:35:17
 tags:
- - c/c++
+  - c/c++
+date: 2017-08-09 13:35:17
 ---
 
 > File : variable list.cpp

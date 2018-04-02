@@ -1,13 +1,12 @@
-
 ---
 title: 工具参考书之GCC基本使用
-date: 2017-06-07 01:05:36
 tags:
- - gcc
- - c/c++
- - linux
+  - gcc
+  - c/c++
+  - linux
 categories:
- - 笔记
+  - 笔记
+date: 2017-06-07 01:05:36
 ---
 
 

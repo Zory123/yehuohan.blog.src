@@ -1,11 +1,11 @@
 ---
-title: c/c++:异常抛出(throw and catch)
+title: 'c/c++:异常抛出(throw and catch)'
 categories:
   - Gist
 mathjax: false
-date: 2017-08-09 15:48:39
 tags:
- - c/c++
+  - c/c++
+date: 2017-08-09 15:48:39
 ---
 
 > File : throw and catch.cpp

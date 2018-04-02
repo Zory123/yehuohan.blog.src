@@ -3,9 +3,9 @@ title: windows下pip install utf-8问题
 categories:
   - 杂记
 mathjax: false
-date: 2018-01-21 16:02:44
 tags:
- - python
+  - python
+date: 2018-01-21 16:02:44
 ---
 
 windows下使用`pip install`时，有时会遇到utf-8编码问。

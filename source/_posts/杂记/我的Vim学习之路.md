@@ -1,11 +1,11 @@
 ---
 title: 我的Vim学习之路
 categories:
- - 杂记
+  - 杂记
 mathjax: false
+tags:
+  - vim
 date: 2017-07-10 23:48:41
-tags: 
- - vim
 ---
 
 在此文中，我会讲述我学习使用Vim的过程。

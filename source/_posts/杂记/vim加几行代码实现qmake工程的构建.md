@@ -3,9 +3,9 @@ title: Vim加几行代码实现qmake工程的构建
 categories:
   - 杂记
 mathjax: false
-date: 2017-09-28 20:43:11
 tags:
- - vim
+  - vim
+date: 2017-09-28 20:43:11
 ---
 
 在vimrc加几行代码，实现qmake工程的构建，直接用vim简单实现qt-IDE。

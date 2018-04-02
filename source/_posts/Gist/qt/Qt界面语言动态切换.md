@@ -3,9 +3,9 @@ title: Qt界面语言动态切换
 categories:
   - Gist
 mathjax: false
-date: 2017-09-29 21:18:18
 tags:
- - qt
+  - qt
+date: 2017-09-29 21:18:18
 ---
 
 > File : [lang.h 主要程序](lang.h) *(直接右键另存为下载)*

@@ -3,9 +3,9 @@ title: Linux自动挂载权限问题
 categories:
   - 杂记
 mathjax: false
-date: 2017-09-28 19:56:50
 tags:
- - linux
+  - linux
+date: 2017-09-28 19:56:50
 ---
 
 查到的关于Linux自动挂载设备时的权限问题的资料。
