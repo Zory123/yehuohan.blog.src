@@ -93,6 +93,7 @@ search:
 # Dependencies: https://github.com/xu-song/hexo-auto-category
 auto_category:
  enable: true
+ render_drafts: false
  depth: 1
  
 
