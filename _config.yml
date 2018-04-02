@@ -88,7 +88,12 @@ theme: 3-hexo
 search:
   path: search.xml
   field: post
+
+# Generate categories from directory-tree
+# Dependencies: https://github.com/xu-song/hexo-auto-category
+auto_category: false
  
+
 #===============================================================================
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
