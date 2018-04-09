@@ -3,13 +3,14 @@ title: 工具参考书之NumPy使用
 categories:
   - 笔记
 mathjax: false
-date: 2018-03-08 14:15:12
 tags:
+  - numpy
+date: 2018-03-08 14:15:12
 ---
 
 参考书籍：
-《Python数据分析基础教程：NumPy学习指南》（第二版），Lvan Ldris
 [NumPy: Quickstart tutorial](https://docs.scipy.org/doc/numpy/user/quickstart.html)
+《Python数据分析基础教程：NumPy学习指南》（第二版），Lvan Ldris
 
 ---
 
@@ -32,7 +33,7 @@ NumPy的数组类为ndarray，这是一个所有的元素都是一种类型、�
  - `np.ndarray`：多维数组类
  - `np.dtype`：数据类型类
 
-```python3
+```python
 dt = np.dtype(np.int32)      # 32-bit integer
 dt = np.dtype(np.complex128) # 128-bit complex floating-point number
 ```
@@ -58,7 +59,7 @@ a =
  - `a.imag`              : 复数数组的虚部
  - `a.flat`              : 数组迭代器，示例如下
 
-```python3
+```python
 print([i for i in a.flat])  # 将a当作一维数组，遍历a中所有元素
 print(a.flat[0])            # 将a当作一维数组，访问a[0]
 print(a.flat[[10,3]])       # 将a当作一维数组，再取a[10]和a[3]组成一个list
@@ -68,7 +69,7 @@ print(a.flat[[10,3]])       # 将a当作一维数组，再取a[10]和a[3]组成�
 
  - `arange, array`
 
-```python3
+```python
 a = np.arange(1, 5, 2, dtype=int) # 创建一维数组[1 3]，元素类型为int
 c = np.arange(15).reshape(3, 5)   # 使用reshape创建3x5的多维数组
 
@@ -79,7 +80,7 @@ b = np.array([a, np.arange(2)], dtype=np.float)
 
  - `empty, ones, zeros, full`
 
-```python3
+```python
 a = np.ones(3, dtype=int)           # 创建一维数组[1 1 1]
 b = np.ones((2, 3), dtype=float)    # 创建2x3的float数组，元素初始值为1.0
 c = np.ones_like(b, dtype=int)      # 创建和b相同2x3维度的int数组，无素初始值为1
@@ -92,7 +93,7 @@ c = np.ones_like(b, dtype=int)      # 创建和b相同2x3维度的int数组，�
 
  - `eye, identity`：创建单位矩阵数组
 
-```python3
+```python
 a = np.eye(3, dtype=float)  # 创建二维3x3的单位矩阵数组
 a = np.eye(3, 4)            # 创建二维3x4的单位矩阵数组
 b = np.identity(3)          # 创建3x3的单位矩阵数组
@@ -100,7 +101,7 @@ b = np.identity(3)          # 创建3x3的单位矩阵数组
 
  - `fromstring, fromfile, loadtxt`：从字符或文件创建数组
 
-```python3
+```python
 b = np.fromstring('1, 4, 5', dtype=int, sep=',' )
 
 b = np.fromfile('test.txt', dtype=int, count=3, sep=',')
@@ -114,7 +115,7 @@ a = np.loadtxt('test.txt', comments='#',delimiter=',')
 
  - `linspace, logspace, geomspace`：等间距创建一组数组
 
-```python3
+```python
 a = np.linspace(1, 4, num=5, dtype=float)   # 范围从1到4
 a = np.logspace(1, 2, num=5, dtype=float)   # 取10^n，n从1到2等间距取5个数
 a = np.geomspace(1, 4, num=3, dtype=float)  # 创建等比数列，范围从1到4
@@ -122,7 +123,7 @@ a = np.geomspace(1, 4, num=3, dtype=float)  # 创建等比数列，范围从1到
 
  - `meshgrid`：等间距创建多维数组
 
-```python3
+```python
 a = np.arange(-2, 2, 1)     # 竖线a = [-2 -1 0 1 2]
 b = np.arange(-2, 2, 1)     # 横线b = [-2 -1 0 1 2]
 x, y = np.meshgrid(a, b)    # 平面坐标x,y竖线和横线的相交坐标点
@@ -134,7 +135,7 @@ meshgrid示意图如下（[原图地址](https://zhuanlan.zhihu.com/p/29663486)�
 
  - `diag, diagflat, tri`：创建特殊矩阵数组
 
-```python3
+```python
 a = np.diag(np.arange(5))        # 创建对角矩阵数组
 a = np.diagflat(np.arange(3), 1) # 对角线向上移1一个单位的对角矩阵数组
 a = np.tri(3, 4)                 # 创建三角矩阵数组
@@ -147,7 +148,7 @@ a = np.tri(3, 4)                 # 创建三角矩阵数组
 
 一维数组可以被索引、切片和迭代，就像list和其它Python序列。多维数组每个轴有一个索引，这些索引由一个逗号分割的元组给出。
 
-```python3
+```python
 a = np.array([[-1,2], [3,4]])
 print(a[0,1])               # 索引单个元素
 print(a[0][1])              # 索引单个元素
@@ -160,7 +161,7 @@ print([i for i in a[-1]])   # 迭代第-1维中的所有元素
 
  - NumPy数组有水平组合、垂直组合和深度组合等多种组合方式，可以用`vstack,dstack,hstack,column_stack,row_stack和concatenate`函数来完成。
 
-```python3
+```python
 a = np.array([[-1,2], [3,4]])
 b = np.array([[6,8], [9,6]])
 c = np.hstack((a,b))    # 水平组合
@@ -173,7 +174,7 @@ c = np.concatenate((a,b), axis=2)   # 在维度2方向上组合，即深度组�
 
 深度组合，可以看成两个二维坐标值合成三维坐标：
 
-```python3
+```python
 a = np.linspace(-1, 1, 3)
 b = np.linspace(-1, 1, 3)
 x,y = np.meshgrid(a, b)
@@ -195,7 +196,7 @@ c=
 
  - NumPy数组同样可以进行水平、垂直或深度分割，可以`hsplit、 vsplit、 dsplit和split`函数来完成。
 
-```python3
+```python
 a = np.array([[-1,2], [3,4]])
 c = np.hsplit(a, 2)     # 水平分割，分割的数组保存在list中
 c = np.vsplit(a, 2)     # 垂直分割，分割的数组保存在list中
@@ -222,7 +223,7 @@ a **= 2             # a中的每个元素进行 **=2 运算
 
 Python的许多内置一元函数，也作为ndarray的成员方法实现了。
 
-```python3
+```python
 a = np.array([[1,2], [3,4]])
 c = a.sum()         # a中所有元素求和
 c = a.min(axis=0)   # 按维度（用axis指定维度）求最小值
@@ -233,7 +234,7 @@ c = a.mean(axix=1)  # 按维度求平均
 
 NumPy提供了常用的数学函数，如`sin`,`cos`,`exp`等，NumPy称之为`通用函数(ufunc)`。`通用函数`也是按元素计算的。
 
-```python3
+```python
 a = np.array([[1,2], [3,4]])
 c = np.abs(a)
 c = np.sin(a)
@@ -250,7 +251,7 @@ c = np.std(a, axis=0)    # 按维度求标准仿差
 
  - 完全不拷贝，只是指针的赋值
 
-```python3
+```python
 a = np.arange(1, 5)
 b = a       # 简单赋值，即有id(a) = id(b)，修改b，则同样会修改a
 
@@ -261,7 +262,7 @@ f(a)        # 作为函数参数传递，相当于按址传递
 
  - view和浅拷贝
 
-```python3
+```python
 a = np.arange(1, 5)
 b = a.view()            # a与b共享数组数据，但保存各自的属性值
 b[0] = -1               # 修改b的数据，a的数据也会改变
@@ -274,7 +275,7 @@ b = a[:]                # 切片数组返回的是一个view
 
  - 深度拷贝
 
-```python3
+```python
 a = np.arange(1, 5)
 b = a.copy()            # 创建一个内容相同的新数组，a,b不会相互影响
 ```
@@ -288,7 +289,7 @@ NumPy中的数组ndarray可以是多维的，而矩阵matrix只能是二维的�
 
  - `mat, matrix`：从输入创建矩阵
 
-```python3
+```python
 x = np.array([[1,2], [3,4]])
 a = np.mat([[1,2], [4,5]])      # 将list转成矩阵
 a = np.mat(x)                   # 将ndarray转化成矩阵
@@ -303,7 +304,7 @@ b = np.matrix('1,2; 8,9')       # 将string转成矩阵
 
  - `bmat`：组合矩阵
 
-```python3
+```python
 a = np.mat('1,2; 8,9')
 b = np.mat([[4,5], [6,7]])
 c = np.bmat('a; b')             # 在行（垂直）方向上组合
@@ -374,4 +375,4 @@ c = np.bmat([[a, b]])           # 在列（水平）方向上组合
  - [数学函数](https://docs.scipy.org/doc/numpy/reference/routines.math.html)
  - [随机数模块numpy.random](https://docs.scipy.org/doc/numpy/reference/routines.random.html)
  - [排序、查找和计数](https://docs.scipy.org/doc/numpy/reference/routines.sort.html)
- - [文件输入与输出](https://docs.scipy.org/doc/numpy/reference/routines.io.html)
+ - [文件输入与输出](https://docs.scipy.org/doc/numpy/reference/routines

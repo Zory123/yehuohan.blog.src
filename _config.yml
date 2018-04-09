@@ -92,7 +92,7 @@ search:
 # Generate categories from directory-tree
 # Dependencies: https://github.com/xu-song/hexo-auto-category
 auto_category:
- enable: true
+ enable: false
  render_drafts: false
  depth: 1
  
