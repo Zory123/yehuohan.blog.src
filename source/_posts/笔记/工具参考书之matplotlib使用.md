@@ -177,21 +177,24 @@ zorder    : 控制绘图顺序
 
 ```python
 import numpy as np
+import matplotlib as mpl
 import matplotlib.figure as mfig
 import matplotlib.backends.backend_agg as mbk
 
+mpl.rcParams['font.family'] = 'Microsoft YaHei Mono'        # 设置中文字体
 fig = mfig.Figure()
 canvas = mbk.FigureCanvas(fig)
 ax = fig.add_axes([0.1, 0.1, 0.8, 0.8], projection='polar') # 添加极坐极图表
+ax.text(np.pi*0.8, 180, '对数螺线', color='red')
 
 theta = np.linspace(0, 1.5*np.pi, 1000, dtype = np.float)
 r = np.exp(theta)
 ax.plot(theta, r, color='green')        # 绘制对数螺线
 
-fig.savefig('fig1.png')                 # 保存成fig1.png
+fig.savefig('fig.png')                  # 保存成fig.png
 ```
 
-![fig1](fig1.png)
+![fig](fig.png)
 
  - 结合pyplot的面向对象式绘图
 
@@ -199,14 +202,17 @@ fig.savefig('fig1.png')                 # 保存成fig1.png
 
 ```python
 import numpy as np
+import matplotlib as mpl
 import matplotlib.pyplot as plt
 
-fig = plt.figure('fig')    # 添加Figure
-ax = fig.add_subplot(111, projection='polar') # 添加极坐极图表
+mpl.rcParams['font.family'] = 'Microsoft YaHei Mono'    # 设置中文字体
+fig = plt.figure('fig')                                 # 添加Figure
+ax = fig.add_subplot(111, projection='polar')           # 添加极坐极图表
 
 theta = np.linspace(0, 1.5*np.pi, 1000, dtype = np.float)
 r = np.exp(theta)
 ax.plot(theta, r, color='green')        # 绘制对数螺线
+ax.text(np.pi*0.8, 180, '对数螺线', color='red')
 
 plt.show()                              # 显示绘图
 ```
@@ -289,17 +295,146 @@ import matplotlib.pyplot as plt
 import mpl_toolkits.mplot3d as plt3d
 
 fig = plt.figure('fig')                     # 添加Figure
-ax = fig.add_subplot(111, projection='3d')  # 添加3d图表
-a = b = np.linspace(0, 3*np.pi, 1000)
+
+ax1 = fig.add_subplot(121, projection='3d') # 添加3d图表
+t = np.linspace(0, 3*np.pi, 1000)
+x = np.sin(t)                               # 生成x,y坐标数据
+y = np.cos(t)
+z = x + y                                   # 生成z数据
+ax1.plot_wireframe(x, y, z, color='red')    # 绘制
+ax1.set_xlabel('X')
+ax1.set_ylabel('Y')
+ax1.set_zlabel('Z')
+
+ax2 = fig.add_subplot(122, projection='3d') # 添加3d图表
+a = b = np.linspace(-2*np.pi, 2*np.pi, 1000)
 x, y = np.meshgrid(a, b)                    # 生成x,y坐标数据
-z = 10 * np.sin(np.sqrt(x**2 + y**2))       # 生成z数据
-ax.plot_wireframe(x, y, z, color='red')     # 绘制
-ax.set_xlabel('X')
-ax.set_ylabel('Y')
-ax.set_zlabel('Z')
+z = np.sin(np.sqrt(x**2 + y**2))            # 生成z数据
+ax2.plot_surface(x, y, z, shade=True, cmap='jet')   # 绘制
+ax2.set_xlabel('X')
+ax2.set_ylabel('Y')
+ax2.set_zlabel('Z')
 plt.show()
 ```
 
 ![3d](3d.png)
 
 3D绘图也可以绘制散点图、条形图等，这里就不一一举例了。
+
+---
+# 动画生成
+
+[matplotlib.animation](https://matplotlib.org/api/animation_api.html#module-matplotlib.animation)模块与动画的生成、保存等相关。生成动画的基本函数及其基本参数如下：
+
+基本函数：[animation.FuncAnimation(fig, func, frames)](https://matplotlib.org/api/_as_gen/matplotlib.animation.FuncAnimation.html#matplotlib.animation.FuncAnimation)
+
+基本参数：
+ - `fig`是动画所在的`Figure`；
+ - `func`是一个回调函数，用于处理动画每帧数据的更新；
+ - `frames`是每帧动画数据的来源，即传递给`func`的参数来源；
+
+| `frames`             | 说明                                                          |
+| : -                  | : -                                                           |
+| `None`               | 传给`func`的参数是当前的帧数，即0,1,2,3...                    |
+| `int`                | 传给`func`的参数是自增的小于int的整数，即0,1,2...int,0,1,2... |
+| `iterable`           | 传给`func`的参数是可迭代对象，如list,tuple等                  |
+| `generator function` | 传给`func`的参数是迭代器函数的返回值                          |
+
+实例如下：（使用ImageMagick来生成gif图片，[具体教程可以参照这](https://stackoverflow.com/questions/23417487/saving-a-matplotlib-animation-with-imagemagick-and-without-ffmpeg-or-mencoder)）
+
+ - frames = None 或 int
+
+```python
+import numpy as np
+import matplotlib as mpl
+import matplotlib.pyplot as plt
+import matplotlib.animation as animation
+
+mpl.rcParams['animation.convert_path'] = 'D:/ImageMagick/magick.exe'
+fig = plt.figure('fig', figsize=(4.4,3))
+ax = fig.add_subplot(111)
+N = 10
+line, = ax.plot(np.random.rand(N), 'r-') # 添加线元素，line是plot返回list的第0个元素
+
+def update(num):
+    """update函数用于更新fig中的line等对象"""
+    line.set_ydata(np.arange(N)**num)
+    ax.set_ylim(0, N**num)
+    return line
+frame = 5           # 传递update的参数为 0, 1, 2, 3, 4, 0, 1, 2, 3, ...
+# frame = None      # 传递update的参数为当前的帧数，即0, 1, 2, 3, 4, 5, 6, ...
+                    # 注意：使用None貌似不能生成gif图片
+anim = animation.FuncAnimation(fig, func=update, frames=frame, interval=500)
+anim.save('anim1.gif', writer=animation.ImageMagickWriter(fps=2))
+plt.show()
+```
+
+![anim1](anim1.gif)
+
+ - frames = iterable
+
+```python
+import numpy as np
+import matplotlib as mpl
+import matplotlib.pyplot as plt
+import mpl_toolkits.mplot3d as plt3d
+import matplotlib.animation as animation
+
+mpl.rcParams['animation.convert_path'] = 'D:/ImageMagick/magick.exe'
+fig = plt.figure('fig', figsize=(4.4,3))
+ax = fig.add_subplot(111, projection='3d')
+a = b = np.linspace(-2*np.pi, 2*np.pi, 1000)
+x, y = np.meshgrid(a, b)                    # 生成x,y坐标数据
+z = np.sin(np.sqrt(x**2 + y**2))            # 生成z数据
+ax.plot_surface(x, y, z, cmap='jet')        # 绘制
+ax.set_xlabel('X')
+ax.set_ylabel('Y')
+ax.set_zlabel('Z')
+
+def update(ang):
+    """update函数用于更新fig中的ax等对象"""
+    ax.view_init(elev=50, azim=ang)
+    return ax
+frame = np.linspace(0, 360, num=50)
+anim = animation.FuncAnimation(fig, func=update, frames=frame, interval=500)
+anim.save('anim2.gif', writer=animation.ImageMagickWriter(fps=5))
+plt.show()
+```
+
+![anim2](anim2.gif)
+
+ - frames = generator function
+
+```python
+import numpy as np
+import matplotlib as mpl
+import matplotlib.pyplot as plt
+import matplotlib.animation as animation
+
+mpl.rcParams['animation.convert_path'] = 'D:/ImageMagick/magick.exe'
+fig = plt.figure('fig', figsize=(4.4,3))
+ax = fig.add_subplot(111, xticks=[])
+N = 10
+sort = np.array(1000*np.random.rand(N), dtype=np.int)
+bars = ax.bar(np.arange(0, N), height=sort, color='g')
+
+def update(data):
+    """update函数用于更新fig中的bars等对象"""
+    for k,rect in enumerate(bars.patches):
+        rect.set_height(data[k])
+    return bars
+
+def generator():
+    """迭代器函数，冒泡排序算法"""
+    for i in range(sort.size - 1):
+        for j in range(sort.size - 1 - i):
+            if sort[j] > sort[j+1]:
+                sort[j], sort[j+1] = sort[j+1], sort[j]
+            yield(sort)
+
+anim = animation.FuncAnimation(fig, func=update, frames=generator, interval=200)
+anim.save('anim3.gif', writer=animation.ImageMagickWriter(fps=5))
+plt.show()
+```
+
+![anim3](anim3.gif)
