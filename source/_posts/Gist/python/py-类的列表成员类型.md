@@ -15,39 +15,41 @@ tags:
 
 ---
 
+一般而言：
+ - `__init__`外的为类的静态成员
+ - `__init__`内的为类的实例对象的成员
+
 ```python
-class Foo:
-    """ 测试类 """
-    plst = []
-    slst = []
+class MyClass:
+    static_elem = 123
 
     def __init__(self):
-        self.plst = []      # Foo类的每个对象，plst均会指向新的列表引用
+        self.object_elem = 456
 
-def foo_str(foo):
-    """ 输出 """
-    return "plst:{} slst:{}".format(foo.plst, foo.slst)
+c1 = MyClass()
+c2 = MyClass()
 
-if __name__ == "__main__":
-    foo1 = Foo()
-    foo2 = Foo()        # foo2.slst与foo1.slst指向相同的列表引用
-    foo1.plst = [1,1]
-    foo1.slst = [1,1]   # foo1.slst指向了新的列表引用
-    foo2.plst = [2,2]
-    foo2.slst = [2,2]   # foo2.slst指向了新的列表引用
-    print("foo1: {}".format(foo_str(foo1)))
-    print("foo2: {}".format(foo_str(foo2)))
+# Initial values of both elements
+>>> print c1.static_elem, c1.object_elem 
+123 456
+>>> print c2.static_elem, c2.object_elem
+123 456
 
-    foo3 = Foo()
-    foo4 = Foo()        # foo3.slst与foo4.slst指向相同的列表引用
-    foo3.plst.append(3)
-    foo3.slst.append(3) # foo3.slst指向的列表引用添加元素
-    foo4.plst.append(4)
-    foo4.slst.append(4) # foo4.slst指向的列表引用添加元素
-    # foo3.plst和foo4.plst在__init__时就指向了新的列表引用，故值不相同
-    print("foo3: {}".format(foo_str(foo3)))
-    # foo3.slst和foo4.slst一直指向相同列表引用，故值为[3,4]
-    print("foo4: {}".format(foo_str(foo4)))
+# Nothing new so far ...
 
+# Let's try changing the static element
+MyClass.static_elem = 999
 
+>>> print c1.static_elem, c1.object_elem
+999 456
+>>> print c2.static_elem, c2.object_elem
+999 456
+
+# Now, let's try changing the object element
+c1.object_elem = 888
+
+>>> print c1.static_elem, c1.object_elem
+999 888
+>>> print c2.static_elem, c2.object_elem
+999 456
 ```
