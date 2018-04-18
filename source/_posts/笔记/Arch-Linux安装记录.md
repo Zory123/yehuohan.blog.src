@@ -636,7 +636,7 @@ sudo mkfontscale
 sudo mkfontdir
 sudo fc-cache -fv
 ```
-附：[consolas字体](https://github.com/yehuohan/dotconfigs/tree/master/cf-font)
+附：[consolas字体](https://github.com/yehuohan/dotconfigs/tree/master/font)
 
 ## 对调Esc和CapsLock
 （方便Vim使用）
