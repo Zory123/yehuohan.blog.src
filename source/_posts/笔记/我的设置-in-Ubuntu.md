@@ -4,7 +4,7 @@ tags:
   - linux
   - ubuntu
 categories:
-  - 杂记
+  - 笔记
 date: 2017-06-07 00:38:29
 ---
 

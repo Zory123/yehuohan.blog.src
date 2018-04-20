@@ -214,7 +214,7 @@ r = np.exp(theta)
 ax.plot(theta, r, color='green')        # 绘制对数螺线
 ax.text(np.pi*0.8, 180, '对数螺线', color='red')
 
-plt.show()                              # 显示绘图
+plt.show(fig)                           # 显示绘图
 ```
 
 ---
