@@ -410,6 +410,7 @@ efibootmgr -c -l /boot/efi/refind/refind_x64.efi -L 'refind boot manager'
 
 ```bash
 pacman -S linux
+# 安装linux内核，也可以使用其它的，如linux-lts, linux-zen等
 mkinitcpio -p linux
 ```
 
