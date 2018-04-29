@@ -21,7 +21,7 @@ date: 2017-06-11 23:36:58
  - 了解引导的基本知识；
  - 在虚拟机安装一遍Arch，并记下自己的步骤。
 
-## ArchWiki参考教程 
+## ArchWiki参考教程
 
 > 注意：以下ArchWiki的教程，有些是中文，可以自己选择（左侧栏里选）语言。中文是根据英文翻译过来，一般会注明最后更新时间，看英文还是中文，自己把握。
 
@@ -46,7 +46,7 @@ date: 2017-06-11 23:36:58
 最简单的方法，就是直接刻录到U盘中，然后用U盘启动就行。
 这里我只记下自己的方法：
 
- - 安装环境 
+ - 安装环境
  UEFI启动，硬盘使用MBR分区（没写错，就是MBR，不是GPT）。
 
  - 多系统：
@@ -190,14 +190,14 @@ wifi-menu
 timedatectl
 # 查询和更改系统时钟设置
 timedatectl status
-# 查看当前Time状态 
+# 查看当前Time状态
 timedatectl set-ntp true
 # 远程NTP服务器时间同步
 ```
 
-## 硬盘分区 
+## 硬盘分区
 
-先确定好分区情况，我的分区设置如下： 
+先确定好分区情况，我的分区设置如下：
 
 ```
 /dev/sda1 : ESP分区，fat32格式，refind引导所在分区
@@ -428,7 +428,7 @@ useradd -m -G wheel -s /bin/zsh username
 # 创建用户，同时创建与username同名的用户组，所属的附加组为wheel组，使用zsh
 useradd -m -g usergroup -G wheel -s /bin/zsh username
 # 创建用户，属于usergroup组（需要先创建用户组），所属的附加组为wheel组，使用zsh
-passwd username 
+passwd username
 # 设定密码
 su root
 chsh -s /bin/zsh
@@ -491,7 +491,7 @@ suso pacman -S zsh-completions
 
 ```bash
 lspci -v | grep VGA
-# 查看显示型号 
+# 查看显示型号
 
 sudo pacman -S <显卡驱动>
 # 根据自己的显卡，查找相应的显卡驱，开源驱动（也有闭源的，推荐使用开源的）如下：
@@ -532,7 +532,7 @@ sudo pacman -S xorg-xinit xorg-twm xorg-xclock xterm
 # 安装xorg-init和twm窗器管理器
 cp /etc/X11/xinit/xintrc ~/.xinitrc
 # 桌面环境配置文件
-startx 
+startx
 # 测试xorg
 ```
 
@@ -553,7 +553,7 @@ sudo systemctl enable sddm.service
 ls -l /etc/systemd/system/display-manager.service
 # 查看当前使用的是那个登录管理器
 pacman -S gst-libav phonon-qt5-gstreamer gst-plugins-good
-git clone https://github.com/3ximus/aerial-sddm-theme                                                                                       
+git clone https://github.com/3ximus/aerial-sddm-theme
 sudo mv aerial-sddm-theme /usr/share/sddm/themes
 # 一个不错的sddm主题，可能需要安装qt5-multimedia和qt5-svg
 
@@ -645,7 +645,7 @@ sudo fc-cache -fv
  - Console环境
 
 ```bash
-cd /usr/share/kbd/keymaps/i386/qwerty/ 
+cd /usr/share/kbd/keymaps/i386/qwerty/
 cp us.map.gz custom.map.gz
 # 修改custom中的Esc和CapsLock键位映射
 vim /etc/vconsole.conf
@@ -658,10 +658,10 @@ KEYMAP=custom
 ```bash
 vim .Xmodmap
 # 添加以下内容：
-clear Lock  
-keysym Caps_Lock = Escape  
-keysym Escape = Caps_Lock  
-add Lock = Caps_Lock  
+clear Lock
+keysym Caps_Lock = Escape
+keysym Escape = Caps_Lock
+add Lock = Caps_Lock
 
 vim .zprofile
 # zsh用.zprofile，bash用.xprofile
@@ -762,9 +762,9 @@ yaourt -S i3-gaps-git
 # 换用i3-gaps，可以设置透明i3bar
 sudo pacman -S i3lock
 # 锁屏
-yaourt -S quickswitch-i3
-# 窗口快速切换插件
-sudo pacman -S feh 
+pacman -S rofi
+# 可用于窗口切换和程序启动，可代替dmenu
+sudo pacman -S feh
 # 壁纸
 sudo pacman -S compton
 # 透明效果设置
@@ -788,13 +788,22 @@ sudo pacman -S xfce4-terminal
 
 ## 其它设置
 
+ - mtp
+
 ```bash
 sudo pacman -S gvfs-mtp
-# 安装mtp，支持移动设备挂载
-# 安装后xfce-thunar可以自动识别windows-ntfs硬盘和手机u盘等设备
+# 安装mtp，支持移动设备挂载；
+# 安装后xfce-thunar可以自动识别windows-ntfs硬盘和手机u盘等设备。
 ```
 
----
+ - ntf-3g
+
+```bash
+sudo pacman -S ntfs-3g
+# Linux内核目前只支持对微软NTFS文件系统的读取；
+# NTFS-3G是微软NTFS文件系统的一个开源实现，同时支持读和写；
+# NTFS-3G 开发者使用 FUSE 文件系统来辅助开发，同时对可移植性有益。
+```
 
 ---
 
