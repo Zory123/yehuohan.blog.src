@@ -542,7 +542,7 @@ xrandr --ourput HDMI-1 --off
 # 关闭HDMI-1
 
 # 附：arandr, lxrandr为xrandr的图形客户端
-# 附：xrandr的设置为临时设置，在/etc/X11/xorg.conf
+# 附：xrandr的设置为临时设置，在/etc/X11/xorg.conf可进行文件配置
 ```
 
 ---

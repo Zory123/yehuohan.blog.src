@@ -717,7 +717,7 @@ Section "InputClass"
         Option "NaturalScrolling" "on"
 EndSection
 ```
-## 独显
+## 独显Nvidia+CUDA
  [开源独显Nouveau](https://wiki.archlinux.org/index.php/Nouveau)
  [Nouveau支持查询](https://nouveau.freedesktop.org/wiki/CodeNames/)
  [Nouveau支持功能查询](https://nouveau.freedesktop.org/wiki/FeatureMatrix/)
@@ -731,7 +731,7 @@ sudo pacman -S bumblebee mesa xf86-video-intel nvidia
 # bumblebee        : 提供守护进程以及程序的主要安装包。
 # mesa             : 开源的OpenGL标准实现。
 # xf86-video-intel : Intel 驱动。
-# nvidia           : NVIDIA 驱动。
+# nvidia           : NVIDIA 驱动，注意，如果使用nvidia-lts版，内核也要使用linux-lts版。
 # 最好卸了Nouveau驱动
 sudo gpasswd -a <user> bumblebee
 # 安装,并添加用户到bumblebee用户组
@@ -749,6 +749,9 @@ sudo pacman -S bbswitch
 lspci | grep VGA
 # 查看独显示状态，(rev ff)表示关闭，否则为打开状态
 # 运行glxspheres64时，则不为(rev ff)
+
+sudo pacman -S cuda
+# 安装CUDA
 ```
 
 ## i3wm配置
@@ -807,3 +810,19 @@ sudo pacman -S ntfs-3g
 
 ---
 
+# 常见问题
+
+## 关机出现“watchdog0: watchdog did not stop!”
+
+[相同问题：watchdog did not stop on reboot](https://bbs.archlinux.org/viewtopic.php?pid=1195597#p1195597)
+[对systemd关机过程的说明：cgroup : option or name mismatch, new: 0x0"", old: 0x4 "systemd"](https://bbs.archlinux.org/viewtopic.php?pid=1372562#p1372562)
+
+根据以上查到的资料，这是正常的。
+
+## Inter i5 8250U + Nvidia MX150的关机问题
+
+我自己电脑遇到的关机问题，感觉像MX150使用nouveau驱动的问题（201804时遇到的，可能后来的更新会修复错误），主要表现如下：
+ - 未禁用nouveau前，每次进xorg+i3wm，关机都会出现问题，关机时会卡在一个地方，出现不同的错误提示，遇到过的有以下几个(具体的没记下，只记得一些大概的文字)：
+    - `watchdog: BUG: soft lockup - CPU#1 stuck for 22s`
+    - `[drm:drm_atomic_helper_wait_for_dependencies [drm_kms_helper]] *ERROR* [CRTC:26:pipe A] flip_done timed out`
+ - 禁用nouveau，安装 nvidia+bumblebee，xorg使用intel集显驱动，关机正常。
