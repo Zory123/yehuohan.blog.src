@@ -622,10 +622,16 @@ sudo pacman -S wqy-microhei
 yaourt -S ttf-dejavu-sans-mono-powerline-git
 # 打补丁的dejavu字体，包含powerline图标字体
 
+sudo pacman -S noto-fonts noto-fonts-cjk
+# (可选)Google Noto字体
 sudo pacman -S adobe-source-han-sans-cn-fonts
 # (可选)安装思源体简体中文部体，中文效果比文泉好些
-pacman -S ttf-ubuntu-font-family
+sudo pacman -S ttf-ubuntu-font-family
 # (可选)ubuntu上的字体
+yaourt -S ttf-ms-win10-zh_cn
+# (可选)win10字体
+yaourt -S fontconfig-infinality-ultimate
+# 字体渲染优化
 
 # 手动安装consolas安体
 cd /usr/share/fonts
