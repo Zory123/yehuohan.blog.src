@@ -782,17 +782,17 @@ yaourt -S ttf-font-awesome
 # 用conky代替i3status，并安装图标字体
 sudo pacman -S scrot
 # 截图软件
-sudo pacman -S alsa-utils
-sudo pacman -S volumeicon
-# 音量管理
+sudo pacman -S alsa-utils volumeicon pulseaudio ffmpeg
+# 音量管理，浏览器在线播放也需要
 sudo pacman -S networkmanager network-manager-applet nm-connection-editor
 sudo systemctl start NetworkManager
 sudo systemctl enable NetworkManager
 # 网络管理及托盘图标
 sudo pacman -S xfce4-power-manager
-# xfce4的电源理软件，包括对屏幕亮度调节（可以直接再安装一个xfce桌面环境）
+sudo pacman -S mate-power-manager
+# 电源理软件，包括对屏幕亮度调节，xfce4或mate的任选一个
 sudo pacman -S xfce4-terminal
-# xfce4的终端（可以直接再安装一个xfce桌面环境）
+# xfce4的终端
 ```
 
 ## 其它设置
