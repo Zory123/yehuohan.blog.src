@@ -375,4 +375,4 @@ c = np.bmat([[a, b]])           # 在列（水平）方向上组合
  - [数学函数](https://docs.scipy.org/doc/numpy/reference/routines.math.html)
  - [随机数模块numpy.random](https://docs.scipy.org/doc/numpy/reference/routines.random.html)
  - [排序、查找和计数](https://docs.scipy.org/doc/numpy/reference/routines.sort.html)
- - [文件输入与输出](https://docs.scipy.org/doc/numpy/reference/routines
+ - [文件输入与输出](https://docs.scipy.org/doc/numpy/reference/routines)

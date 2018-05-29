@@ -602,11 +602,6 @@ cp /etc/xdg/awesome/rc.lua ~/.config/awesome/
 # 如果使用xorg-init，则添加 "exec awesome" 到.xinitrc，通过startx则可以启动ie
 ```
 
-
----
-
----
-
 ---
 
 # 我的设置 Of ArchLinux
@@ -723,7 +718,7 @@ Section "InputClass"
         Option "NaturalScrolling" "on"
 EndSection
 ```
-## 独显Nvidia+CUDA
+## 独显Nvidia
  [开源独显Nouveau](https://wiki.archlinux.org/index.php/Nouveau)
  [Nouveau支持查询](https://nouveau.freedesktop.org/wiki/CodeNames/)
  [Nouveau支持功能查询](https://nouveau.freedesktop.org/wiki/FeatureMatrix/)
@@ -756,14 +751,18 @@ lspci | grep VGA
 # 查看独显示状态，(rev ff)表示关闭，否则为打开状态
 # 运行glxspheres64时，则不为(rev ff)
 
-sudo pacman -S cuda
-# 安装CUDA
+# 附：安装cuda等，一条命令就搞定，很是方便
+sudo pacman -S cuda cudnn
+# 安装CUDA, CUDNN，安装在/opt/cuda，里面有samples可以运行
+sudo pacman -S python-tensorflow-cuda
+# 安装tensorflow
+# 注意：同样会安装numpy等包，如果已经用pip安装，需要先删了，不然会提示文件冲突
 ```
 
 ## i3wm配置
 i3的配置比较容易，找一份详细的配置和教程，仔细看一看就可以配置自己所想要的。
 [i3wm ArchWiki](https://wiki.archlinux.org/index.php/I3)
-[我的i3wm置文件](https://github.com/yehuohan/LinuxConfigs/tree/master/cf-i3)
+[我的i3wm置文件](https://github.com/yehuohan/dotconfigs/tree/master/cf-i3)
 [awesome-font图标字体，直接复制使用](http://fontawesome.io/cheatsheet/)
 
 ```bash
