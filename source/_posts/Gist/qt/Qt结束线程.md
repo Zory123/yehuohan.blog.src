@@ -1,5 +1,5 @@
 ---
-title: Qt结束线程
+title: 'qt:结束线程'
 categories:
   - Gist
 mathjax: false

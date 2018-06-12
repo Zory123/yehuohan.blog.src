@@ -1,5 +1,5 @@
 ---
-title: Python-Matlab绘制相平面轨迹
+title: 'py/matlab:绘制相平面轨迹'
 categories:
   - Gist
 mathjax: true

@@ -1,5 +1,5 @@
 ---
-title: 'c++:类的各类型成员初始化'
+title: 'c/c++:类的各类型成员初始化'
 categories:
   - Gist
 mathjax: false

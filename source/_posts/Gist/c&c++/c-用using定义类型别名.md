@@ -1,5 +1,5 @@
 ---
-title: 'c++:用using定义类型别名'
+title: 'c/c++:用using定义类型别名'
 categories:
   - Gist
 mathjax: false

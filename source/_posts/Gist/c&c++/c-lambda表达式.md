@@ -1,5 +1,5 @@
 ---
-title: 'c++:lambda表达式'
+title: 'c/c++:lambda表达式'
 categories:
   - Gist
 mathjax: false

@@ -1,5 +1,5 @@
 ---
-title: 'c++:auto在遍历中的使用'
+title: 'c/c++:auto在遍历中的使用'
 categories:
   - Gist
 mathjax: false

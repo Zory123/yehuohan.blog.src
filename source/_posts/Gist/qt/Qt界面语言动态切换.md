@@ -1,5 +1,5 @@
 ---
-title: Qt界面语言动态切换
+title: 'qt:界面语言动态切换'
 categories:
   - Gist
 mathjax: false

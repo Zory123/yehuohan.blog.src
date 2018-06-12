@@ -1,5 +1,5 @@
 ---
-title: Simulink Integrator的理解
+title: 'matlab:Simulink Integrator的理解'
 categories:
   - Gist
 mathjax: true

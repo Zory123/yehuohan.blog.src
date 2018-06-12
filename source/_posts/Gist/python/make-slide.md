@@ -1,5 +1,5 @@
 ---
-title: make slide
+title: 'py:make slide'
 categories:
   - Gist
 mathjax: false

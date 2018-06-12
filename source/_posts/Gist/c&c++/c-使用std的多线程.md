@@ -1,5 +1,5 @@
 ---
-title: 'c++:使用std的多线程'
+title: 'c/c++:使用std的多线程'
 categories:
   - Gist
 mathjax: false

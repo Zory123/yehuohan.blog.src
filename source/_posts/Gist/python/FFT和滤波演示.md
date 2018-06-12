@@ -1,5 +1,5 @@
 ---
-title: FFT和滤波演示
+title: 'py:FFT和滤波演示'
 categories:
   - Gist
 mathjax: false

@@ -1,5 +1,5 @@
 ---
-title: loan calculation
+title: 'py:loan calculation'
 categories:
   - Gist
 mathjax: false
