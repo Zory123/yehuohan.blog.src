@@ -322,10 +322,6 @@ cv::putText(img, "Hello", cv::Point(100,100),
 cv::imshow(wstr, img);
 ```
 
-
----
-
-
 ---
 # Python中使用OpenCv
 
