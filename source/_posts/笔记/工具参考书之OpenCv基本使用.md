@@ -268,6 +268,7 @@ cv::Mat img = cv::imread("pic.jpg");
 cv::namedWindow(wstr, cv::WindowFlags::WINDOW_AUTOSIZE);    // 创建窗口
 cv::moveWindow(wstr, 50, 50);                   // 移动窗口
 cv::setWindowTitle(wstr, "Showing pic.jpg");    // 设置标题
+cv::Rect rect = cv::selectROI(img);             // 输入Rect
 cv::imshow(wstr, img);                          // 显示窗口
 while(1) {
     cv::imshow(wstr, img);
@@ -323,6 +324,149 @@ cv::imshow(wstr, img);
 
 
 ---
+
+
+---
+# Python中使用OpenCv
+
+先安装opencv-python，即可在python中引入。
+
+```
+import cv2
+
+img = cv2.imread('pic.jpg')
+cv2.imshow('pic', img)
+
+while True:
+    key = cv2.waitKey(10)
+    if key in [27, 113]:
+        break
+cv2.destroyAllWindows()
+```
+
+还可以和Matplotlib、Numpy等库结合使用。
+
+```
+import matplotlib.pyplot as plt
+import cv2
+plt.imshow(cv2.cvtColor(cv2.imread('pic.jpg'), cv2.COLOR_BGR2RGB))
+plt.show()
+```
+
+
+# 几个小demo
+
+顺便附上几个以前用过模块的小demo。
+
+## 图像畸变校正
+
+原来用Matlab，用OpenCv也试下。
+
+```cpp
+std::vector<cv::String> filelist;// 图像文件
+
+// find corners
+int square_size = 30;           // 方格大小，mm
+cv::Size image_size(640, 480);  // 图像大小，pixel
+cv::Size border_size(13,12);    // 内角点个数
+std::vector<std::vector<cv::Point2f>> image_corners;// 角点坐标
+for (auto& file:filelist)
+{
+    cv::Mat img;
+    cv::Mat gray;
+    std::vector<cv::Point2f> corners;
+    img = cv::imread(file);
+    cv::cvtColor(img, gray, cv::COLOR_BGR2GRAY);
+
+    bool found = cv::findChessboardCorners(img, border_size, corners,
+        cv::CALIB_CB_ADAPTIVE_THRESH | cv::CALIB_CB_FAST_CHECK | cv::CALIB_CB_NORMALIZE_IMAGE);
+    if (found)
+    {
+        cv::cornerSubPix(gray, corners, cv::Size(11,11), cv::Size(-1,-1),
+                cv::TermCriteria(cv::TermCriteria::EPS + cv::TermCriteria::COUNT, 30, 0.1));
+        cv::drawChessboardCorners(img, border_size, cv::Mat(corners), found);
+
+        image_corners.push_back(corners);
+        cv::imshow(file, img);
+    }
+}
+
+// calc matrix
+cv::Mat cam_mat = cv::Mat::eye(3, 3, CV_64FC1);
+cv::Mat dist_coeffs = cv::Mat::zeros(8, 1, CV_64FC1);
+std::vector<cv::Mat> rvecs, tvecs;
+std::vector<std::vector<cv::Point3f>> obj_points(1);
+for (int i = 0; i < border_size.height; i ++)
+    for (int j = 0; j < border_size.width; j ++)
+        obj_points[0].push_back(cv::Point3f(float(j*square_size),
+                                            float(i*square_size),
+                                            0));
+obj_points.resize(image_corners.size(), obj_points[0]);
+cv::calibrateCamera(obj_points, image_corners, image_size,
+    cam_mat, dist_coeffs, rvecs, tvecs,
+    cv::CALIB_FIX_K4 | cv::CALIB_FIX_K5);
+
+// undistort
+cv::Mat view, rview, map1, map2;
+cv::initUndistortRectifyMap(cam_mat, dist_coeffs, cv::Mat(),
+    cv::getOptimalNewCameraMatrix(cam_mat, dist_coeffs, image_size, 1, image_size, 0),
+    image_size, CV_16SC2, map1, map2);
+for (auto& file:filelist)
+{
+    view = cv::imread(file);
+    //cv::undistort(view, rview, cam_mat, dist_coeffs, cam_mat);
+    cv::remap(view, rview, map1, map2, cv::INTER_LINEAR);
+    cv::imshow(file + " + undistort", rview);
+}
+
+
+
+```
+
+## DPM人物检测
+
+DPM模块在opencv_contrib中，需要自行编译，或者直接使用源码。
+
+```cpp
+typedef cv::dpm::DPMDetector DD;
+cv::Mat img = cv::imread("pic.jpg");
+cv::Mat frame = img.clone();
+cv::Ptr<DD> detector =          // 检测器
+  DD::create(std::vector<std::string>(1, "inriaperson.xml"));
+std::vector<DD::ObjectDetection> ds;
+detector->detect(frame, ds);    // 开始检测
+for (auto& it:ds)
+    cv::rectangle(img, it.rect, cv::Scalar(0,0,255), 2);
+cv::imshow("mat", img);
+```
+
+检测示例结果：
+
+![dpm](pic_rect.jpg)
+
+
+## Tracker物体跟踪
+
+tracking模块在opencv_contrib中，需要自行编译，或者直接使用源码。
+
+```cpp
+cv::Mat img;
+cv::Ptr<cv::Tracker> tracker = cv::Tracker::create("KCF");
+cv::VideoCapture cap(0);
+
+cap >> img;
+cv::Rect2d roi = cv::selectROI("tracker", img, false, false);   // 框选跟踪目标
+tracker->init(img, roi);
+
+while (cap.isOpened())
+{
+    cap >> img;
+    tracker->update(img, roi);      // 跟踪
+    cv::rectangle(img, roi, cv::Scalar(0,0,255),2);
+    cv::imshow("tracker", img);
+}
+```
+
 # 常用模块
 
  - [Operations on arrays](https://docs.opencv.org/3.4.1/d2/de8/group__core__array.html)：线性代数计算等；
