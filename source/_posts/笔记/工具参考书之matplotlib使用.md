@@ -11,6 +11,7 @@ tags:
 
 参考书籍：
 [Matplotlib官方在线文档](https://matplotlib.org/)
+[Matplotlib入门介绍](https://matplotlib.org/tutorials/index.html#toolkits)
 [Matplotlib绘图实例](https://matplotlib.org/gallery.html)
 
 ---
