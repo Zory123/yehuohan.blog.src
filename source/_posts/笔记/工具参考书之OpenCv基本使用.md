@@ -29,7 +29,7 @@ LIBS        += \
 常用数据类型：
 
  - `cv::Mat`：N维数组类，也是一个通用的矩阵类和图像类；
- - `type`：表示数组类每个元素的类型，或表示图像每个像素的类型，通过宏定义`CV_MAKETYPE`实现；
+ - `type`：表示数组类每个元素的类型，或表示图像每个像素的类型，通过宏定义`CV_MAKE_TYPE`实现；
  - `cv::Point`：点坐标，包含x,y两个元素；
  - `cv::Size`：尺寸，包含width,height两个元素；
 （Point和Size均只有两个成员变量，貌似相同，但是两个类中封装的函数不一样，Point可以进行点乘等运算，而Size可以计算面积等）
@@ -50,8 +50,8 @@ LIBS        += \
 
 ```
 // type
-CV_MAKETYPE(depth,cn) ~ CV_MAKETYPE(CV_8U,cn) -> CV_8UC(n)
-CV_MAKETYPE(depth,cn) ~ CV_MAKETYPE(CV_8U,1)  -> CV_8UC1
+CV_MAKE_TYPE(depth,cn) ~ CV_MAKE_TYPE(CV_8U,cn) -> CV_8UC(n)
+CV_MAKE_TYPE(depth,cn) ~ CV_MAKE_TYPE(CV_8U,1)  -> CV_8UC1
 
 // 坐标和点
 cv::Point_<T>  ~ cv::Point_<int>  -> cv::Point2i -> cv::Point
@@ -67,6 +67,30 @@ cv::Vec<T, n>   ~ cv::Vec<uchar, 3> -> cv::Vec3b
 ```
 
 更多的[数据类型可参考这](https://docs.opencv.org/3.4.1/dc/d84/group__core__basic.html)。
+
+`type`与通道类型对应关系：
+
+|        | C1 | C2 | C3 | C4 |
+| :-     | :- | :- | :- | :- |
+| CV_8U  | 0  | 8  | 16 | 24 |
+| CV_8S  | 1  | 9  | 17 | 25 |
+| CV_16U | 2  | 10 | 18 | 26 |
+| CV_16S | 3  | 11 | 19 | 27 |
+| CV_32S | 4  | 12 | 20 | 28 |
+| CV_32F | 5  | 13 | 21 | 29 |
+| CV_64F | 6  | 14 | 22 | 30 |
+
+`type`与数据类型对应关系：
+
+|        | C1       | C2             | C3             | C4             |
+| :-     | :-       | :-             | :-             | :-             |
+| CV_8U  | `uchar`  | `Vec2b`        | `Vec3b`        | `Vec4b`        |
+| CV_8S  | `char`   | `Vec<char, 2>` | `Vec<char, 3>` | `Vec<char, 4>` |
+| CV_16U | `short`  | `Vec2w`        | `Vec3w`        | `Vec4w`        |
+| CV_16S | `ushort` | `Vec2s`        | `Vec3s`        | `Vec4s`        |
+| CV_32S | `int`    | `Vec2i`        | `Vec3i`        | `Vec4i`        |
+| CV_32F | `float`  | `Vec2f`        | `Vec3f`        | `Vec4f`        |
+| CV_64F | `double` | `Vec2d`        | `Vec3d`        | `Vec4d`        |
 
 ## 创建cv::Mat
 
