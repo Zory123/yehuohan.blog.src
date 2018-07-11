@@ -24,9 +24,9 @@ LIBS        += \
 对于头文件，分不清模块间区别，就直接包含`opencv2/opencv.hpp`吧。
 
 ---
-# 基本数据表示
+# 基本数据类型
 
-常用数据类型：
+## 常用数据类型
 
  - `cv::Mat`：N维数组类，也是一个通用的矩阵类和图像类；
  - `type`：表示数组类每个元素的类型，或表示图像每个像素的类型，通过宏定义`CV_MAKE_TYPE`实现；
@@ -38,13 +38,12 @@ LIBS        += \
  - `cv::Scalar`：4元素向量；
  - `cv::String`：字符串；
  - `cv::_InputArray`,`cv::_OutputArray`：输入输出类，其拷贝构造函数可以接受Mat,Vec等各种数据类型；
-
-常用模板类：
-
  - `cv::Mat_<T>`：N维数组类，在编译时确定元素类型；
  - `cv::Matx<T,m,n>`：用于小尺寸矩阵，在编译时确定元素类型和矩阵尺寸；
  - `cv::MatIterator_<T>`：Mat迭代器；
  - `cv::Complex<T>`：复数类，和std::complex类似；
+ - `cv::UMat`：类似于Mat（会在支持OpenCL的设备上自动使用GPU运算，在不支持OpenCL的设备仍然使用CPU运算）
+ - `cv::cuda::GpuMat`：用使Gpu的Mat类型，需要安装Cuda；
 
 模板类之间的联系：
 
@@ -273,6 +272,9 @@ std::cout << (c^d); // 按元素做位或
 知道基本OpenCv数据结构的使用，那之后无论用Mat来处理图像，或是基于矩阵进行数值计算，基本上就是看库模块技术文档+实践的过程了。
 
 ---
+
+## 
+
 # 图像基本操作
 
 基本的图像操作模块有[imgcodecs](https://docs.opencv.org/3.4.1/d4/da8/group__imgcodecs.html),[videoio](https://docs.opencv.org/3.4.1/dd/de7/group__videoio.html),[highgui](https://docs.opencv.org/3.4.1/d7/dfc/group__highgui.html),[imgproc](https://docs.opencv.org/3.4.1/d7/dbd/group__imgproc.html)，下面是一些简单用法。
