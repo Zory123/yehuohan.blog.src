@@ -54,6 +54,7 @@ a =
  - `a.size`     = 15     : 数组元素总个数
  - `a.itemsize` = 4      : 一个元素的大小，单位为字节
  - `a.nbytes`   = 60     : 所有元素占的空间大小，单位为字节
+ - `a.dtype`             : 元素数据型类
  - `a.T`                 : 矩阵转置
  - `a.real`              : 复数数组的实部
  - `a.imag`              : 复数数组的虚部
@@ -208,6 +209,26 @@ c = np.split(np.stack((a, a)), 2, axis=2)
                             # 按维度2方向分割，等同于深度分割
 ```
 
+## 数组维度修改
+
+ - 查看维度
+
+```python
+a.ndim    : 数组维度，也将维度叫做轴
+a.shape   : 数组每个维度的长度
+```
+ - 修变、添加、删除维度
+
+```python
+a.reshape : 修改维度，修改前后的总元素数需要相同
+np.expand_dims: 添加维度，其长度为1
+np.squeeze: 删除维度，其长度为1才能删除
+
+a = np.arange(0, 100).reshape(10, 10)   # shape = (10, 10)
+a = np.expand_dims(a, 2)                # shape = (10, 10, 1)
+a = np.squeeze(a, 2)                    # shape = (10, 10)
+```
+
 ## 数组运算
 
 ### 基本运算
@@ -279,6 +300,29 @@ b = a[:]                # 切片数组返回的是一个view
 a = np.arange(1, 5)
 b = a.copy()            # 创建一个内容相同的新数组，a,b不会相互影响
 ```
+
+## 数组其它操作
+
+在[The N-dimensional array](https://docs.scipy.org/doc/numpy/reference/arrays.ndarray.html)详细介绍了ndarray的用法，这里简单列举一些常用函数。
+
+ - `ndarray.tolist`: 将数组内容转成list
+ - `ndarray.tofile`: 将数组内容保存到文件
+ - `ndarray.astype`: 转换数组元素类型
+ - `ndarray.byteswap`: 互换数组元素型高低位（大小端转换）
+ - `ndarray.fill`: 数组内容填充
+ - `ndarray.reshape`: 修改shape（元素总数size不变）
+ - `ndarray.resize`: 同时修改shape和size
+ - `ndarray.swapaxes`: 交换维度
+ - `ndarray.flatten`: 以一维数组形式返回所有元素的copy
+ - `ndarray.take`: 从ndarray中取出元素按，指定形式生成新的数组
+ - `ndarray.put`: 根据指定形式，给ndarray中元素赋值（与take相反）
+ - `ndarray.repeat`: 重复元素内容
+ - `ndarray.sort`: 数组排序
+ - `ndarray.partition`: 使指定轴点于数组排序后所在的位置（类似于快排的轴点）
+ - `ndarray.diagonal`: 返回对角线数组
+ - `ndarray.ptp`: 获取max-min值
+ - `ndarray.argmax, ndarray.argmin`: 返回最值索引
+ - `ndarray.clip`: 将数组元素的值置于指定范围内
 
 ---
 # 数组与矩阵
