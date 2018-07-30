@@ -10,3 +10,11 @@ tags:
 
 
 
+# 基本
+ - Graph
+ - Session
+ - Tensor
+ - Variable
+ - feed, fetch
+
+## Variable
